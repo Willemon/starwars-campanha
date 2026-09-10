@@ -320,6 +320,47 @@
             margin: 3px 0;
         }
 
+        .library-layout {
+            display: grid;
+            grid-template-columns: minmax(220px, 280px) 1fr;
+            gap: 20px;
+        }
+
+        .library-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .library-item-btn {
+            background: rgba(0, 0, 0, 0.35);
+            color: var(--sw-text);
+            border: 1px solid var(--sw-border);
+            border-radius: 3px;
+            padding: 10px;
+            text-align: left;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .library-item-btn:hover,
+        .library-item-btn.active {
+            border-color: var(--sw-yellow);
+            color: var(--sw-yellow);
+        }
+
+        .library-panel {
+            background: rgba(255, 232, 31, 0.05);
+            border-left: 3px solid var(--sw-yellow);
+            padding: 15px;
+            min-height: 180px;
+        }
+
+        .library-tree-title {
+            color: var(--sw-yellow);
+            margin-top: 0;
+        }
+
         .class-table {
             width: 100%;
             border-collapse: collapse;
@@ -882,6 +923,9 @@
                 padding: 6px 10px;
                 font-size: 0.8em;
             }
+            .library-layout {
+                grid-template-columns: 1fr;
+            }
 
             /* Notas */
             .note-card { padding: 10px; }
@@ -1288,6 +1332,7 @@ window._debouncedRender = function() {
 
     <div class="save-load">
         <button class="btn-action btn-reference" onclick="openClassReference()">📖 Consultar Classes</button>
+        <button class="btn-action btn-reference" onclick="openLibrary()">📚 Biblioteca</button>
     </div>
 </div>
 
@@ -1301,6 +1346,25 @@ window._debouncedRender = function() {
         </div>
 
         <div id="classDetails">
+        </div>
+    </div>
+</div>
+
+<!-- Library Modal -->
+<div id="libraryModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeLibrary()">&times;</span>
+        <h2>Biblioteca - Star Wars Saga Edition</h2>
+
+        <div class="class-selector" id="libraryTabs">
+        </div>
+
+        <div class="library-layout">
+            <div class="library-list" id="libraryList">
+            </div>
+
+            <div class="library-panel" id="libraryDetails">
+            </div>
         </div>
     </div>
 </div>
@@ -4423,6 +4487,189 @@ window._debouncedRender = function() {
 
     function closeClassReference() {
         document.getElementById('classModal').classList.remove('active');
+    }
+
+    const LIBRARY_DATA = {
+        forcePowers: {
+            label: 'Poderes da Força',
+            items: [
+                'Relâmpago da Força',
+                'Mover Objeto',
+                'Empurrão da Força',
+                'Atordoar',
+                'Sugestão Mental',
+                'Visão da Força',
+                'Surto da Força',
+                'Escudo da Força',
+                'Agarrão da Força',
+                'Desarmar com a Força'
+            ]
+        },
+        aptitudes: {
+            label: 'Aptidões',
+            trees: [
+                {
+                    name: 'Árvore de Aptidões do Jedi',
+                    items: [
+                        'Bloquear',
+                        'Defletir',
+                        'Sentir a Força',
+                        'Ataque Atordoante',
+                        'Técnica de Sabre de Luz'
+                    ]
+                },
+                {
+                    name: 'Árvore de Aptidões do Sith',
+                    items: [
+                        'Ódio Sombrio',
+                        'Poder do Lado Sombrio',
+                        'Corrupção',
+                        'Medo',
+                        'Fúria Sith'
+                    ]
+                },
+                {
+                    name: 'Árvore de Aptidões do Soldado',
+                    items: [
+                        'Especialista em Armadura',
+                        'Especialista em Armas',
+                        'Ataque Devastador',
+                        'Treinamento Tático',
+                        'Duro de Matar'
+                    ]
+                },
+                {
+                    name: 'Árvore de Aptidões do Nobre',
+                    items: [
+                        'Inspirar Confiança',
+                        'Coordenar',
+                        'Presença Nobre',
+                        'Recursos',
+                        'Comando'
+                    ]
+                },
+                {
+                    name: 'Árvore de Aptidões do Malandro',
+                    items: [
+                        'Ataque Furtivo',
+                        'Sorte do Malandro',
+                        'Trapaceiro',
+                        'Oportunista',
+                        'Evasão'
+                    ]
+                },
+                {
+                    name: 'Árvore de Aptidões do Batedor',
+                    items: [
+                        'Rastreador',
+                        'Sobrevivente',
+                        'Explorador',
+                        'Percepção Aguçada',
+                        'Movimento Rápido'
+                    ]
+                }
+            ]
+        },
+        talents: {
+            label: 'Talentos',
+            items: [
+                'Sensitivo à Força',
+                'Treinamento na Força',
+                'Foco em Perícia',
+                'Treinamento em Perícia',
+                'Usar Armadura Leve',
+                'Usar Armadura Média',
+                'Usar Armadura Pesada',
+                'Proficiência com Armas Simples',
+                'Proficiência com Pistolas',
+                'Proficiência com Rifles',
+                'Proficiência com Sabres de Luz',
+                'Tiro Preciso',
+                'Ataque Poderoso',
+                'Esquiva',
+                'Mobilidade'
+            ]
+        }
+    };
+
+    function openLibrary() {
+        document.getElementById('libraryModal').classList.add('active');
+        showLibraryCategory('forcePowers');
+    }
+
+    function closeLibrary() {
+        document.getElementById('libraryModal').classList.remove('active');
+    }
+
+    function showLibraryCategory(categoryKey) {
+        const tabs = document.getElementById('libraryTabs');
+        const list = document.getElementById('libraryList');
+        const details = document.getElementById('libraryDetails');
+
+        tabs.innerHTML = '';
+        list.innerHTML = '';
+        details.innerHTML = '<p>Selecione uma opção da lista para ver os detalhes futuramente.</p>';
+
+        Object.entries(LIBRARY_DATA).forEach(([key, category]) => {
+            const btn = document.createElement('button');
+            btn.className = 'class-btn' + (key === categoryKey ? ' active' : '');
+            btn.textContent = category.label;
+            btn.onclick = () => showLibraryCategory(key);
+            tabs.appendChild(btn);
+        });
+
+        const category = LIBRARY_DATA[categoryKey];
+
+        if (category.trees) {
+            category.trees.forEach((tree, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'library-item-btn' + (index === 0 ? ' active' : '');
+                btn.textContent = tree.name;
+                btn.onclick = () => showLibraryTree(categoryKey, index);
+                list.appendChild(btn);
+            });
+            showLibraryTree(categoryKey, 0);
+            return;
+        }
+
+        category.items.forEach(item => {
+            const btn = document.createElement('button');
+            btn.className = 'library-item-btn';
+            btn.textContent = item;
+            btn.onclick = () => showLibraryItem(category.label, item);
+            list.appendChild(btn);
+        });
+    }
+
+    function showLibraryTree(categoryKey, treeIndex) {
+        const category = LIBRARY_DATA[categoryKey];
+        const tree = category.trees[treeIndex];
+        const details = document.getElementById('libraryDetails');
+
+        document.querySelectorAll('#libraryList .library-item-btn').forEach((btn, index) => {
+            btn.classList.toggle('active', index === treeIndex);
+        });
+
+        details.innerHTML = `
+            <h3 class="library-tree-title">${tree.name}</h3>
+            <div class="library-list">
+                ${tree.items.map(item => `
+                    <button class="library-item-btn" onclick="showLibraryItem('${category.label}', '${item.replace(/'/g, "\\'")}', '${tree.name.replace(/'/g, "\\'")}')">${item}</button>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    function showLibraryItem(categoryLabel, itemName, treeName) {
+        const details = document.getElementById('libraryDetails');
+        const context = treeName ? `<p><strong>Árvore:</strong> ${treeName}</p>` : '';
+
+        details.innerHTML = `
+            <h3 class="library-tree-title">${itemName}</h3>
+            <p><strong>Categoria:</strong> ${categoryLabel}</p>
+            ${context}
+            <p>As informações completas em português brasileiro serão adicionadas na próxima etapa.</p>
+        `;
     }
 
     // Inicializar
