@@ -5980,6 +5980,85 @@ window._debouncedRender = function() {
         }
     };
 
+    const LIBRARY_ITEM_DETAILS = {
+        "Agressão Temperada (Tempered Aggression)": {
+                "source": "Jedi Academy Training Manual / Wiki Omnibus",
+                "descriptor": "[Lado Sombrio], [Forma de Sabre]",
+                "text": "Tempo: Ação padrão\nAlvo: Um inimigo ao alcance do seu sabre de luz\n\nVocê canaliza agressividade pelo Lado Sombrio para executar um golpe de sabre mais brutal e direto. Faça uma verificação de Usar a Força antes do ataque. Se o poder for ativado, realize um ataque corpo a corpo com sabre de luz contra o alvo.\n\nEfeito: o ataque recebe benefício ofensivo conforme o resultado da verificação, favorecendo dano e pressão contra o inimigo atingido. Use este poder como técnica de Forma de Sabre ligada a ataques agressivos.\n\nEspecial: por ter descritor do Lado Sombrio, seu uso pode ter consequências de campanha conforme a regra do Mestre. Requer sabre de luz ativado."
+        },
+        "Aproximar (Draw Closer)": {
+                "source": "Jedi Academy Training Manual / Wiki Omnibus",
+                "descriptor": "[Forma de Sabre], [Telequinético]",
+                "text": "Tempo: Ação padrão\nAlvo: Um inimigo a até 6 quadrados e em sua linha de visão\n\nVocê agarra o inimigo com a Força e o puxa para o caminho do seu sabre de luz. Faça uma verificação de Usar a Força; o resultado define o tamanho máximo do alvo que pode ser puxado.\n\nCD 15: alvo Médio ou menor.\nCD 20: alvo Grande ou menor.\nCD 25: alvo Enorme ou menor.\nCD 30: alvo Imenso ou menor.\n\nSe o alvo puder ser puxado, ele vai para o espaço livre adjacente mais próximo de você. Se terminar adjacente, você pode fazer um ataque corpo a corpo com sabre de luz contra ele. O poder falha se não houver espaço legal para o alvo ocupar.\n\nForma de Sabre — Niman: se você tiver a aptidão Niman, o alcance passa para 12 quadrados.\n\nEspecial: você pode gastar 1 Ponto da Força para escolher qualquer espaço adjacente legal para onde o alvo será puxado."
+        },
+        "Atordoamento da Força (Force Stun)": {
+                "source": "Saga Edition Core Rulebook / Wiki Omnibus",
+                "descriptor": "—",
+                "text": "Tempo: Ação padrão\nAlvo: Uma criatura a até 6 quadrados ou em sua linha de visão\n\nVocê usa a Força para sobrecarregar os sentidos de um inimigo. Faça uma verificação de Usar a Força contra a Defesa de Fortitude do alvo.\n\nEfeito: se o resultado igualar ou superar a Defesa de Fortitude, o alvo desce −1 passo na trilha de condição. Para cada 5 pontos completos acima da Defesa de Fortitude, o alvo desce mais −1 passo.\n\nModificador de tamanho na Defesa de Fortitude do alvo: Colossal +50, Imenso +20, Enorme +10, Grande +5, Médio ou menor +0.\n\nEspecial: você pode gastar 1 Ponto da Força para mover o alvo mais −1 passo na trilha de condição."
+        },
+        "Avalanche Cadente (Falling Avalanche)": {
+                "source": "Jedi Academy Training Manual / material de campanha",
+                "descriptor": "[Forma de Sabre: Djem So]",
+                "text": "Tempo: Ação padrão\nAlvo: Um inimigo ao alcance do seu sabre de luz\n\nVocê concentra a força de um golpe descendente de sabre em um ataque devastador. Faça uma verificação de Usar a Força antes de atacar.\n\nCD 25: faça um ataque corpo a corpo com sabre de luz. Se acertar, o ataque ignora 5 pontos de RD ou SR do alvo.\nCD 30: como CD 25, e o dano do ataque aumenta em +1d10. Se o dano superar o limiar de dano do alvo, ele desce −1 passo na trilha de condição.\n\nEspecial: se o alvo bloqueou ou desviou seu ataque imediatamente antes desta ação, o bônus de dano aumenta para +2d10. Você pode gastar 1 Ponto da Força para ignorar 10 pontos de RD ou SR."
+        },
+        "Balistocinese (Ballistakinesis)": {
+                "source": "Legacy Era Campaign Guide / material de campanha",
+                "descriptor": "[Telequinético]",
+                "text": "Tempo: Ação padrão\nAlvo: Todos os alvos em uma área de 2 x 2 quadrados a até 12 quadrados\n\nVocê arremessa telecineticamente detritos, fragmentos ou projéteis contra uma área. Escolha o tipo de dano ao ativar: impacto, perfuração ou corte. Faça uma verificação de Usar a Força contra a Defesa de Reflexos de cada alvo na área.\n\nCD 20: 3d8 de dano, e o alvo sofre −2 em jogadas de ataque até o início do seu próximo turno.\nCD 25: 4d8 de dano, e a penalidade aumenta para −3.\nCD 30: 5d8 de dano, e a penalidade aumenta para −4.\nCD 35: 6d8 de dano, e a penalidade aumenta para −5.\n\nEspecial: alvos com cobertura recebem os benefícios normais contra poderes telequinéticos."
+        },
+        "Barreira de Lâminas (Barrier of Blades)": {
+                "source": "Jedi Academy Training Manual / material de campanha",
+                "descriptor": "[Forma de Sabre: Soresu]",
+                "text": "Tempo: Ação padrão\nAlvo: Você\n\nVocê gira seu sabre de luz em alta velocidade, formando uma barreira defensiva contra disparos e ataques de área. Faça uma verificação de Usar a Força.\n\nCD 25: você ganha cobertura aprimorada, recebendo +8 na Defesa de Reflexos contra ataques à distância até o início do seu próximo turno.\nCD 30: como CD 25, e você pode usar sua reação para tentar defletir um ataque à distância, como a aptidão Defletir, mesmo que já tenha usado sua reação nesta rodada.\n\nEspecial: você pode manter o poder de rodada em rodada com uma ação rápida. Você pode gastar 1 Ponto da Força para refletir automaticamente um projétil defletido de volta ao atacante."
+        },
+        "Bloqueio Desequilibrante (Unbalancing Block)": {
+                "source": "Jedi Academy Training Manual / Wiki Omnibus",
+                "descriptor": "[Forma de Sabre]",
+                "text": "Tempo: Reação\nAlvo: Um inimigo cujo ataque corpo a corpo você acabou de bloquear\n\nVocê usa o bloqueio para quebrar o equilíbrio do inimigo e abrir uma oportunidade de contra-ataque. Ative este poder quando bloquear um ataque corpo a corpo com seu sabre de luz.\n\nEfeito: faça uma verificação de Usar a Força. Se o poder for ativado, o atacante sofre uma penalidade ou fica em posição desfavorável até o início do próximo turno dele, conforme a decisão do Mestre e a versão adotada da técnica.\n\nEspecial: por ser poder de Forma de Sabre, exige sabre de luz ativado. Use esta entrada como referência inicial; a versão detalhada será revisada na etapa de conferência fina com o livro correspondente."
+        },
+        "Bomba de Pensamento (Thought Bomb)": {
+                "source": "Homebrew de campanha inspirado no lore Sith; Wiki Omnibus lista o poder com descritor [Afeta a Mente]",
+                "descriptor": "[Lado Sombrio], [Afeta a Mente]",
+                "text": "Tempo: Ação de rodada completa, com carregamento de 3 rodadas\nAlvo: Seres sencientes em uma grande área ao redor do ponto de detonação\n\nVocê concentra ódio e energia sombria em um ponto fixo, criando uma explosão proibida capaz de devastar seres sencientes e aprisionar suas essências em um vórtice do Lado Sombrio.\n\nCD 40: criaturas que falham contra sua verificação sofrem 15d6 de dano de Força e descem até o fundo da trilha de condição.\nCD 45: como CD 40, e sobreviventes ficam permanentemente ensurdecidos e perdem a capacidade de usar Poderes da Força por 24 horas.\nCD 50: como CD 40, com raio de efeito dobrado.\n\nCusto e risco: o usuário sofre 10d6 de dano de Força e desce −3 passos na trilha de condição. Se for reduzido a 0 PV durante o carregamento, a detonação ocorre prematuramente centrada nele.\n\nObservação de campanha: poder de consequência narrativa extrema. Requer autorização direta do Mestre."
+        },
+        "Cambalear (Stagger)": {
+                "source": "Legacy Era Campaign Guide / material de campanha",
+                "descriptor": "[Telequinético]",
+                "text": "Tempo: Ação padrão\nAlvo: Uma criatura a até 12 quadrados e em sua linha de visão\n\nVocê atinge o alvo com uma pressão telequinética brusca, atrapalhando seu equilíbrio e sua coordenação. Faça uma verificação de Usar a Força contra a Defesa de Fortitude do alvo.\n\nEfeito: se o teste superar a defesa do alvo, ele sofre dano moderado e fica atordoado por 1 rodada. Se falhar, sofre efeito reduzido, a critério da versão de campanha adotada.\n\nUso prático: este poder serve para interromper avanço, enfraquecer ações do alvo e criar espaço para aliados. Alvos com cobertura recebem os benefícios normais contra poderes telequinéticos."
+        },
+        "Camuflagem (Cloak)": {
+                "source": "Clone Wars Campaign Guide / material de campanha",
+                "descriptor": "—",
+                "text": "Tempo: Ação padrão\nAlvo: Você\n\nVocê dobra a luz ao redor do corpo e se torna difícil de perceber. Faça uma verificação de Usar a Força.\n\nCD 20: você ganha ocultação total contra todos os alvos até o início do seu próximo turno.\nCD 25: como CD 20, e recebe +2 em Furtividade.\nCD 30: como CD 20, e recebe +3 em Furtividade.\nCD 35: como CD 20, e recebe +5 em Furtividade.\n\nEspecial: você pode manter Camuflagem de rodada em rodada usando uma ação rápida."
+        },
+        "Carga Desimpedida (Unhindered Charge)": {
+                "source": "Jedi Academy Training Manual / Wiki Omnibus",
+                "descriptor": "[Forma de Sabre]",
+                "text": "Tempo: Ação padrão\nAlvo: Você\n\nVocê usa a Força para transformar uma investida com sabre de luz em um avanço fluido, superando obstáculos e pressão do campo de batalha.\n\nEfeito: faça uma verificação de Usar a Força ao realizar uma investida. Se o poder for ativado, você pode ignorar parte das restrições normais de movimento durante a carga, conforme a versão adotada da técnica, e concluir o ataque com sabre de luz no fim do deslocamento.\n\nEspecial: por ser poder de Forma de Sabre, exige sabre de luz ativado. Use esta entrada como referência inicial; a versão detalhada será revisada na etapa de conferência fina com o livro correspondente."
+        },
+        "Cegueira (Blind)": {
+                "source": "Jedi Academy Training Manual / material de campanha",
+                "descriptor": "[Telequinético]",
+                "text": "Tempo: Ação padrão\nAlvo: Uma criatura a até 12 quadrados e em sua linha de visão\n\nVocê usa a Força para cegar temporariamente um alvo, lançando luz, poeira ou pressão telequinética contra os olhos dele. Faça uma verificação de Usar a Força contra a Defesa de Reflexos do alvo. Se igualar ou superar a defesa, o alvo fica cego e desce −1 passo na trilha de condição.\n\nCD 20: cego até o início do seu próximo turno.\nCD 25: cego por 1d4 rodadas.\nCD 30: cego por 1 minuto.\nCD 35: cego por 1 hora.\n\nEspecial: alvos com cobertura recebem os benefícios normais contra poderes telequinéticos."
+        },
+        "Círculo de Proteção (Circle of Shelter)": {
+                "source": "Jedi Academy Training Manual / material de campanha",
+                "descriptor": "[Forma de Sabre: Niman/Jar'Kai]",
+                "text": "Tempo: Ação padrão\nAlvo: Você e aliados a até 2 quadrados\n\nVocê protege aliados próximos com movimentos amplos de sabre de luz, cobrindo a área ao seu redor. Faça uma verificação de Usar a Força.\n\nCD 20: você e aliados adjacentes recebem +2 na Defesa de Reflexos contra ataques à distância até o início do seu próximo turno.\nCD 25: como CD 20, e você pode usar sua reação para tentar defletir um ataque direcionado a um aliado adjacente.\nCD 30: como CD 20, e o bônus aumenta para +4 para todos na área.\n\nEspecial: você pode manter o poder de rodada em rodada com uma ação rápida. Você pode gastar 1 Ponto da Força para ampliar o raio de proteção para 3 quadrados."
+        },
+        "Combate Cinético (Kinetic Combat)": {
+                "source": "Force Unleashed Campaign Guide / material de campanha",
+                "descriptor": "[Telequinético]",
+                "text": "Tempo: Ação padrão\nAlvo: Você\n\nVocê manipula telecineticamente uma arma corpo a corpo, permitindo que ela lute à distância como extensão da sua vontade.\n\nCD 25: você pode mover telecineticamente uma arma de uma mão a até 12 quadrados e realizar um ataque com ela. O ataque usa seu bônus base de ataque + modificador de Carisma. Para dano, substitua o modificador de Força pelo modificador de Carisma.\n\nA arma ameaça os quadrados adjacentes a ela e pode realizar ataques de oportunidade.\n\nEspecial: você pode manter o poder de rodada em rodada com uma ação rápida. Como ação padrão, pode mover a arma até 6 quadrados e atacar. Você pode gastar 1 Ponto da Força para receber +1 nas jogadas de ataque feitas com a arma."
+        },
+        "Combustão (Combustion)": {
+                "source": "Legacy Era Campaign Guide / material de campanha",
+                "descriptor": "[Telequinético]",
+                "text": "Tempo: Ação padrão\nAlvo: Todos os alvos em uma área de 2 x 2 quadrados a até 12 quadrados\n\nVocê usa a Força para inflamar detritos e gerar uma explosão de fogo em uma pequena área. Faça uma verificação de Usar a Força contra a Defesa de Reflexos de cada alvo.\n\nEfeito: se igualar ou superar a Defesa de Reflexos, o alvo sofre 4d6 de dano de fogo e desce −1 passo na trilha de condição. Se falhar contra a defesa, o alvo sofre metade do dano e não desce na trilha.\n\nEspecial: você pode gastar 1 Ponto da Força para causar +2d6 de dano de fogo."
+        }
+};
+
+
     function openLibrary() {
         document.getElementById('libraryModal').classList.add('active');
         showLibraryCategory('forcePowers');
@@ -6048,15 +6127,52 @@ window._debouncedRender = function() {
         `;
     }
 
+    function escapeLibraryText(value) {
+        return String(value || '').replace(/[&<>\"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;' }[char]));
+    }
+
+    function getLibraryCopyText(categoryLabel, itemName, treeName, detail) {
+        const parts = [itemName, `Categoria: ${categoryLabel}`];
+        if (treeName) parts.push(`Árvore: ${treeName}`);
+        if (detail?.descriptor) parts.push(`Descritor: ${detail.descriptor}`);
+        if (detail?.source) parts.push(`Fonte: ${detail.source}`);
+        parts.push('');
+        parts.push(detail?.text || 'As informações completas em português brasileiro serão adicionadas na próxima etapa.');
+        return parts.join('\n');
+    }
+
+    function copyLibraryItem(categoryLabel, itemName, treeName) {
+        const detail = LIBRARY_ITEM_DETAILS[itemName];
+        const text = getLibraryCopyText(categoryLabel, itemName, treeName, detail);
+        navigator.clipboard.writeText(text).then(() => {
+            const status = document.getElementById('libraryCopyStatus');
+            if (status) {
+                status.textContent = 'Copiado para a área de transferência.';
+                setTimeout(() => status.textContent = '', 2500);
+            }
+        }).catch(() => {
+            const status = document.getElementById('libraryCopyStatus');
+            if (status) status.textContent = 'Não foi possível copiar automaticamente. Selecione o texto e copie manualmente.';
+        });
+    }
+
     function showLibraryItem(categoryLabel, itemName, treeName) {
         const details = document.getElementById('libraryDetails');
-        const context = treeName ? `<p><strong>Árvore:</strong> ${treeName}</p>` : '';
+        const detail = LIBRARY_ITEM_DETAILS[itemName];
+        const context = treeName ? `<p><strong>Árvore:</strong> ${escapeLibraryText(treeName)}</p>` : '';
+        const body = detail ? escapeLibraryText(detail.text).replace(/\n/g, '<br>') : 'As informações completas em português brasileiro serão adicionadas na próxima etapa.';
+        const source = detail?.source ? `<p><strong>Fonte:</strong> ${escapeLibraryText(detail.source)}</p>` : '';
+        const descriptor = detail?.descriptor ? `<p><strong>Descritor:</strong> ${escapeLibraryText(detail.descriptor)}</p>` : '';
 
         details.innerHTML = `
-            <h3 class="library-tree-title">${itemName}</h3>
-            <p><strong>Categoria:</strong> ${categoryLabel}</p>
+            <h3 class="library-tree-title">${escapeLibraryText(itemName)}</h3>
+            <p><strong>Categoria:</strong> ${escapeLibraryText(categoryLabel)}</p>
             ${context}
-            <p>As informações completas em português brasileiro serão adicionadas na próxima etapa.</p>
+            ${descriptor}
+            ${source}
+            <p>${body}</p>
+            <button class="btn-action btn-reference" onclick="copyLibraryItem('${categoryLabel.replace(/'/g, "\\'")}', '${itemName.replace(/'/g, "\\'")}', '${(treeName || '').replace(/'/g, "\\'")}')">📋 Copiar texto</button>
+            <p id="libraryCopyStatus" style="color: var(--sw-yellow); font-weight: bold;"></p>
         `;
     }
 
