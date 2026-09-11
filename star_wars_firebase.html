@@ -6377,8 +6377,169 @@ window._debouncedRender = function() {
                         { "cd": "30", "effect": "Você ganha PE 20 até o início do seu próximo turno." }
                 ],
                 "special": "Você pode gastar 1 Ponto da Força ao ativar este poder para aumentar a Pontuação de Escudo em +5. Você pode manter Escudo da Força de rodada em rodada com uma ação padrão. Se a Pontuação de Escudo for reduzida a 0, o efeito termina."
+        },
+        "Estilhaço Mental (Mind Shard)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Afeta a Mente]",
+                "text": "Tempo: Ação padrão\nAlvo: Uma criatura a até 12 quadrados e em sua linha de visão\n\nVocê fragmenta a mente do alvo com a Força, causando dor mental intensa. Faça uma verificação de Usar a Força. Se o resultado também igualar ou superar a Defesa de Vontade do alvo, ele sofre dano de Força, desce −1 passo na trilha de condição e não pode melhorar sua própria condição até o fim do seu próximo turno.",
+                "checks": [
+                        { "cd": "15", "effect": "2d8 de dano de Força, se a verificação igualar ou superar a Defesa de Vontade do alvo." },
+                        { "cd": "20", "effect": "3d8 de dano de Força, se a verificação igualar ou superar a Defesa de Vontade do alvo." },
+                        { "cd": "25", "effect": "4d8 de dano de Força, se a verificação igualar ou superar a Defesa de Vontade do alvo." },
+                        { "cd": "30", "effect": "5d8 de dano de Força, se a verificação igualar ou superar a Defesa de Vontade do alvo." }
+                ],
+                "special": "Você pode gastar 1 Ponto da Força para aumentar o dano em +2d8."
+        },
+        "Explosão da Força (Force Blast)": {
+                "source": "Star Wars Saga Edition Force Unleashed Campaign Guide / Wiki-Fandom",
+                "descriptor": "—",
+                "text": "Tempo: Ação padrão\nAlvo: Uma criatura, objeto ou veículo a até 12 quadrados e em sua linha de visão\n\nVocê compacta ar, poeira e detritos com a Força e arremessa essa massa contra o alvo. Faça uma verificação de Usar a Força contra a Defesa de Reflexos do alvo. Se acertar, a explosão causa dano de Força conforme a tabela.",
+                "checks": [
+                        { "cd": "Defesa de Reflexos do alvo", "effect": "O alvo sofre 4d6 de dano de Força." },
+                        { "cd": "Defesa de Reflexos +5", "effect": "O alvo sofre 6d6 de dano de Força." },
+                        { "cd": "Defesa de Reflexos +10", "effect": "O alvo sofre 8d6 de dano de Força." },
+                        { "cd": "Defesa de Reflexos +15", "effect": "O alvo sofre 10d6 de dano de Força." }
+                ],
+                "special": "Você pode gastar 1 Ponto da Força para aumentar o dano em +2d6."
+        },
+        "Explosão de Relâmpago (Lightning Burst)": {
+                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                "descriptor": "[Lado Sombrio]",
+                "text": "Tempo: Ação padrão\nAlvo: Todos os inimigos adjacentes a você\n\nVocê convoca o Lado Sombrio para fazer relâmpagos saltarem do seu corpo contra inimigos próximos. Faça uma verificação de Usar a Força e compare o resultado com a Defesa de Reflexos de cada alvo. Um alvo atingido sofre 3d6 de dano de Força e desce −1 passo na trilha de condição; um alvo que não for atingido sofre metade do dano e não desce na trilha.",
+                "special": "Você pode gastar 1 Ponto da Força para aumentar o dano em +2d6. Você pode manter este poder como ação padrão se não tiver se movido desde a ativação; ao manter, faça uma nova verificação contra cada alvo adjacente."
+        },
+        "Fase (Phase)": {
+                "source": "Star Wars Saga Edition Clone Wars Campaign Guide / Wiki-Fandom",
+                "descriptor": "—",
+                "text": "Tempo: Ação de movimento\nAlvo: Você\n\nVocê atravessa matéria sólida, como paredes, portas, veículos, objetos grandes e espaços ocupados por inimigos. Faça uma verificação de Usar a Força. Você precisa terminar o movimento em um espaço legal e desocupado. O deslocamento de fase nunca pode exceder seu deslocamento base e dura até o início do seu próximo turno.",
+                "checks": [
+                        { "cd": "25", "effect": "Você ganha deslocamento de fase 2 quadrados e pode se mover até esse valor como parte da ativação." },
+                        { "cd": "30", "effect": "Você ganha deslocamento de fase 4 quadrados e pode se mover até esse valor como parte da ativação." },
+                        { "cd": "35", "effect": "Você ganha deslocamento de fase 6 quadrados e pode se mover até esse valor como parte da ativação." },
+                        { "cd": "40", "effect": "Você ganha deslocamento de fase 8 quadrados e pode se mover até esse valor como parte da ativação." }
+                ],
+                "special": "Você pode gastar 1 Ponto da Força para aumentar seu deslocamento de fase em +2 quadrados. Você pode manter Fase de rodada em rodada com uma ação de movimento; se sofrer dano enquanto mantém o poder, precisa passar em Usar a Força CD 15 + dano sofrido para continuar mantendo o efeito."
+        },
+        "Ferida (Wound)": {
+                "source": "Star Wars Saga Edition Knights of the Old Republic Campaign Guide / Wiki-Fandom",
+                "descriptor": "[Lado Sombrio]",
+                "text": "Tempo: Ação padrão\nAlvo: Uma criatura a até 6 quadrados e em sua linha de visão\n\nVocê provoca espasmos dolorosos nos pulmões do alvo. Faça uma verificação de Usar a Força contra a Defesa de Fortitude do alvo. Se o resultado igualar ou superar a defesa, o alvo sofre 4d6 de dano de Força. Alvos maiores que Médio somam o modificador de tamanho à Defesa de Fortitude contra este poder: Grande +5, Enorme +10, Imenso +20 e Colossal +50.",
+                "special": "Você pode gastar 1 Ponto da Força para aumentar o dano em +2d6. Se o alvo descer na trilha de condição por causa do dano deste poder, a condição se torna persistente até receber cirurgia com Tratar Ferimentos CD 20."
+        },
+        "Ferocidade do Vornskr (Vornskr's Ferocity)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Forma de Sabre], [Lado Sombrio]",
+                "text": "Tempo: Ação padrão\nAlvo: Um inimigo ao alcance\n\nVocê caminha na fronteira entre luz e trevas enquanto ataca com ferocidade. Faça uma verificação de Usar a Força. O resultado determina o dano adicional causado por um único ataque corpo a corpo com sabre de luz contra o alvo.",
+                "checks": [
+                        { "cd": "20", "effect": "Faça um ataque com sabre de luz; se acertar, cause +1 dado de dano." },
+                        { "cd": "25", "effect": "Faça um ataque com sabre de luz; se acertar, cause +2 dados de dano." },
+                        { "cd": "30", "effect": "Faça um ataque com sabre de luz; se acertar, cause +3 dados de dano." },
+                        { "cd": "35", "effect": "Faça um ataque com sabre de luz; se acertar, cause +4 dados de dano." }
+                ],
+                "special": "Forma de Sabre (Juyo): se você tiver a aptidão Juyo, este poder não possui o descritor [Lado Sombrio] para você. Você pode gastar 1 Ponto da Força para usar este poder ao final de uma investida."
+        },
+        "Flanco Rápido (Swift Flank)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Forma de Sabre]",
+                "text": "Tempo: Ação padrão\nAlvo: Um inimigo ao alcance\n\nVocê salta ou corre ao redor do inimigo, usando a Força para atacar de um ângulo inesperado. Faça uma verificação de Usar a Força antes de realizar o ataque corpo a corpo com sabre de luz.",
+                "checks": [
+                        { "cd": "20", "effect": "Mova-se 1 quadrado antes do ataque e faça um ataque com sabre de luz contra o alvo. Esse movimento não provoca ataques de oportunidade do alvo." },
+                        { "cd": "25", "effect": "Como CD 20, e você recebe +1 de bônus no ataque." },
+                        { "cd": "30", "effect": "Como CD 20, e você recebe +2 de bônus no ataque." }
+                ],
+                "special": "Forma de Sabre (Vaapad): se você tiver a aptidão Vaapad, o alvo é considerado desprevenido contra esse ataque."
+        },
+        "Fúria Sombria (Dark Rage)": {
+                "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                "descriptor": "[Lado Sombrio]",
+                "text": "Tempo: Ação rápida\nAlvo: Você\n\nVocê se entrega à raiva enquanto o Lado Sombrio flui através de você. Faça uma verificação de Usar a Força. O resultado determina o bônus de fúria aplicado às suas jogadas de ataque corpo a corpo e às suas jogadas de dano corpo a corpo até o fim do seu turno.",
+                "checks": [
+                        { "cd": "15", "effect": "+2 de bônus de fúria em ataques corpo a corpo e dano corpo a corpo até o fim do seu turno." },
+                        { "cd": "20", "effect": "+4 de bônus de fúria em ataques corpo a corpo e dano corpo a corpo até o fim do seu turno." },
+                        { "cd": "25", "effect": "+6 de bônus de fúria em ataques corpo a corpo e dano corpo a corpo até o fim do seu turno." }
+                ],
+                "special": "Enquanto está tomado pela fúria, você não pode usar perícias ou executar tarefas que exijam paciência ou concentração. Você pode gastar 1 Ponto da Força para estender a duração até o fim do encontro."
+        },
+        "Golpe da Força (Force Slam)": {
+                "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                "descriptor": "[Telequinético]",
+                "text": "Tempo: Ação padrão\nAlvo: Todos os alvos em uma área de cone de 6 quadrados\n\nVocê golpeia múltiplos inimigos com uma onda telecinética. Faça uma verificação de Usar a Força e compare o resultado com a Defesa de Fortitude de cada alvo. Alvos atingidos sofrem dano de Força e podem cair no chão conforme a força do impacto.",
+                "checks": [
+                        { "cd": "Defesa de Fortitude do alvo", "effect": "O alvo sofre 4d6 de dano de Força." },
+                        { "cd": "Defesa de Fortitude +5", "effect": "O alvo sofre 4d6 de dano de Força e cai prostrado." },
+                        { "cd": "Defesa de Fortitude +10", "effect": "O alvo sofre 6d6 de dano de Força e cai prostrado." }
+                ],
+                "special": "Este poder é uma área de cone; aplique as regras normais para ataques de área quando apropriado."
+        },
+        "Golpe de Batalha (Battle Strike)": {
+                "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                "descriptor": "—",
+                "text": "Tempo: Ação rápida\nAlvo: Você\n\nVocê usa a Força para ampliar sua precisão e impacto em combate. Faça uma verificação de Usar a Força. O resultado determina o bônus no próximo ataque que você fizer antes do fim do seu próximo turno e o dano adicional se esse ataque acertar.",
+                "checks": [
+                        { "cd": "15", "effect": "+1 de bônus da Força no próximo ataque e +1d6 de dano se acertar." },
+                        { "cd": "20", "effect": "+1 de bônus da Força no próximo ataque e +2d6 de dano se acertar." },
+                        { "cd": "25", "effect": "+1 de bônus da Força no próximo ataque e +3d6 de dano se acertar." }
+                ],
+                "special": "Você pode gastar 1 Ponto da Força para causar +2d6 de dano adicional no próximo ataque."
+        },
+        "Golpe Desarmador (Disarming Slash)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Forma de Sabre]",
+                "text": "Tempo: Ação padrão\nAlvo: Um inimigo ao alcance\n\nVocê golpeia a arma do oponente para arrancá-la de sua mão. Faça uma verificação de Usar a Força. Faça um ataque corpo a corpo com sabre de luz contra o alvo; se causar dano, use o resultado de Usar a Força no lugar de uma jogada de ataque para uma tentativa imediata de desarmar.",
+                "checks": [
+                        { "cd": "15", "effect": "O alvo recebe +10 na Defesa de Reflexos contra a tentativa de desarme." },
+                        { "cd": "20", "effect": "O alvo recebe +5 na Defesa de Reflexos contra a tentativa de desarme." },
+                        { "cd": "25", "effect": "O alvo recebe +2 na Defesa de Reflexos contra a tentativa de desarme." },
+                        { "cd": "30", "effect": "O alvo não recebe bônus adicional na Defesa de Reflexos contra a tentativa de desarme." }
+                ],
+                "special": "Forma de Sabre (Shii-Cho): se você tiver a aptidão Shii-Cho, pode usar este poder como reação ao ser atacado por um oponente adjacente. Você pode gastar 1 Ponto da Força para causar à arma do alvo dano igual ao dano causado ao alvo, caso o desarme tenha sucesso."
+        },
+        "Golpe Duplo (Twin Strike)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Forma de Sabre]",
+                "text": "Tempo: Ação padrão\nAlvo: Um inimigo ao alcance\n\nVocê usa duas lâminas em um arco conjunto, atingindo o alvo com força concentrada. Faça uma verificação de Usar a Força e um ataque corpo a corpo com sabre de luz contra o alvo. O resultado da verificação determina o benefício aplicado ao ataque.",
+                "checks": [
+                        { "cd": "20", "effect": "Faça um ataque com sabre de luz; se acertar, cause +1 dado de dano." },
+                        { "cd": "25", "effect": "Faça um ataque com sabre de luz; se acertar, cause +2 dados de dano." },
+                        { "cd": "30", "effect": "Faça um ataque com sabre de luz; se acertar, cause +3 dados de dano." }
+                ],
+                "special": "Você precisa empunhar dois sabres de luz ativados ou um sabre de luz de lâmina dupla com as duas lâminas ativadas. Forma de Sabre (Jar'Kai): se você tiver a aptidão Jar'Kai, recebe o benefício defensivo associado à forma até o início do seu próximo turno."
+        },
+        "Golpe Garantido (Assured Strike)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Forma de Sabre]",
+                "text": "Tempo: Ação padrão\nAlvo: Um inimigo ao alcance\n\nVocê troca potência por precisão. Faça uma verificação de Usar a Força. O resultado determina a penalidade de dano aplicada a um único ataque corpo a corpo com sabre de luz contra o alvo; em todos os casos, role duas vezes a jogada de ataque e mantenha o melhor resultado.",
+                "checks": [
+                        { "cd": "15", "effect": "Faça um ataque com sabre de luz rolando duas vezes e mantendo o melhor resultado; se acertar, sofra −5 na jogada de dano." },
+                        { "cd": "20", "effect": "Como CD 15, mas a penalidade de dano é −2." },
+                        { "cd": "25", "effect": "Como CD 15, mas a penalidade de dano é −1." },
+                        { "cd": "30", "effect": "Como CD 15, sem penalidade de dano." }
+                ],
+                "special": "Forma de Sabre (Juyo): se você tiver a aptidão Juyo e errar as duas jogadas de ataque, este poder permanece em sua suíte de Poderes da Força. Você pode gastar 1 Ponto da Força para rolar o ataque três vezes e manter o melhor resultado."
+        },
+        "Golpe Revelador (Deflecting Slash)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Forma de Sabre]",
+                "text": "Tempo: Reação, quando você é alvo de um ataque à distância que não seja de área\nAlvo: Você e um inimigo ao seu alcance\n\nVocê usa o impulso da tentativa de defletir um projétil para atacar um inimigo adjacente. Faça uma verificação de Usar a Força contra a jogada do ataque recebido. Se tiver sucesso, o ataque recebido causa metade do dano caso acerte, e você pode fazer um ataque corpo a corpo com sabre de luz contra um alvo ao seu alcance depois que o ataque recebido for resolvido.",
+                "checks": [
+                        { "cd": "15", "effect": "Compare sua verificação com o ataque recebido; se igualar ou superar, reduza o ataque recebido a metade do dano em caso de acerto e faça um ataque com sabre de luz contra um alvo ao alcance." },
+                        { "cd": "20", "effect": "Como CD 15, e o ataque de sabre de luz causa +1 de dano se acertar." },
+                        { "cd": "30", "effect": "Como CD 15, e o ataque de sabre de luz causa +3 de dano se acertar." },
+                        { "cd": "35", "effect": "Como CD 15, e o ataque de sabre de luz causa +5 de dano se acertar." }
+                ],
+                "special": "Forma de Sabre (Soresu): se você tiver a aptidão Soresu, pode gastar 1 Ponto da Força para redirecionar o ataque recebido como pela aptidão Redirecionar Disparo. Você também pode gastar 1 Ponto da Força para não sofrer dano do ataque recebido se sua verificação igualar ou superar a jogada de ataque."
+        },
+        "Grito da Força (Force Scream)": {
+                "source": "Star Wars Saga Edition Knights of the Old Republic Campaign Guide / Wiki-Fandom",
+                "descriptor": "[Lado Sombrio]",
+                "text": "Tempo: Ação padrão\nAlvo: Criaturas em um cone de 6 quadrados\n\nVocê libera um grito sônico intenso, amplificado pela Força. Faça uma verificação de Usar a Força contra a Defesa de Fortitude de cada alvo na área. Alvos atingidos sofrem dano sônico e uma penalidade no limiar de dano até o fim do seu próximo turno.",
+                "checks": [
+                        { "cd": "Defesa de Fortitude do alvo", "effect": "O alvo sofre 2d6 de dano sônico e −2 no limiar de dano até o fim do seu próximo turno." },
+                        { "cd": "Defesa de Fortitude +5", "effect": "O alvo sofre 4d6 de dano sônico e −5 no limiar de dano até o fim do seu próximo turno." },
+                        { "cd": "Defesa de Fortitude +10", "effect": "O alvo sofre 6d6 de dano sônico e −5 no limiar de dano até o fim do seu próximo turno." }
+                ],
+                "special": "Você pode gastar 1 Ponto da Força para aumentar o dano em +2d6. Este poder não afeta criaturas ou objetos incapazes de serem afetados por som."
         }
-
 };
 
 
