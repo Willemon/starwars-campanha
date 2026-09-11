@@ -5998,8 +5998,7 @@ window._debouncedRender = function() {
                                 "cd": "40",
                                 "effect": "Como CD 30, porém basta superar a Defesa de Reflexos do alvo por 2 ou mais."
                         }
-                ],
-                "special": "Requer sabre de luz ativado."
+                ]
         },
         "Aproximar (Draw Closer)": {
                 "source": "Star Wars Saga Edition Jedi Academy Training Manual / documento da campanha",
@@ -6207,6 +6206,179 @@ window._debouncedRender = function() {
                 ],
                 "special": "Você pode gastar 1 Ponto da Força para fazer o alvo descer −1 passo na trilha de condição, além de sofrer o dano e pegar fogo."
         }
+        ,
+        "Convecção (Convection)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "—",
+                "text": "Tempo: Ação rápida\nAlvo: Você\n\nVocê altera a química do seu corpo com a Força, fazendo sua pele arder com calor intenso. Faça uma verificação de Usar a Força. Até o início do seu próximo turno, seus ataques corpo a corpo desarmados causam dano de fogo adicional conforme a tabela. Qualquer alvo que sofra esse dano de fogo também pega fogo.",
+                "checks": [
+                        { "cd": "15", "effect": "+1d6 de dano de fogo em ataques corpo a corpo desarmados." },
+                        { "cd": "20", "effect": "+2d6 de dano de fogo em ataques corpo a corpo desarmados." },
+                        { "cd": "25", "effect": "+3d6 de dano de fogo em ataques corpo a corpo desarmados." },
+                        { "cd": "30", "effect": "+4d6 de dano de fogo em ataques corpo a corpo desarmados." }
+                ],
+                "special": "Você pode gastar 1 Ponto da Força para aplicar o dano de fogo adicional aos seus ataques corpo a corpo com sabre de luz até o início do seu próximo turno."
+        },
+        "Corrupção (Corruption)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Lado Sombrio]",
+                "text": "Tempo: Ação padrão\nAlvo: Uma criatura viva a até 12 quadrados e em sua linha de visão\n\nVocê injeta energia sombria no corpo do alvo, causando dor e degradação física. Faça uma verificação de Usar a Força contra a Defesa de Fortitude do alvo. Se tiver sucesso, o alvo sofre dano e desce na trilha de condição conforme a tabela.",
+                "checks": [
+                        { "cd": "Defesa de Fortitude do alvo", "effect": "O alvo sofre 2d6 de dano e desce −1 passo na trilha de condição." },
+                        { "cd": "Defesa de Fortitude +5", "effect": "O alvo sofre 4d6 de dano e desce −1 passo na trilha de condição." },
+                        { "cd": "Defesa de Fortitude +10", "effect": "O alvo sofre 6d6 de dano e desce −2 passos na trilha de condição." }
+                ],
+                "special": "Você pode gastar 1 Ponto da Força para aumentar o dano em +2d6. Usar este poder conta como ato do Lado Sombrio."
+        },
+        "Cortar a Força (Sever Force)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Lado Luminoso]",
+                "text": "Tempo: Ação padrão\nAlvo: Um usuário da Força a até 12 quadrados e em sua linha de visão\n\nVocê tenta bloquear temporariamente a conexão do alvo com a Força. Faça uma verificação de Usar a Força contra a Defesa de Vontade do alvo. Se tiver sucesso, o alvo sofre penalidade em suas verificações de Usar a Força e pode perder acesso imediato a poderes ativos.",
+                "checks": [
+                        { "cd": "Defesa de Vontade do alvo", "effect": "O alvo sofre −5 em verificações de Usar a Força até o fim do seu próximo turno." },
+                        { "cd": "Defesa de Vontade +5", "effect": "Como acima, e um efeito de poder da Força mantido pelo alvo termina imediatamente." },
+                        { "cd": "Defesa de Vontade +10", "effect": "Como acima, e o alvo não pode ativar poderes da Força até o fim do seu próximo turno." }
+                ],
+                "special": "Este poder só pode ser usado contra criaturas com o talento Sensitivo à Força."
+        },
+        "Crioquinese (Cryokinesis)": {
+                "source": "Star Wars Saga Edition Galaxy at War / Wiki-Fandom",
+                "descriptor": "[Telequinético]",
+                "text": "Tempo: Ação padrão\nAlvo: Uma criatura ou objeto a até 12 quadrados e em sua linha de visão\n\nVocê reduz a temperatura ao redor do alvo, criando gelo e dor congelante. Faça uma verificação de Usar a Força. O resultado determina o dano de frio causado ao alvo.",
+                "checks": [
+                        { "cd": "15", "effect": "O alvo sofre 2d6 de dano de frio." },
+                        { "cd": "20", "effect": "O alvo sofre 4d6 de dano de frio." },
+                        { "cd": "25", "effect": "O alvo sofre 6d6 de dano de frio." },
+                        { "cd": "30", "effect": "O alvo sofre 8d6 de dano de frio." }
+                ],
+                "special": "Você pode gastar 1 Ponto da Força para fazer o alvo descer −1 passo na trilha de condição se o ataque causar dano."
+        },
+        "Crucitorn (Crucitorn)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Controle]",
+                "text": "Tempo: Ação rápida\nAlvo: Você\n\nVocê controla sua dor e força seu corpo a continuar funcionando apesar de ferimentos. Faça uma verificação de Usar a Força. O resultado determina a redução de penalidades causada pela dor e pela trilha de condição até o fim do encontro.",
+                "checks": [
+                        { "cd": "15", "effect": "Reduza em 1 a penalidade sofrida por estar abaixo do normal na trilha de condição." },
+                        { "cd": "20", "effect": "Reduza em 2 a penalidade sofrida por estar abaixo do normal na trilha de condição." },
+                        { "cd": "25", "effect": "Reduza em 5 a penalidade sofrida por estar abaixo do normal na trilha de condição." }
+                ],
+                "special": "Este poder altera apenas as penalidades sofridas; ele não remove passos da trilha de condição."
+        },
+        "Defesa de Terreno Elevado (High Ground Defense)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Forma de Sabre]",
+                "text": "Tempo: Reação\nAlvo: Você\n\nVocê usa posição superior, ângulo e disciplina defensiva para conter um ataque corpo a corpo. Faça uma verificação de Usar a Força quando um inimigo fizer um ataque corpo a corpo contra você. O resultado pode substituir sua Defesa de Reflexos contra esse ataque.",
+                "checks": [
+                        { "cd": "Resultado da verificação", "effect": "Use o resultado da sua verificação de Usar a Força no lugar da sua Defesa de Reflexos contra o ataque desencadeador, se o resultado for maior." }
+                ],
+                "special": "Se você estiver em terreno elevado em relação ao atacante, receba +5 de bônus de circunstância nessa verificação."
+        },
+        "Deflexão Shien (Shien Deflection)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Forma de Sabre]",
+                "text": "Tempo: Reação\nAlvo: Um ataque à distância feito contra você\n\nVocê redireciona um disparo recebido com seu sabre de luz. Faça uma verificação de Usar a Força contra o resultado do ataque. Se tiver sucesso, o ataque é negado e pode ser redirecionado conforme a tabela.",
+                "checks": [
+                        { "cd": "Resultado do ataque", "effect": "O ataque contra você é negado." },
+                        { "cd": "Resultado do ataque +5", "effect": "O ataque é negado e você pode redirecioná-lo contra um alvo válido a até 6 quadrados." },
+                        { "cd": "Resultado do ataque +10", "effect": "Como acima, e o ataque redirecionado recebe +2 no dano." }
+                ],
+                "special": "Você precisa estar empunhando um sabre de luz ativado e ter linha de efeito até o novo alvo para redirecionar o disparo."
+        },
+        "Desarmar pela Força (Force Disarm)": {
+                "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                "descriptor": "[Telequinético]",
+                "text": "Tempo: Ação padrão\nAlvo: Uma criatura a até 12 quadrados e em sua linha de visão\n\nVocê puxa ou torce uma arma com a Força para arrancá-la das mãos do alvo. Faça uma verificação de Usar a Força contra a Defesa de Reflexos do alvo. Se tiver sucesso, o alvo é desarmado.",
+                "checks": [
+                        { "cd": "Defesa de Reflexos do alvo", "effect": "O alvo deixa cair um objeto empunhado de sua escolha." },
+                        { "cd": "Defesa de Reflexos +5", "effect": "O objeto cai em um quadrado adjacente à sua escolha." },
+                        { "cd": "Defesa de Reflexos +10", "effect": "O objeto voa até sua mão, se você tiver uma mão livre e estiver dentro do alcance." }
+                ],
+                "special": "O alvo recebe bônus normal por segurar um objeto com as duas mãos, se aplicável."
+        },
+        "Detonar (Detonate)": {
+                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                "descriptor": "[Telequinético]",
+                "text": "Tempo: Ação padrão\nAlvo: Um objeto a até 12 quadrados e em sua linha de visão\n\nVocê pressuriza um objeto com a Força até fazê-lo explodir. Faça uma verificação de Usar a Força contra a Defesa de Fortitude do objeto. Se tiver sucesso, o objeto sofre dano e a explosão afeta criaturas próximas.",
+                "checks": [
+                        { "cd": "Defesa de Fortitude do objeto", "effect": "O objeto sofre 4d6 de dano. Se for destruído, criaturas adjacentes sofrem 2d6 de dano." },
+                        { "cd": "Defesa de Fortitude +5", "effect": "Como acima, mas criaturas adjacentes sofrem 4d6 de dano." },
+                        { "cd": "Defesa de Fortitude +10", "effect": "Como acima, mas a explosão afeta criaturas a até 2 quadrados do objeto." }
+                ],
+                "special": "Objetos carregados ou empunhados usam a melhor Defesa aplicável entre o objeto e o portador."
+        },
+        "Dilacerar (Rend)": {
+                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                "descriptor": "[Telequinético]",
+                "text": "Tempo: Ação padrão\nAlvo: Uma criatura ou objeto a até 12 quadrados e em sua linha de visão\n\nVocê agarra o alvo com energia telecinética e o rasga em direções opostas. Faça uma verificação de Usar a Força contra a Defesa de Fortitude do alvo. Se tiver sucesso, o alvo sofre dano conforme a tabela.",
+                "checks": [
+                        { "cd": "Defesa de Fortitude do alvo", "effect": "O alvo sofre 2d6 de dano." },
+                        { "cd": "Defesa de Fortitude +5", "effect": "O alvo sofre 4d6 de dano." },
+                        { "cd": "Defesa de Fortitude +10", "effect": "O alvo sofre 6d6 de dano." },
+                        { "cd": "Defesa de Fortitude +15", "effect": "O alvo sofre 8d6 de dano." }
+                ],
+                "special": "Você pode gastar 1 Ponto da Força para aumentar o dano em +2d6."
+        },
+        "Dobrar o Espaço (Fold Space)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Teletransporte]",
+                "text": "Tempo: Ação padrão\nAlvo: Um objeto que você possa ver\n\nVocê dobra o espaço para transportar um objeto instantaneamente de um ponto a outro. Faça uma verificação de Usar a Força. O resultado determina o tamanho máximo do objeto que pode ser movido. O objeto aparece em um espaço desocupado dentro do alcance permitido.",
+                "checks": [
+                        { "cd": "20", "effect": "Objeto Pequeno ou menor." },
+                        { "cd": "25", "effect": "Objeto Médio ou menor." },
+                        { "cd": "30", "effect": "Objeto Grande ou menor." },
+                        { "cd": "35", "effect": "Objeto Enorme ou menor." }
+                ],
+                "special": "Você pode gastar 1 Ponto da Força para aumentar em uma categoria o tamanho máximo do objeto transportado."
+        },
+        "Drenar Energia (Drain Energy)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "—",
+                "text": "Tempo: Ação padrão\nAlvo: Uma arma ou objeto energizado a até 6 quadrados e em sua linha de visão\n\nVocê retira a energia de um objeto alimentado, como a célula de energia de um blaster ou um gerador. Faça uma verificação de Usar a Força. O resultado determina o tamanho máximo do objeto afetado. O objeto perde toda a energia e não pode ser usado até que suas células de energia sejam substituídas.",
+                "checks": [
+                        { "cd": "20", "effect": "Drena uma arma ou objeto energizado Pequeno ou menor." },
+                        { "cd": "25", "effect": "Drena uma arma ou objeto energizado Médio ou menor." },
+                        { "cd": "30", "effect": "Drena uma arma ou objeto energizado Grande ou menor." },
+                        { "cd": "35", "effect": "Drena uma arma ou objeto energizado Enorme ou menor. Se o objeto for alimentado por um gerador, o gerador também é drenado." }
+                ],
+                "special": "Você pode gastar 1 Ponto da Força para aumentar o tamanho máximo do objeto drenado em uma categoria, até Imenso."
+        },
+        "Dreno de Vida (Force Drain)": {
+                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom: Dark Transfer",
+                "descriptor": "[Lado Sombrio]",
+                "text": "Tempo: Ação padrão\nAlvo: Uma outra criatura viva ao seu alcance\n\nVocê usa o Lado Sombrio da Força para restaurar vitalidade em uma criatura viva. Faça uma verificação de Usar a Força. O resultado determina a quantidade de PV curados no alvo.",
+                "checks": [
+                        { "cd": "15", "effect": "O alvo cura PV iguais ao seu nível de personagem." },
+                        { "cd": "20", "effect": "O alvo cura PV iguais a 2 × seu nível de personagem." },
+                        { "cd": "25", "effect": "O alvo cura PV iguais a 3 × seu nível de personagem." },
+                        { "cd": "30", "effect": "O alvo cura PV iguais a 4 × seu nível de personagem." }
+                ],
+                "special": "Cada uso deste poder faz você descer −1 passo persistente na trilha de condição. Você precisa descansar 8 horas para remover essa condição. Você pode gastar 1 Ponto da Força para evitar descer na trilha de condição ao usar este poder."
+        },
+        "Enxame de Sabres (Saber Swarm)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "descriptor": "[Forma de Sabre]",
+                "text": "Tempo: Ação padrão\nAlvo: Um inimigo ao alcance\n\nVocê golpeia rapidamente o corpo do oponente com vários cortes curtos. Faça uma verificação de Usar a Força. O resultado determina a penalidade aplicada aos dois ataques corpo a corpo com sabre de luz feitos contra um único alvo.",
+                "checks": [
+                        { "cd": "20", "effect": "Faça dois ataques corpo a corpo com sabre de luz contra um único alvo; cada ataque sofre −5 de penalidade." },
+                        { "cd": "25", "effect": "Faça dois ataques corpo a corpo com sabre de luz contra um único alvo; cada ataque sofre −2 de penalidade." },
+                        { "cd": "30", "effect": "Faça dois ataques corpo a corpo com sabre de luz contra um único alvo; cada ataque sofre −1 de penalidade." },
+                        { "cd": "35", "effect": "Faça dois ataques corpo a corpo com sabre de luz contra um único alvo sem penalidade adicional por este poder." }
+                ],
+                "special": "Forma de Sabre (Ataru): se você tiver a aptidão Ataru, o oponente sofre −5 em verificações de Usar a Força feitas para bloquear seus ataques com a aptidão Bloquear ou com o poder Riposte Makashi. Você pode gastar 1 Ponto da Força para se mover até 2 quadrados antes ou depois de usar este poder; esse movimento não provoca ataques de oportunidade."
+        },
+        "Escudo da Força (Force Shield)": {
+                "source": "Star Wars Saga Edition Force Unleashed Campaign Guide / Wiki-Fandom",
+                "descriptor": "[Telequinético]",
+                "text": "Tempo: Reação\nAlvo: Você\n\nVocê cria uma bolha de energia telecinética ao redor de si, protegendo seu corpo contra dano. Faça uma verificação de Usar a Força. O resultado determina a Pontuação de Escudo recebida até o início do seu próximo turno. Essa Pontuação de Escudo é energia telecinética pura e não pode ser recarregada.",
+                "checks": [
+                        { "cd": "15", "effect": "Você ganha PE 5 até o início do seu próximo turno." },
+                        { "cd": "20", "effect": "Você ganha PE 10 até o início do seu próximo turno." },
+                        { "cd": "25", "effect": "Você ganha PE 15 até o início do seu próximo turno." },
+                        { "cd": "30", "effect": "Você ganha PE 20 até o início do seu próximo turno." }
+                ],
+                "special": "Você pode gastar 1 Ponto da Força ao ativar este poder para aumentar a Pontuação de Escudo em +5. Você pode manter Escudo da Força de rodada em rodada com uma ação padrão. Se a Pontuação de Escudo for reduzida a 0, o efeito termina."
+        }
+
 };
 
 
