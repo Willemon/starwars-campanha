@@ -5977,6 +5977,21 @@ window._debouncedRender = function() {
                 'Vontade Bothan (Bothan Will)',
                 'Voo Impulsivo (Impulsive Flight)'
             ]
+
+        },
+        healing: {
+            label: 'Cura',
+            items: [
+                'Recuperar o Fôlego (Second Wind)',
+                'Cura Natural (Descanso)',
+                'Primeiros Socorros',
+                'Cirurgia',
+                'Reanimar',
+                'Injetor de Adrenalina',
+                'Microrrobôs de Reparação',
+                'Medpac de Combate',
+                'Medpac de Combate Avançado'
+            ]
         }
     };
 
@@ -7816,6 +7831,42 @@ window._debouncedRender = function() {
         "Espacial Veterano (Veteran Spacer)": {
                 "source": "Star Wars Saga Edition Galaxy of Intrigue / Wiki-Fandom",
                 "text": "Pré-requisito: Espécie Duros.\n\nBenefício: Você recebe +5 de bônus de espécie em verificações de Usar Computadores feitas para astrogração e cálculos de salto no hiperespaço. Esse bônus também se aplica a verificações para reconhecer rotas espaciais, perigos de navegação e procedimentos comuns de viagem interestelar."
+        },
+        "Recuperar o Fôlego (Second Wind)": {
+                "source": "Guia de Cura Star Wars RPG - Edição Saga",
+                "text": "Categoria: Cura\n\nTipo: Recuperação básica sem item.\n\nRegra: Uma vez por dia, quando você estiver com menos da metade de seus Pontos de Vida totais, pode usar uma ação padrão para recuperar o fôlego.\n\nEfeito: Você recupera Pontos de Vida iguais a 1/4 do seu total de Pontos de Vida ou um valor baseado no seu nível, usando o maior valor.\n\nClasses, talentos ou outros recursos podem permitir usos adicionais de Recuperar o Fôlego."
+        },
+        "Cura Natural (Descanso)": {
+                "source": "Guia de Cura Star Wars RPG - Edição Saga",
+                "text": "Categoria: Cura\n\nTipo: Recuperação básica sem item.\n\nRegra: O corpo recupera Pontos de Vida por meio de descanso.\n\nDescanso de 8 horas: Você recupera metade do total de seus Pontos de Vida.\n\nDescanso de 24 horas: Você recupera totalmente seus Pontos de Vida."
+        },
+        "Primeiros Socorros": {
+                "source": "Guia de Cura Star Wars RPG - Edição Saga",
+                "text": "Categoria: Cura\n\nUso: Fechar feridas abertas no meio da batalha.\n\nRequisito: Exige um Medpac.\n\nAção: Rodada completa.\n\nCD: 15.\n\nEfeito: O alvo recupera Pontos de Vida iguais a 2 vezes o nível dele, mais 1 Ponto de Vida para cada ponto pelo qual a verificação superar a CD."
+        },
+        "Cirurgia": {
+                "source": "Guia de Cura Star Wars RPG - Edição Saga",
+                "text": "Categoria: Cura\n\nUso: Cura pesada ou remoção de condições persistentes.\n\nRequisito: Exige um Kit de Cirurgia.\n\nTempo: 1 hora.\n\nCD: 25.\n\nEfeito: O alvo recupera Pontos de Vida iguais ao bônus de Constituição dele multiplicado por 2 vezes o nível dele.\n\nFalha crítica: Se a verificação falhar por 5 ou mais, o paciente recebe dano igual ao seu Limiar de Dano. Se esse dano reduzir os Pontos de Vida da criatura a 0, ela morre."
+        },
+        "Reanimar": {
+                "source": "Guia de Cura Star Wars RPG - Edição Saga",
+                "text": "Categoria: Cura\n\nUso: Trazer alguém de volta do limiar da morte.\n\nAção: Rodada completa.\n\nTempo limite: Deve ser feito na rodada seguinte à morte.\n\nCD: 30.\n\nEfeito: Se a verificação tiver sucesso, o personagem fica inconsciente em vez de morto."
+        },
+        "Injetor de Adrenalina": {
+                "source": "Guia de Cura Star Wars RPG - Edição Saga",
+                "text": "Categoria: Cura\n\nTipo: Equipamento médico.\n\nDescrição: Estimulante químico usado para ignorar dor e manter o corpo em atividade extrema por pouco tempo.\n\nAção: Rápida.\n\nEfeito: Por 3 rodadas, você ignora todas as penalidades da Trilha de Condição e ganha uma ação total extra por turno.\n\nCusto: Ao final do efeito, você desce 2 passos na Trilha de Condição automaticamente pelo cansaço.\n\nPreço: 250 créditos."
+        },
+        "Microrrobôs de Reparação": {
+                "source": "Guia de Cura Star Wars RPG - Edição Saga",
+                "text": "Categoria: Cura\n\nTipo: Equipamento médico.\n\nDescrição: Cura automática aplicada ao alvo, permitindo que o médico continue atuando em combate.\n\nAção: Padrão para aplicar.\n\nEfeito: O alvo recupera 2 Pontos de Vida no início de cada turno dele por uma quantidade de rodadas igual ao bônus de Sabedoria do aplicador.\n\nEfeito adicional, CD 20: Se aplicado por um personagem treinado em Tratar Ferimentos, o alvo recupera 5 Pontos de Vida no início de cada turno dele pela mesma duração.\n\nPreço: 400 créditos."
+        },
+        "Medpac de Combate": {
+                "source": "Guia de Cura Star Wars RPG - Edição Saga",
+                "text": "Categoria: Cura\n\nTipo: Equipamento médico.\n\nDescrição: Injeção rápida de bacta concentrado para uso em situação de combate.\n\nAção: Movimento. Se o personagem for treinado em Tratar Ferimentos, a ação é rápida.\n\nEfeito: Cura 2d8 + modificador de Sabedoria.\n\nBônus de especialista, CD 30: Se o personagem for treinado em Tratar Ferimentos, soma +1d6 à cura total, mais +1d6 adicional para cada 5 pontos pelos quais superar a CD.\n\nPreço: 1000 créditos."
+        },
+        "Medpac de Combate Avançado": {
+                "source": "Guia de Cura Star Wars RPG - Edição Saga",
+                "text": "Categoria: Cura\n\nTipo: Equipamento médico.\n\nDescrição: Cartucho pressurizado de bacta densa com seladores dérmicos.\n\nAção: Padrão. Se o personagem for treinado em Tratar Ferimentos, a ação é de movimento.\n\nEfeito: Cura 3d10 + modificador de Sabedoria.\n\nBônus de especialista, CD 30: Se o personagem for treinado em Tratar Ferimentos, soma +1d6 à cura total, mais +1d8 adicional para cada 5 pontos pelos quais superar a CD.\n\nPreço: 1500 créditos."
         }
 };
 
