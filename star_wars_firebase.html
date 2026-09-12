@@ -6847,6 +6847,600 @@ window._debouncedRender = function() {
                                         }
                         ],
                         "special": "Você pode manter o objeto suspenso de rodada em rodada com uma ação padrão. Alvos vivos podem resistir conforme as regras normais do poder."
+        },
+        "Negar Energia (Negate Energy)": {
+                        "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                        "descriptor": "—",
+                        "text": "Tempo: Reação\nAlvo: Um ataque contra você que cause dano de energia\n\nVocê neutraliza espontaneamente um ataque de energia, como um disparo de blaster ou golpe de sabre de luz. Faça uma verificação de Usar a Força. Se o resultado igualar ou superar o dano causado pelo ataque de energia, o ataque é negado e você não sofre dano. Se o resultado for menor que o dano, você sofre o dano normalmente.",
+                        "special": "Você precisa estar ciente do ataque e não pode estar desprevenido. Se negar o ataque com sucesso, pode gastar 1 Ponto da Força para recuperar PV iguais ao dano negado, até seu máximo normal de PV."
+        },
+        "Obscurecer (Obscure)": {
+                        "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                        "descriptor": "[Afeta a Mente]",
+                        "text": "Tempo: Reação\nAlvo: Uma criatura a até 12 quadrados e em sua linha de visão que acabou de fazer uma jogada de ataque\n\nVocê turva a mente do atacante, dificultando que ele fixe o alvo correto. Faça uma verificação de Usar a Força contra a Defesa de Vontade do alvo. Se tiver sucesso, o alvo sofre −5 na jogada de ataque desencadeadora.",
+                        "checks": [
+                                        {
+                                                        "cd": "Defesa de Vontade do alvo",
+                                                        "effect": "O alvo sofre −5 na jogada de ataque. Se o ataque errar, você pode fazê-lo repetir o ataque contra uma criatura adjacente a ele; essa nova jogada também sofre −5."
+                                        }
+                        ],
+                        "special": "Você pode gastar 1 Ponto da Força ao ativar este poder para aplicar a penalidade a todas as jogadas de ataque do alvo até o início do próximo turno dele."
+        },
+        "Ódio (Hatred)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                        "descriptor": "[Lado Sombrio]",
+                        "text": "Tempo: Ação padrão\nAlvo: Todas as criaturas a até 6 quadrados de você\n\nVocê se entrega ao Lado Sombrio e deixa seu ódio irradiar em ondas palpáveis. Faça uma verificação de Usar a Força. O resultado determina o dano de Força causado a qualquer criatura que iniciar o turno a até 6 quadrados de você, além da penalidade em todas as Defesas até o fim do seu próximo turno.",
+                        "checks": [
+                                        {
+                                                        "cd": "15",
+                                                        "effect": "1d6 de dano de Força e −1 em todas as Defesas."
+                                        },
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "2d6 de dano de Força e −1 em todas as Defesas."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "3d6 de dano de Força e −1 em todas as Defesas."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "4d6 de dano de Força e −1 em todas as Defesas."
+                                        }
+                        ],
+                        "special": "Você pode gastar 1 Ponto da Força para aumentar o dano em +1d6. Pode manter Ódio de rodada em rodada com uma ação rápida, fazendo nova verificação a cada rodada. Se sofrer dano enquanto mantém, deve passar em Usar a Força CD 15 + dano sofrido para continuar."
+        },
+        "Oportunidade Contenciosa (Contentious Opportunity)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                        "descriptor": "[Forma de Sabre]",
+                        "text": "Tempo: Reação\nAlvo: Um inimigo ao seu alcance que provocou uma abertura\n\nVocê usa tensão, pressão e leitura de combate para transformar um erro do inimigo em uma oportunidade imediata. Faça uma verificação de Usar a Força quando o alvo provocar uma abertura em combate corpo a corpo. O resultado determina o benefício aplicado ao ataque de sabre de luz feito contra ele.",
+                        "checks": [
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Faça um ataque com sabre de luz contra o alvo como reação."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Como CD 20, e receba +1 de bônus no ataque."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "Como CD 20, e receba +2 de bônus no ataque."
+                                        }
+                        ],
+                        "special": "Exige sabre de luz ativado e acesso à Forma de Sabre correspondente. Você pode gastar 1 Ponto da Força para manter este poder em sua suíte caso o ataque erre."
+        },
+        "Passar a Lâmina (Pass the Blade)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                        "descriptor": "[Forma de Sabre]",
+                        "text": "Tempo: Ação padrão\nAlvo: Um inimigo ao seu alcance\n\nVocê guia a lâmina por uma abertura no equilíbrio do oponente, usando a Força para reposicionar o ataque no momento exato. Faça uma verificação de Usar a Força e depois um ataque corpo a corpo com sabre de luz contra o alvo.",
+                        "checks": [
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Faça um ataque com sabre de luz; se acertar, você pode se mover 1 quadrado após o ataque."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Como CD 20, e o movimento após o ataque não provoca ataques de oportunidade do alvo."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "Como CD 25, e você recebe +2 de bônus na Defesa de Reflexos contra o alvo até o início do seu próximo turno."
+                                        }
+                        ],
+                        "special": "Exige sabre de luz ativado. Forma de Sabre associada pode conceder benefícios adicionais conforme a aptidão usada na campanha."
+        },
+        "Ponto de Ruptura (Shatterpoint)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                        "descriptor": "—",
+                        "text": "Tempo: Ação rápida\nAlvo: Uma criatura ou objeto a até 12 quadrados e em sua linha de visão\n\nVocê percebe uma falha crítica no alvo por meio da Força. Faça uma verificação de Usar a Força. O resultado determina o benefício recebido contra o alvo até o início do seu próximo turno.",
+                        "checks": [
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Seu próximo ataque contra o alvo ignora 5 pontos de RD ou SR."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Como CD 20, e você recebe +2 no dano contra o alvo."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "Como CD 20, e seu próximo ataque contra o alvo causa +1 dado de dano."
+                                        }
+                        ],
+                        "special": "Você pode gastar 1 Ponto da Força para aplicar o benefício a todos os seus ataques contra o alvo até o início do seu próximo turno."
+        },
+        "Presciência (Prescience)": {
+                        "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                        "descriptor": "—",
+                        "text": "Tempo: Ação rápida\nAlvo: Você\n\nA Força concede um lampejo de insight sobre o fluxo imediato do combate. Faça uma verificação de Usar a Força. O resultado determina o bônus de insight recebido na próxima jogada de ataque ou verificação feita antes do fim do seu próximo turno.",
+                        "checks": [
+                                        {
+                                                        "cd": "15",
+                                                        "effect": "Receba +1 de bônus de insight."
+                                        },
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Receba +2 de bônus de insight."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Receba +5 de bônus de insight."
+                                        }
+                        ],
+                        "special": "Você pode gastar 1 Ponto da Força para aplicar o bônus também à sua Defesa de Reflexos até o início do seu próximo turno."
+        },
+        "Pressão da Força (Force Grip)": {
+                        "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                        "descriptor": "[Telequinético]",
+                        "text": "Tempo: Ação padrão\nAlvo: Uma criatura a até 12 quadrados e em sua linha de visão\n\nVocê aperta o alvo com energia telecinética, esmagando garganta, órgãos ou estrutura corporal. Faça uma verificação de Usar a Força contra a Defesa de Fortitude do alvo. Se tiver sucesso, o alvo sofre dano e pode perder ações conforme o grau de sucesso.",
+                        "checks": [
+                                        {
+                                                        "cd": "Defesa de Fortitude do alvo",
+                                                        "effect": "O alvo sofre 2d6 de dano de Força."
+                                        },
+                                        {
+                                                        "cd": "Defesa de Fortitude +5",
+                                                        "effect": "O alvo sofre 4d6 de dano de Força e perde sua próxima ação rápida."
+                                        },
+                                        {
+                                                        "cd": "Defesa de Fortitude +10",
+                                                        "effect": "O alvo sofre 6d6 de dano de Força e perde sua próxima ação de movimento."
+                                        }
+                        ],
+                        "special": "Você pode manter Pressão da Força de rodada em rodada com uma ação padrão, fazendo nova verificação a cada rodada. Você pode gastar 1 Ponto da Força para aumentar o dano em +2d6."
+        },
+        "Projeção da Força (Force Projection)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                        "descriptor": "[Afeta a Mente]",
+                        "text": "Tempo: Ação padrão\nAlvo: Criaturas capazes de perceber sua projeção dentro do alcance narrativo definido pela cena\n\nVocê cria uma manifestação sensorial de si mesmo por meio da Força, projetando sua imagem, voz e presença para interagir à distância. Faça uma verificação de Usar a Força. O resultado determina a clareza e estabilidade da projeção.",
+                        "checks": [
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Cria uma projeção visual e auditiva simples por até 1 minuto."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "A projeção pode se mover e conversar de forma natural por até 10 minutos."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "A projeção é convincente o bastante para participar de uma cena social sem revelar sua natureza à primeira vista."
+                                        }
+                        ],
+                        "special": "A projeção não pode causar dano, manipular objetos ou ativar poderes a partir de sua posição. Você pode gastar 1 Ponto da Força para aumentar a duração para até 1 hora."
+        },
+        "Rastrear pela Força (Force Track)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                        "descriptor": "—",
+                        "text": "Tempo: Ação padrão\nAlvo: Uma criatura específica que você esteja tentando localizar\n\nVocê segue rastros deixados na Força por uma criatura. Faça uma verificação de Usar a Força. O resultado determina a qualidade da direção obtida e a distância máxima em que a trilha ainda pode ser percebida.",
+                        "checks": [
+                                        {
+                                                        "cd": "15",
+                                                        "effect": "Você percebe a direção geral do alvo se ele estiver a até 1 quilômetro."
+                                        },
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Você percebe a direção geral do alvo se ele estiver a até 10 quilômetros."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Você percebe direção e impressão emocional recente do alvo se ele estiver no mesmo planeta."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "Você recebe uma impressão clara da direção do alvo mesmo através de grande distância, desde que exista vínculo ou rastro forte."
+                                        }
+                        ],
+                        "special": "Um objeto pessoal, local marcante ou vínculo emocional com o alvo pode conceder bônus de circunstância definido pelo Mestre. Alvos treinados em Usar a Força podem tentar ocultar sua presença conforme as regras de sentir a Força."
+        },
+        "Redemoinho Ascendente (Rising Whirlwind)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                        "descriptor": "[Forma de Sabre]",
+                        "text": "Tempo: Ação padrão\nAlvo: Um inimigo ao seu alcance\n\nVocê gira em um movimento ascendente, combinando impulso da Força e lâmina para desequilibrar o alvo. Faça uma verificação de Usar a Força e um ataque corpo a corpo com sabre de luz contra o alvo.",
+                        "checks": [
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Se o ataque acertar, cause dano normal e mova o alvo 1 quadrado para uma posição legal adjacente."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Como CD 20, e o alvo fica desprevenido até o início do seu próximo turno."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "Como CD 20, e o alvo cai prostrado se sofrer dano acima do limiar."
+                                        }
+                        ],
+                        "special": "Exige sabre de luz ativado. Você pode gastar 1 Ponto da Força para se mover 2 quadrados antes do ataque sem provocar ataques de oportunidade do alvo."
+        },
+        "Redemoinho da Força (Force Whirlwind)": {
+                        "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                        "descriptor": "[Telequinético]",
+                        "text": "Tempo: Ação padrão\nAlvo: Uma criatura ou objeto a até 12 quadrados e em sua linha de visão\n\nVocê envolve o alvo em uma coluna de energia telecinética giratória. Faça uma verificação de Usar a Força contra a Defesa de Reflexos do alvo. Se tiver sucesso, o alvo fica preso no redemoinho e sofre efeitos conforme o grau de sucesso.",
+                        "checks": [
+                                        {
+                                                        "cd": "Defesa de Reflexos do alvo",
+                                                        "effect": "O alvo fica agarrado pela Força e sofre 2d6 de dano."
+                                        },
+                                        {
+                                                        "cd": "Defesa de Reflexos +5",
+                                                        "effect": "O alvo sofre 4d6 de dano e fica impedido de se mover até o início do seu próximo turno."
+                                        },
+                                        {
+                                                        "cd": "Defesa de Reflexos +10",
+                                                        "effect": "O alvo sofre 6d6 de dano, fica impedido de se mover e desce −1 passo na trilha de condição."
+                                        }
+                        ],
+                        "special": "Você pode manter Redemoinho da Força de rodada em rodada com uma ação padrão. Você pode gastar 1 Ponto da Força para afetar um alvo uma categoria de tamanho maior."
+        },
+        "Refutar (Rebuke)": {
+                        "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                        "descriptor": "—",
+                        "text": "Tempo: Reação\nAlvo: Um poder da Força usado contra você\n\nVocê tenta negar ou devolver um poder da Força lançado contra você. Faça uma verificação oposta de Usar a Força contra o usuário do poder. Se seu resultado igualar ou superar o resultado dele, o poder é negado.",
+                        "checks": [
+                                        {
+                                                        "cd": "Verificação oposta",
+                                                        "effect": "Se sua verificação igualar ou superar a do usuário, o poder da Força usado contra você é negado."
+                                        },
+                                        {
+                                                        "cd": "Verificação oposta +5",
+                                                        "effect": "Você pode refletir o poder de volta contra o usuário original, se o poder puder afetá-lo validamente."
+                                        }
+                        ],
+                        "special": "Você pode gastar 1 Ponto da Força para receber +5 na verificação de Refutar. Se refletir um poder, use o resultado original do atacante para resolver o efeito contra ele."
+        },
+        "Reorganização (Rearrangement)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                        "descriptor": "[Telequinético]",
+                        "text": "Tempo: Ação padrão\nAlvo: Objetos soltos ou criaturas em área limitada a até 12 quadrados e em sua linha de visão\n\nVocê usa a Força para reposicionar rapidamente objetos e alvos leves no campo de batalha. Faça uma verificação de Usar a Força. O resultado determina quantos elementos podem ser deslocados e a distância do reposicionamento.",
+                        "checks": [
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Mova até dois objetos Pequenos ou menores por até 2 quadrados."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Mova até três objetos Pequenos ou um objeto Médio por até 4 quadrados."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "Mova até quatro objetos Pequenos, dois Médios ou um Grande por até 6 quadrados."
+                                        }
+                        ],
+                        "special": "Objetos empunhados ou presos exigem comparação contra a Defesa de Reflexos do portador. Você pode gastar 1 Ponto da Força para aumentar em 2 quadrados a distância de deslocamento."
+        },
+        "Repulsa (Repulse)": {
+                        "source": "Star Wars Saga Edition Force Unleashed Campaign Guide / Wiki-Fandom",
+                        "descriptor": "[Telequinético]",
+                        "text": "Tempo: Ação padrão\nAlvo: Todos os alvos em uma explosão ao seu redor\n\nVocê libera uma onda telecinética em todas as direções. Faça uma verificação de Usar a Força e compare com a Defesa de Fortitude de cada alvo na área. Alvos atingidos sofrem dano de Força e são empurrados para longe de você.",
+                        "checks": [
+                                        {
+                                                        "cd": "Defesa de Fortitude do alvo",
+                                                        "effect": "O alvo sofre 4d6 de dano de Força e é empurrado 1 quadrado."
+                                        },
+                                        {
+                                                        "cd": "Defesa de Fortitude +5",
+                                                        "effect": "O alvo sofre 6d6 de dano de Força e é empurrado 2 quadrados."
+                                        },
+                                        {
+                                                        "cd": "Defesa de Fortitude +10",
+                                                        "effect": "O alvo sofre 8d6 de dano de Força e é empurrado 3 quadrados."
+                                        }
+                        ],
+                        "special": "Você pode gastar 1 Ponto da Força para aumentar o raio da explosão em 1 quadrado ou aumentar o dano em +2d6."
+        },
+        "Resistência a Energia (Energy Resistance)": {
+                        "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                        "descriptor": "—",
+                        "text": "Tempo: Ação rápida\nAlvo: Você\n\nVocê usa a Força para proteger seu corpo contra energia nociva. Faça uma verificação de Usar a Força. O resultado determina a resistência a energia recebida até o início do seu próximo turno.",
+                        "checks": [
+                                        {
+                                                        "cd": "15",
+                                                        "effect": "Receba resistência a energia 5."
+                                        },
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Receba resistência a energia 10."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Receba resistência a energia 15."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "Receba resistência a energia 20."
+                                        }
+                        ],
+                        "special": "Você pode gastar 1 Ponto da Força para aumentar a resistência em +5. Pode manter o poder de rodada em rodada com uma ação rápida."
+        },
+        "Resistir à Força (Resist Force)": {
+                        "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                        "descriptor": "—",
+                        "text": "Tempo: Reação\nAlvo: Você\n\nVocê fortalece sua presença na Força para resistir a um poder usado contra você. Faça uma verificação de Usar a Força quando for alvo de um poder da Força. O resultado pode substituir uma de suas Defesas contra esse poder.",
+                        "checks": [
+                                        {
+                                                        "cd": "Resultado da verificação",
+                                                        "effect": "Use o resultado da sua verificação de Usar a Força no lugar da Defesa aplicável contra o poder, se for maior."
+                                        }
+                        ],
+                        "special": "Você pode gastar 1 Ponto da Força para receber +5 nessa verificação."
+        },
+        "Riposte Fluido (Fluid Riposte)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                        "descriptor": "[Forma de Sabre]",
+                        "text": "Tempo: Reação\nAlvo: Um inimigo ao seu alcance cujo ataque corpo a corpo errou você\n\nVocê transforma esquiva e deslocamento em contra-ataque fluido. Faça uma verificação de Usar a Força depois que um ataque corpo a corpo contra você errar. O resultado determina o benefício do riposte.",
+                        "checks": [
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Faça um ataque com sabre de luz contra o atacante."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Como CD 20, e receba +1 no ataque."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "Como CD 20, e receba +2 no ataque e +2 na Defesa de Reflexos contra o atacante até o início do seu próximo turno."
+                                        }
+                        ],
+                        "special": "Exige sabre de luz ativado. Você pode gastar 1 Ponto da Força para dar 1 passo antes do contra-ataque."
+        },
+        "Riposte Makashi (Makashi Riposte)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                        "descriptor": "[Forma de Sabre]",
+                        "text": "Tempo: Reação\nAlvo: Um inimigo ao seu alcance cujo ataque corpo a corpo você evitou ou bloqueou\n\nVocê usa a precisão da Forma Makashi para responder imediatamente a uma abertura do oponente. Faça uma verificação de Usar a Força e um ataque corpo a corpo com sabre de luz contra o alvo.",
+                        "checks": [
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Faça um ataque com sabre de luz contra o alvo."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Como CD 20, e o ataque causa +1 dado de dano se acertar."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "Como CD 20, e o ataque causa +2 dados de dano se acertar."
+                                        }
+                        ],
+                        "special": "Forma de Sabre (Makashi): se você tiver a aptidão Makashi, recebe +2 na jogada de ataque deste riposte. Você pode gastar 1 Ponto da Força para usar este poder mesmo após já ter usado uma reação nesta rodada."
+        },
+        "Surgimento de Plantas (Plant Surge)": {
+                        "source": "Star Wars Saga Edition Clone Wars Campaign Guide / Wiki-Fandom",
+                        "descriptor": "—",
+                        "text": "Tempo: Ação padrão\nAlvo: Plantas em uma área a até 12 quadrados e em sua linha de visão\n\nVocê acelera o crescimento vegetal por meio da Força, fazendo raízes, galhos e vinhas se moverem em ritmo impossível. Faça uma verificação de Usar a Força. O resultado determina a área e a intensidade do terreno criado.",
+                        "checks": [
+                                        {
+                                                        "cd": "15",
+                                                        "effect": "Crie terreno difícil em uma área de 2 x 2 quadrados até o início do seu próximo turno."
+                                        },
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Crie terreno difícil em uma área de 4 x 4 quadrados; criaturas na área sofrem −2 em Acrobacia e Saltar."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Como CD 20, e criaturas que começarem o turno na área têm deslocamento reduzido em 2 quadrados."
+                                        }
+                        ],
+                        "special": "Este poder exige vegetação, sementes, raízes ou matéria vegetal suficiente na área. Você pode gastar 1 Ponto da Força para manter o efeito por mais 1 minuto."
+        },
+        "Tecnometria (Technometry)": {
+                        "source": "Star Wars Saga Edition Scavenger's Guide to Droids / Wiki-Fandom",
+                        "descriptor": "—",
+                        "text": "Tempo: Ação padrão\nAlvo: Um droide, computador ou dispositivo eletrônico tocado\n\nVocê lê impressões tecnológicas pela Força, percebendo uso recente, função, falhas e traços de programação. Faça uma verificação de Usar a Força. O resultado determina a quantidade de informação obtida.",
+                        "checks": [
+                                        {
+                                                        "cd": "15",
+                                                        "effect": "Descubra a função básica do dispositivo e se ele está danificado ou adulterado."
+                                        },
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Descubra o último uso relevante, usuário recente ou comando executado."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Identifique falhas, bloqueios, programação incomum ou sinais de sabotagem."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "Receba uma leitura detalhada de histórico recente e propósito oculto do sistema."
+                                        }
+                        ],
+                        "special": "Tecnometria não substitui Mecânica ou Usar Computadores para reparar ou invadir sistemas. Você pode gastar 1 Ponto da Força para receber +5 em uma verificação relacionada ao dispositivo lido."
+        },
+        "Tempestade da Força (Force Storm)": {
+                        "source": "Star Wars Saga Edition Force Unleashed Campaign Guide / Wiki-Fandom",
+                        "descriptor": "[Lado Sombrio], [Telequinético]",
+                        "text": "Tempo: Ação padrão\nAlvo: Criaturas e objetos em uma área a até 12 quadrados e em sua linha de visão\n\nVocê convoca uma tempestade violenta de energia da Força, detritos e pressão telecinética. Faça uma verificação de Usar a Força contra a Defesa de Reflexos de cada alvo na área. Alvos atingidos sofrem dano e são arremessados pela tempestade.",
+                        "checks": [
+                                        {
+                                                        "cd": "Defesa de Reflexos do alvo",
+                                                        "effect": "O alvo sofre 4d6 de dano de Força e é empurrado 1 quadrado."
+                                        },
+                                        {
+                                                        "cd": "Defesa de Reflexos +5",
+                                                        "effect": "O alvo sofre 6d6 de dano de Força e é empurrado 2 quadrados."
+                                        },
+                                        {
+                                                        "cd": "Defesa de Reflexos +10",
+                                                        "effect": "O alvo sofre 8d6 de dano de Força, é empurrado 3 quadrados e cai prostrado."
+                                        }
+                        ],
+                        "special": "Usar este poder conta como ato do Lado Sombrio. Você pode gastar 1 Ponto da Força para aumentar a área ou o dano em +2d6."
+        },
+        "Transferência de Essência (Essence Transfer)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom / conteúdo Sith da campanha",
+                        "descriptor": "[Lado Sombrio]",
+                        "text": "Tempo: Ação de rodada completa\nAlvo: Uma criatura viva adequada dentro do alcance definido pela cena\n\nVocê tenta deslocar sua consciência para outro corpo, usando o Lado Sombrio para sobreviver à destruição do próprio corpo. Faça uma verificação de Usar a Força contra a Defesa de Vontade do alvo. Se tiver sucesso, sua essência tenta dominar o hospedeiro.",
+                        "checks": [
+                                        {
+                                                        "cd": "Defesa de Vontade do alvo",
+                                                        "effect": "Você força contato mental com o alvo e pode iniciar a disputa de controle conforme a cena."
+                                        },
+                                        {
+                                                        "cd": "Defesa de Vontade +5",
+                                                        "effect": "Você recebe vantagem na disputa inicial de controle do corpo."
+                                        },
+                                        {
+                                                        "cd": "Defesa de Vontade +10",
+                                                        "effect": "O alvo sofre −5 na primeira tentativa de resistir à transferência."
+                                        }
+                        ],
+                        "special": "Este poder é raro, extremo e ligado a tradições Sith. Usá-lo conta como ato grave do Lado Sombrio. Detalhes de permanência, morte do corpo original e resistência prolongada seguem a regra da campanha."
+        },
+        "Transferência Sombria (Dark Transfer)": {
+                        "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                        "descriptor": "[Lado Sombrio]",
+                        "text": "Tempo: Ação padrão\nAlvo: Uma criatura viva ao seu alcance\n\nVocê usa energia do Lado Sombrio para restaurar vitalidade, pagando o preço com degradação física e espiritual. Faça uma verificação de Usar a Força. O resultado determina a quantidade de PV curados no alvo.",
+                        "checks": [
+                                        {
+                                                        "cd": "15",
+                                                        "effect": "O alvo cura PV iguais ao nível de personagem dele."
+                                        },
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "O alvo cura PV iguais a 2 × o nível de personagem dele."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "O alvo cura PV iguais a 3 × o nível de personagem dele."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "O alvo cura PV iguais a 4 × o nível de personagem dele."
+                                        }
+                        ],
+                        "special": "Você desce −1 passo persistente na trilha de condição ao usar este poder. Essa condição só é removida após 8 horas de descanso. Você pode gastar 1 Ponto da Força para evitar esse passo na trilha."
+        },
+        "Transferência Vital (Vital Transfer)": {
+                        "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                        "descriptor": "[Lado Luminoso]",
+                        "text": "Tempo: Ação padrão\nAlvo: Uma criatura viva adjacente\n\nVocê transfere parte de sua vitalidade para curar outro ser. Faça uma verificação de Usar a Força. O resultado determina os PV curados no alvo. Você sofre metade da quantidade curada como dano, arredondando para baixo.",
+                        "checks": [
+                                        {
+                                                        "cd": "15",
+                                                        "effect": "O alvo cura 2d6 PV."
+                                        },
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "O alvo cura 3d6 PV."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "O alvo cura 4d6 PV."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "O alvo cura 5d6 PV."
+                                        }
+                        ],
+                        "special": "Você pode gastar 1 Ponto da Força para evitar o dano sofrido pela transferência. Este poder não pode curar droides ou criaturas mortas."
+        },
+        "Truque Mental (Mind Trick)": {
+                        "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                        "descriptor": "[Afeta a Mente]",
+                        "text": "Tempo: Ação padrão\nAlvo: Uma criatura inteligente a até 12 quadrados e em sua linha de visão\n\nVocê usa a Força para influenciar os pensamentos do alvo, plantar uma sugestão simples ou criar uma distração mental. Faça uma verificação de Usar a Força contra a Defesa de Vontade do alvo. Se tiver sucesso, escolha um efeito adequado à situação.",
+                        "checks": [
+                                        {
+                                                        "cd": "Defesa de Vontade do alvo",
+                                                        "effect": "O alvo aceita uma sugestão simples que não pareça claramente prejudicial ou absurda."
+                                        },
+                                        {
+                                                        "cd": "Defesa de Vontade +5",
+                                                        "effect": "Você cria uma distração breve, permitindo uma nova tentativa de Furtividade ou desviando a atenção do alvo."
+                                        },
+                                        {
+                                                        "cd": "Defesa de Vontade +10",
+                                                        "effect": "O alvo considera uma explicação plausível como verdadeira por um curto período, desde que não contradiga evidência direta."
+                                        }
+                        ],
+                        "special": "Este é um efeito de afeta a mente. Criaturas sem mente ou imunes a efeitos mentais não são afetadas."
+        },
+        "Valor (Valor)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                        "descriptor": "[Lado Luminoso]",
+                        "text": "Tempo: Ação rápida\nAlvo: Você ou um aliado a até 12 quadrados e em sua linha de visão\n\nVocê reforça coragem, disciplina e convicção através do Lado Luminoso. Faça uma verificação de Usar a Força. O resultado determina o bônus de moral concedido contra medo, efeitos de afeta a mente e influência do Lado Sombrio até o início do seu próximo turno.",
+                        "checks": [
+                                        {
+                                                        "cd": "15",
+                                                        "effect": "O alvo recebe +1 de bônus de moral na Defesa de Vontade."
+                                        },
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "O alvo recebe +2 de bônus de moral na Defesa de Vontade e contra efeitos de medo."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "O alvo recebe +5 de bônus de moral na Defesa de Vontade contra efeitos de medo, afeta a mente e Lado Sombrio."
+                                        }
+                        ],
+                        "special": "Bônus de moral não se acumulam com outros bônus de moral. Você pode gastar 1 Ponto da Força para afetar todos os aliados a até 6 quadrados."
+        },
+        "Varredura Sarlacc (Sarlacc Sweep)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                        "descriptor": "[Forma de Sabre]",
+                        "text": "Tempo: Ação padrão\nAlvo: Inimigos ao seu alcance\n\nVocê executa uma varredura ampla com o sabre de luz, usando a Força para guiar a lâmina contra múltiplos oponentes. Faça uma verificação de Usar a Força. O resultado determina quantos alvos podem ser atacados.",
+                        "checks": [
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Faça um ataque com sabre de luz contra até dois inimigos ao seu alcance."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Faça um ataque com sabre de luz contra até três inimigos ao seu alcance."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "Faça um ataque com sabre de luz contra todos os inimigos ao seu alcance."
+                                        }
+                        ],
+                        "special": "Exige sabre de luz ativado. Você sofre −2 em cada ataque feito com este poder, salvo se possuir a Forma de Sabre apropriada indicada pela campanha."
+        },
+        "Visão Distante (Farseeing)": {
+                        "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                        "descriptor": "—",
+                        "text": "Tempo: Ação de rodada completa\nAlvo: Você\n\nVocê projeta seus sentidos pela Força para perceber eventos, pessoas ou lugares distantes. Faça uma verificação de Usar a Força. O resultado determina a clareza da visão e a distância simbólica que sua percepção consegue alcançar.",
+                        "checks": [
+                                        {
+                                                        "cd": "15",
+                                                        "effect": "Receba uma impressão vaga de uma pessoa ou local conhecido."
+                                        },
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Veja ou ouça uma cena breve ligada ao alvo da visão."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Receba detalhes claros sobre o local, pessoa ou evento observado."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "Receba uma visão ampla, com contexto emocional e sinais de perigo iminente."
+                                        }
+                        ],
+                        "special": "Visões podem ser simbólicas, fragmentadas ou influenciadas por forte presença na Força. Um vínculo pessoal com o alvo facilita a interpretação."
+        },
+        "Voo do Hawk-bat (Hawk-Bat Swoop)": {
+                        "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                        "descriptor": "[Forma de Sabre]",
+                        "text": "Tempo: Ação padrão\nAlvo: Um inimigo ao alcance após seu deslocamento\n\nVocê salta ou avança como um hawk-bat mergulhando sobre a presa, usando a Força para guiar um ataque veloz com sabre de luz. Faça uma verificação de Usar a Força e mova-se antes do ataque conforme o resultado.",
+                        "checks": [
+                                        {
+                                                        "cd": "20",
+                                                        "effect": "Mova-se até 2 quadrados e faça um ataque com sabre de luz contra o alvo."
+                                        },
+                                        {
+                                                        "cd": "25",
+                                                        "effect": "Mova-se até 4 quadrados e faça o ataque; esse movimento não provoca ataques de oportunidade do alvo."
+                                        },
+                                        {
+                                                        "cd": "30",
+                                                        "effect": "Mova-se até 6 quadrados, faça o ataque e cause +1 dado de dano se acertar."
+                                        }
+                        ],
+                        "special": "Exige sabre de luz ativado. Forma de Sabre (Ataru): se você tiver a aptidão Ataru, pode gastar 1 Ponto da Força para tratar o ataque como investida sem sofrer a penalidade normal na Defesa de Reflexos."
         }
 };
 
