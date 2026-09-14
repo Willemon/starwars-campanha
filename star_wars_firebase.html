@@ -6029,8 +6029,11 @@ window._debouncedRender = function() {
                   "text": "Pré-requisito: Tiro à Queima-Roupa.\n\nBenefício: Ao disparar uma arma à distância contra um alvo dentro do seu espaço de luta ou adjacente a ele, você recebe +1 na jogada de ataque e causa +1 dado de dano se acertar.\n\nEspecial: O dano adicional deste Talento não se acumula com o dano extra concedido por Fogo de Rajada ou Tiro Rápido. Este Talento não se aplica a armas pesadas, armas veiculares ou combate veicular."
         },
         "Algumas Manobras (A Few Maneuvers)": {
-                "source": "Star Wars Saga Edition Threats of the Galaxy / Wiki-Fandom",
-                "text": "Pré-requisitos: Esquiva, Combate Veicular.\n\nBenefício: Enquanto pilota um veículo de tamanho Colossal ou menor, você concede +2 de bônus de esquiva à Defesa de Reflexos do veículo. Além disso, se você for alvo de um ataque com míssil ou torpedo e a jogada de ataque errar por 5 ou mais, o projétil se autodestrói sem causar dano."
+            category: 'Talentos',
+            source: 'Star Wars Saga Edition Threats of the Galaxy / Wiki-Fandom',
+            text: `Pré-requisitos: Esquiva, Combate Veicular.
+
+Benefício: Enquanto pilota um veículo de tamanho Colossal ou menor, você concede +2 de bônus de Esquiva à Defesa de Reflexos do veículo. Além disso, se você for alvo de um ataque de míssil ou torpedo e a jogada de ataque errar por 5 ou mais, o projétil se autodestrói sem causar dano.`
         },
         "Aliado Acrobático (Acrobatic Ally)": {
                 "source": "Star Wars Saga Edition Unknown Regions / Wiki-Fandom",
@@ -6081,8 +6084,15 @@ window._debouncedRender = function() {
                   "text": "Pré-requisito: traço de espécie Metamorfo.\n\nBenefício: Uma vez por encontro, como ação rápida, você pode distorcer sua aparência para assustar um oponente que possa vê-lo. Faça uma verificação de Enganação contra a Defesa de Vontade do alvo. Se tiver sucesso, o alvo se move 1 quadrado para longe de você e sofre –1 de penalidade em todas as jogadas de ataque até o início do seu próximo turno. Este é um efeito de medo e de afetar a mente."
         },
         "Assalto com Fogo Automático (Autofire Assault)": {
-                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Saga Edition RPG Omnibus",
-                "text": "Pré-requisitos: Foco em Arma com a arma escolhida.\n\nBenefício: Quando você mira a mesma área com fogo automático que atacou com fogo automático no seu turno anterior, a penalidade do ataque de fogo automático é reduzida para –2. Se estiver usando uma arma apenas de fogo automático preparada com a aptidão Rajada Controlada, a penalidade é reduzida para –1. Se acertar, causa +1 dado de dano.\n\nNormal: Ataques de fogo automático sofrem –5 de penalidade na jogada de ataque e não recebem bônus por disparos consecutivos nos mesmos quadrados.\n\nEspecial: Este talento não pode ser usado junto com Varredura com Fogo Automático ou Rajada de Fogo."
+            category: 'Talentos',
+            source: 'Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom',
+            text: `Pré-requisito: Foco em Arma com a arma escolhida.
+
+Benefício: Quando empunha uma arma para a qual possui Foco em Arma e mira com fogo automático a mesma área que atingiu com fogo automático no seu último turno, a penalidade do ataque de fogo automático é reduzida para –2. A penalidade é reduzida para –1 se você estiver usando uma arma exclusiva de fogo automático apoiada ou a Aptidão Rajada Controlada. Se acertar, você causa +1 dado de dano.
+
+Normal: Ataques de fogo automático sofrem –5 de penalidade, e não há bônus por disparar contra os mesmos quadrados em rodadas consecutivas.
+
+Especial: Este Talento não pode ser usado com Varredura com Fogo Automático ou Fogo de Rajada.`
         },
         "Assumir Riscos (Risk Taker)": {
                 "source": "Star Wars Saga Edition Galaxy at War / Wiki-Fandom",
@@ -6222,8 +6232,11 @@ Especial: Se você se tornar treinado na perícia escolhida para este talento, p
                 "text": "Pré-requisito: Ataque Coordenado.\n\nBenefício: Quando você faz um ataque com uma arma em modo de fogo automático e causa dano a pelo menos um alvo dentro da área designada, seus aliados recebem +2 de bônus de circunstância em ataques de fogo automático contra esse mesmo alvo até o início do seu próximo turno."
         },
         "Bater Cabeças (Knock Heads)": {
-                "source": "Star Wars Saga Edition Galaxy of Intrigue / Saga Edition RPG Omnibus",
-                "text": "Pré-requisitos: Agarrão Múltiplo, Força 13.\n\nBenefício: Se você estiver agarrando dois inimigos ao mesmo tempo, pode bater um contra o outro como ação padrão. Faça uma jogada de ataque de agarrar contra cada alvo; se acertar, ambos sofrem dano contundente igual ao seu dano desarmado."
+            category: 'Talentos',
+            source: 'Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom',
+            text: `Pré-requisitos: Força 13, Destreza 13, Agarrão Múltiplo.
+
+Benefício: Depois de usar Agarrão Múltiplo com sucesso contra dois alvos que estejam adjacentes a você e também adjacentes entre si, você pode imediatamente bater a cabeça deles uma contra a outra. Cada criatura sofre dano contundente automático igual a 1d6 + seu modificador de Força. Ao comparar esse dano com o limiar de dano de cada criatura, trate o limiar de dano delas como 5 pontos menor. As duas criaturas continuam agarradas ao fim do uso deste Talento.`
         },
         "Benefícios da Orla (Fringe Benefits)": {
                 "source": "Star Wars Saga Edition Rebellion Era Campaign Guide / Saga Edition RPG Omnibus",
@@ -6290,23 +6303,21 @@ Benefício: Em vez de entrar em fúria, você pode canalizar sua fúria para for
                 "text": "Pré-requisito: treinado em Tratar Ferimentos.\n\nBenefício: Você pode instalar uma prótese cibernética em um ser vivo. O procedimento exige 1 hora de trabalho ininterrupto e um teste de Tratar Ferimentos CD 20. Se tiver sucesso, a prótese é instalada corretamente. Se falhar, a prótese não é instalada corretamente; você pode tentar novamente após mais 1 hora ininterrupta de cirurgia.\n\nEspecial: Você pode instalar uma prótese cibernética em si mesmo, mas sofre –5 de penalidade no teste de Tratar Ferimentos. Se possuir Especialização Cirúrgica, pode instalar a prótese em 10 minutos em vez de 1 hora."
         },
         "Agressão Temperada (Tempered Aggression)": {
-                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
-                "descriptor": "[Forma de Sabre], [Lado Sombrio]",
-                "text": "Tempo: Ação padrão\nAlvo: Um inimigo ao alcance do seu sabre de luz\n\nVocê canaliza agressividade pela Força para transformar um ataque de sabre de luz em um golpe de precisão brutal. Faça uma verificação de Usar a Força como parte do ataque corpo a corpo com sabre de luz. Compare o resultado da tabela abaixo para determinar quando o ataque passa a contar como acerto crítico.",
-                "checks": [
-                        {
-                                "cd": "30",
-                                "effect": "Faça um ataque corpo a corpo com sabre de luz. Se superar a Defesa de Reflexos do alvo por 10 ou mais, o ataque conta como acerto crítico."
-                        },
-                        {
-                                "cd": "35",
-                                "effect": "Como CD 30, porém basta superar a Defesa de Reflexos do alvo por 5 ou mais."
-                        },
-                        {
-                                "cd": "40",
-                                "effect": "Como CD 30, porém basta superar a Defesa de Reflexos do alvo por 2 ou mais."
-                        }
-                ]
+            category: 'Poderes da Força',
+            source: 'Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom',
+            descriptor: '[Forma de Sabre], [Lado Sombrio]',
+            text: `Tempo: Ação padrão
+Alvo: Um inimigo ao alcance do seu sabre de luz
+
+Você se lança contra um oponente, controlando sua agressividade para que ela não o domine. Faça uma verificação de Usar a Força. O resultado da verificação determina o efeito abaixo.
+
+Forma de Sabre — Vaapad: Se você possui a Aptidão Vaapad, este poder de forma não possui o descritor [Lado Sombrio] para você.`
+            , checks: [
+                { cd: '30', effect: 'Você pode fazer um único ataque corpo a corpo com sabre de luz contra o alvo. Se superar a Defesa de Reflexos do alvo por 10 ou mais, o ataque conta como acerto crítico.' },
+                { cd: '35', effect: 'Você pode fazer um único ataque corpo a corpo com sabre de luz contra o alvo. Se superar a Defesa de Reflexos do alvo por 5 ou mais, o ataque conta como acerto crítico.' },
+                { cd: '40', effect: 'Você pode fazer um único ataque corpo a corpo com sabre de luz contra o alvo. Se superar a Defesa de Reflexos do alvo por 2 ou mais, o ataque conta como acerto crítico.' }
+            ]
+            , special: 'Você pode gastar 1 Ponto da Força para causar +2 dados de dano com o ataque se ele acertar. Esses dados adicionais são somados depois de dobrar o dano, caso o ataque seja um acerto crítico.'
         },
         "Aproximar (Draw Closer)": {
                 "source": "Star Wars Saga Edition Jedi Academy Training Manual / documento da campanha",
