@@ -2020,11 +2020,11 @@ window._debouncedRender = function() {
         },
         "Sith": {
                 "nome": "Sith",
-                "desc": "Manifestam a Força através de emoções intensas. São os antagonistas naturais dos Jedi, buscando poder e domínio.",
-                "hp": "30 + CON no 1º nível; 1d10 + CON por nível.",
-                "forcePoints": "5 + metade do nível do personagem por nível de classe.",
-                "defenses": "Fortitude +1, Reflexos +1, Vontade +1.",
-                "skills": "2 + INT: Acrobacia, Conhecimentos, Enganação, Iniciativa, Intimidar, Percepção, Persuasão, Pilotar, Saltar, Usar a Força.",
+                "desc": "A energia do Lado Sombrio da Força corre através do Sith, concedendo-lhe poderes terríveis e a capacidade de dominar. Este personagem frequentemente manifesta a Força através de emoções intensas como ódio, raiva e ambição. O Carisma e a Sabedoria são as habilidades mais importantes para um Sith, pois governam a manipulação e o poder da Força, embora o Vigor e a Força sejam cruciais para aqueles que seguem o caminho do Guerreiro Sith.",
+                "hp": "Sith começam o jogo no 1º nível com um número de pontos de vida igual a 30 + seu modificador de Constituição. A cada nível após o 1º, Sith recebem 1d10 pontos de vida + seu modificador de Constituição.",
+                "forcePoints": "Sith recebem um número de Pontos de Força igual a 5 + metade do seu nível de personagem (arredondado para baixo) no 1º nível e toda vez que eles recebem um novo nível nesta classe. Todos os Pontos de Força deixados para trás de níveis anteriores são perdidos.",
+                "defenses": "No 1º nível, você recebe um bônus de classe de +1 em sua Defesa de Fortitude, Defesa de Reflexo, e Defesa de Vontade.",
+                "skills": "Cada personagem tem uma lista de perícias de classe. O número exato de perícias treinadas que um jogador pode escolher no 1º nível depende da classe do personagem. Sith escolhem 2 + modificador de Inteligência perícias treinadas no 1º nível. Perícias de classe: Acrobacia, Conhecimento (todas as perícias, escolhidas individualmente), Enganação, Iniciativa, Intimidar, Percepção, Persuasão, Pilotar, Saltar, Usar a Força.",
                 "feats": "Sensibilidade à Força, Proficiência com Sabres de Luz, Proficiência com Armas Simples.",
                 "defenseBonuses": {
                         "FORT": 1,
@@ -2045,7 +2045,7 @@ window._debouncedRender = function() {
                         [
                                 "1º",
                                 "+1",
-                                "Bônus de Defesa, Sabre de Luz, Aptidão, Talentos Iniciais"
+                                "Bônus de Defesa, Sabre de Luz, Aptidão, Talentos Iniciais, Acólito Sith"
                         ],
                         [
                                 "2º",
@@ -2060,7 +2060,7 @@ window._debouncedRender = function() {
                         [
                                 "4º",
                                 "+4",
-                                "Talento Bônus (Sith)"
+                                "Talento Bônus (Sith), Aprendiz Sith"
                         ],
                         [
                                 "5º",
@@ -2075,7 +2075,7 @@ window._debouncedRender = function() {
                         [
                                 "7º",
                                 "+7",
-                                "Construir Sabre de Luz, Aptidão"
+                                "Construir Sabre de Luz, Aptidão, Sith"
                         ],
                         [
                                 "8º",
@@ -2095,7 +2095,7 @@ window._debouncedRender = function() {
                         [
                                 "11º",
                                 "+11",
-                                "Aptidão"
+                                "Aptidão, Lorde Sith"
                         ],
                         [
                                 "12º",
@@ -2120,7 +2120,7 @@ window._debouncedRender = function() {
                         [
                                 "16º",
                                 "+16",
-                                "Talento Bônus (Sith)"
+                                "Talento Bônus (Sith), Lorde Negro (Darth)"
                         ],
                         [
                                 "17º",
@@ -2142,6 +2142,36 @@ window._debouncedRender = function() {
                                 "+20",
                                 "Talento Bônus (Sith)"
                         ]
+                ],
+                "sections": [
+                        {
+                                "title": "Sabre de Luz",
+                                "text": "Você começa o jogo com um sabre de luz providenciado pelo seu Mestre ou, se for um Acólito, um sabre de luz de treinamento. Mais tarde, você pode construir seu próprio sabre de luz (ver Construir Sabre de Luz, abaixo)."
+                        },
+                        {
+                                "title": "Seleção de Aptidões",
+                                "text": "No 1º nível e a cada nível de número ímpar seguinte (3º, 5º, 7º, etc.), você seleciona uma aptidão de qualquer uma das seguintes árvores de aptidão. Você pode escolher uma aptidão de qualquer árvore que você desejar, mas você deve atender aos pré-requisitos (se houver) da aptidão escolhida. Aptidões não podem ser selecionadas mais de uma vez a menos que expressamente indicado."
+                        },
+                        {
+                                "title": "Hierarquia Sith (Velha República)",
+                                "text": "A progressão na classe Sith reflete a hierarquia do Império Sith na Velha República, onde a Ordem é vasta e hierárquica.\n\n• Acólito Sith (1º Nível): O personagem começa como um Acólito, um estudante na Academia Sith em Korriban ou em outro mundo Sith. O foco é na sobrevivência e na demonstração de poder.\n\n• Aprendiz Sith (4º Nível): O Acólito provou seu valor e foi escolhido por um Lorde Sith para ser seu aprendiz pessoal. O treinamento se torna mais focado e brutal.\n\n• Sith (7º Nível): O Aprendiz completou seus testes e se tornou um membro pleno da Ordem, assumindo o título de Guerreiro Sith, Inquisidor Sith ou similar.\n\n• Lorde Sith (11º Nível): O Sith alcança o domínio do Lado Sombrio e pode tomar seu próprio aprendiz.\n\n• Lorde Negro (Darth) (16º Nível): O Sith mais poderoso, que pode ser um membro do Conselho Sombrio ou um mestre de grande influência."
+                        },
+                        {
+                                "title": "Construindo um Sabre de Luz",
+                                "text": "Esta seção é idêntica à seção Construindo um Sabre de Luz da classe Jedi. Você pode construir um sabre de luz se você possuir ao menos sete níveis heróicos além dos talentos Sensibilidade da Força e Proficiência com Armas (sabres de luz). Você deve gastar 1.500 créditos para obter os componentes básicos e 24 horas ininterruptas construindo a arma. Ao final deste tempo, faça um teste de Usar a Força com CD 20; você não pode escolher 20 neste teste. Se obtiver um sucesso neste teste, você completa a construção do sabre de luz. Se o teste falhar, você deve passar outras 24 horas desmontando e reconstruindo a arma defeituosa. Depois que seu sabre de luz for construído, você deve gastar um Ponto de Força para afiná-lo (uma ação de rodada completa). Deste ponto em diante, você recebe um bônus de +1 em rolagens de ataque com o seu sabre de luz feito sob medida. Ninguém mais que brandir a arma recebe este bônus. Você pode construir um sabre de luz duplo ao invés de um sabre de luz normal, mas o custo dos componentes aumenta para 3.000 créditos."
+                        },
+                        {
+                                "title": "Talentos Bônus",
+                                "text": "A cada nível de número par (2º, 4º, 6º, etc.), você recebe um talento bônus. Este talento deve ser selecionado da lista a seguir, e você deve atender qualquer pré-requisito para este talento. Ataque Acrobático, Trespassar, Reflexos de Combate, Esquiva, Ataque Duplo, Domínio de Armas Duplas I, Domínio de Armas Duplas II, Domínio de Armas Duplas III, Trespassar Maior, Investida Aprimorada, Desarme Aprimorado, Artes Marciais I, Artes Marciais II, Artes Marciais III, Defesa de Ataque Físico, Mobilidade, Saque Rápido, Ataque Poderoso, Investida Poderosa, Ataque Rápido, Ataque em Corrida, Foco em Perícia, Treinamento em Perícia, Forte na Força, Ataque Triplo, Triplo Crítico, Acuidade Mente, Foco em Arma (sabres de luz), Poder do Lado Sombrio, Adepto do Lado Sombrio."
+                        },
+                        {
+                                "title": "Explorações",
+                                "text": "Todos os Sith viajam pela galáxia para impor a vontade do Império e buscar poder. Eles assumem a responsabilidade de esmagar a oposição e eliminar a fraqueza, tanto em si mesmos quanto nos outros. Muitos Sith seguem o Lado Sombrio por pura ambição e desejo de poder. Eles caminham em um mundo maior do que aqueles que não sentem ou não consideram a Força."
+                        },
+                        {
+                                "title": "Créditos Iniciais",
+                                "text": "Um Sith de 1º nível começa o jogo com 3d4 × 100 créditos."
+                        }
                 ]
         },
         "Ace Pilot": {
@@ -2864,150 +2894,6 @@ window._debouncedRender = function() {
                         ]
                 ]
         },
-        "Sith Apprentice": {
-                "nome": "Aprendiz Sith",
-                "desc": "Classe de Prestígio. Requisitos: Nível 7+, Use the Force (Treinada), Force Sensitivity, WP (Lightsabers), Dark Side Score = Wisdom, Membro dos Sith",
-                "hp": "1d10 + CON por nível.",
-                "forcePoints": "1 por nível de personagem.",
-                "defenses": "Bônus de Classe: Reflexos +1, Fortitude +1, Vontade +1",
-                "skills": "Não ganha perícias treinadas adicionais.",
-                "feats": "Não ganha talentos iniciais.",
-                "defenseBonuses": {
-                        "FORT": 1,
-                        "REF": 1,
-                        "VON": 1
-                },
-                "initialTalents": [],
-                "table": [
-                        [
-                                "Nível",
-                                "BBA",
-                                "Características"
-                        ],
-                        [
-                                "1º",
-                                "+1",
-                                "Aptidão"
-                        ],
-                        [
-                                "2º",
-                                "+1",
-                                "Técnica da Força ou Outra"
-                        ],
-                        [
-                                "3º",
-                                "+1",
-                                "Aptidão"
-                        ],
-                        [
-                                "4º",
-                                "+1",
-                                "Técnica da Força ou Outra"
-                        ],
-                        [
-                                "5º",
-                                "+1",
-                                "Aptidão"
-                        ],
-                        [
-                                "6º",
-                                "+1",
-                                "Técnica da Força ou Outra"
-                        ],
-                        [
-                                "7º",
-                                "+1",
-                                "Aptidão"
-                        ],
-                        [
-                                "8º",
-                                "+1",
-                                "Técnica da Força ou Outra"
-                        ],
-                        [
-                                "9º",
-                                "+1",
-                                "Aptidão"
-                        ],
-                        [
-                                "10º",
-                                "+1",
-                                "Segredo da Força ou Outra"
-                        ]
-                ]
-        },
-        "Sith Lord": {
-                "nome": "Lorde Sith",
-                "desc": "Classe de Prestígio. Requisitos: Nível 12+, Use the Force (Treinada), Force Sensitivity, WP (Lightsabers), 1 Force Technique, Dark Side Score = Wisdom, Membro dos Sith",
-                "hp": "1d10 + CON por nível.",
-                "forcePoints": "1 por nível de personagem.",
-                "defenses": "Bônus de Classe: Vontade +2, Reflexos +1, Fortitude +1",
-                "skills": "Não ganha perícias treinadas adicionais.",
-                "feats": "Não ganha talentos iniciais.",
-                "defenseBonuses": {
-                        "FORT": 1,
-                        "REF": 2,
-                        "VON": 2
-                },
-                "initialTalents": [],
-                "table": [
-                        [
-                                "Nível",
-                                "BBA",
-                                "Características"
-                        ],
-                        [
-                                "1º",
-                                "+0.75",
-                                "Aptidão"
-                        ],
-                        [
-                                "2º",
-                                "+0.75",
-                                "Técnica da Força ou Outra"
-                        ],
-                        [
-                                "3º",
-                                "+0.75",
-                                "Aptidão"
-                        ],
-                        [
-                                "4º",
-                                "+0.75",
-                                "Técnica da Força ou Outra"
-                        ],
-                        [
-                                "5º",
-                                "+0.75",
-                                "Aptidão"
-                        ],
-                        [
-                                "6º",
-                                "+0.75",
-                                "Técnica da Força ou Outra"
-                        ],
-                        [
-                                "7º",
-                                "+0.75",
-                                "Aptidão"
-                        ],
-                        [
-                                "8º",
-                                "+0.75",
-                                "Técnica da Força ou Outra"
-                        ],
-                        [
-                                "9º",
-                                "+0.75",
-                                "Aptidão"
-                        ],
-                        [
-                                "10º",
-                                "+0.75",
-                                "Segredo da Força ou Outra"
-                        ]
-                ]
-        },
         "Assassin": {
                 "nome": "Assassino",
                 "desc": "Classe de Prestígio. Requisitos: Nível 7+, Furtividade (Treinada), Sniper, Dastardly Strike",
@@ -3020,78 +2906,6 @@ window._debouncedRender = function() {
                         "FORT": 0,
                         "REF": 2,
                         "VON": 0
-                },
-                "initialTalents": [],
-                "table": [
-                        [
-                                "Nível",
-                                "BBA",
-                                "Características"
-                        ],
-                        [
-                                "1º",
-                                "+1",
-                                "Aptidão"
-                        ],
-                        [
-                                "2º",
-                                "+1",
-                                "Técnica da Força ou Outra"
-                        ],
-                        [
-                                "3º",
-                                "+1",
-                                "Aptidão"
-                        ],
-                        [
-                                "4º",
-                                "+1",
-                                "Técnica da Força ou Outra"
-                        ],
-                        [
-                                "5º",
-                                "+1",
-                                "Aptidão"
-                        ],
-                        [
-                                "6º",
-                                "+1",
-                                "Técnica da Força ou Outra"
-                        ],
-                        [
-                                "7º",
-                                "+1",
-                                "Aptidão"
-                        ],
-                        [
-                                "8º",
-                                "+1",
-                                "Técnica da Força ou Outra"
-                        ],
-                        [
-                                "9º",
-                                "+1",
-                                "Aptidão"
-                        ],
-                        [
-                                "10º",
-                                "+1",
-                                "Segredo da Força ou Outra"
-                        ]
-                ]
-        },
-        "Imperial Knight": {
-                "nome": "Cavaleiro Imperial",
-                "desc": "Classe de Prestígio. Requisitos: BBA +7, Use the Force (Treinada), Force Sensitivity, WP (Lightsabers), AP (Medium), Defensor do Império Fel",
-                "hp": "1d10 + CON por nível.",
-                "forcePoints": "1 por nível de personagem.",
-                "defenses": "Bônus de Classe: Reflexos +1, Fortitude +1, Vontade +1",
-                "skills": "Não ganha perícias treinadas adicionais.",
-                "feats": "Não ganha talentos iniciais.",
-                "defenseBonuses": {
-                        "FORT": 1,
-                        "REF": 1,
-                        "VON": 1
                 },
                 "initialTalents": [],
                 "table": [
@@ -4473,6 +4287,7 @@ window._debouncedRender = function() {
                 <p>${classData.skills}</p>
                 <h4>Talentos Iniciais</h4>
                 <ul>${classData.initialTalents.map(t => '<li>' + t + '</li>').join('')}</ul>
+                ${(classData.sections || []).map(section => '<h4>' + section.title + '</h4><p style="white-space: pre-line">' + section.text + '</p>').join('')}
                 <h4>Progressão de Classe</h4>
                 <table class="class-table">
                     <tbody>
