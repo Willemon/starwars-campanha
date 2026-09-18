@@ -5873,6 +5873,293 @@ window._debouncedRender = function() {
     };
 
     const LIBRARY_ITEM_DETAILS = {
+        "Recuperação de Ponto de Força (Force Point Recovery)": {
+                "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Force_Point_Recovery",
+                "text": "Efeito: Ao término de um encontro, recupere automaticamente 1 Ponto de Força que tenha gasto durante esse encontro."
+        },
+        "Maestria em Poder da Força (Force Power Mastery)": {
+                "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Force_Power_Mastery",
+                "text": "Efeito: Escolha um poder da Força. Ao fazer testes de Usar a Força para ativar esse poder, você pode escolher 10 mesmo estando distraído ou ameaçado.\n\nEspecial: Esta técnica pode ser selecionada várias vezes. Cada escolha se aplica a um poder da Força diferente."
+        },
+        "Transe da Força Aprimorado (Improved Force Trance)": {
+                "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Force_Trance",
+                "text": "Efeito: Para cada hora passada em transe da Força, recupere uma quantidade de Pontos de Vida igual a 2 × seu nível de personagem."
+        },
+        "Mover Objeto Leve Aprimorado (Improved Move Light Object)": {
+                "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Move_Light_Object",
+                "text": "Efeito: O teste de Usar a Força para mover um objeto leve passa a exigir uma ação rápida, em lugar de uma ação de movimento. Usar esse objeto como projétil exige uma ação de movimento, em lugar de uma ação padrão."
+        },
+        "Sentir a Força Aprimorado (Improved Sense Force)": {
+                "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Sense_Force",
+                "text": "Efeito: A aplicação Sentir a Força da perícia Usar a Força pode ser utilizada com uma ação de movimento, em lugar de uma ação de rodada completa."
+        },
+        "Sentir os Arredores Aprimorado (Improved Sense Surroundings)": {
+                "source": "Star Wars Saga Edition Core Rulebook / Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Sense_Surroundings",
+                "text": "Efeito: A aplicação Sentir os Arredores da perícia Usar a Força pode ser utilizada como ação livre, em lugar de uma ação rápida.\n\nLinha de visão — regra adicional do Jedi Academy Training Manual: Muitos poderes exigem que o alvo esteja dentro do alcance e da linha de visão. Sentir os Arredores permite perceber alvos apesar de cobertura, como paredes e portas, ou ocultação, como neblina e fumaça. Pela interpretação estrita, ignorar penalidades em testes de Percepção dessa maneira permite perceber o alvo, sem conceder linha de visão; ouvir alguém se aproximar de uma esquina também permite percebê-lo sem vê-lo.\n\nEm situações apropriadas, o Mestre pode permitir que um personagem com esta técnica obtenha linha de visão para um alvo que tenha percebido, desde que tenha usado Sentir os Arredores anteriormente no mesmo turno."
+        },
+        "Telepatia Aprimorada (Improved Telepathy)": {
+                "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Telepathy",
+                "text": "Efeito: Sempre que usar a aplicação Telepatia da perícia Usar a Força, você pode repetir o teste de Usar a Força e conservar o melhor dos dois resultados."
+        },
+        "Dominar Mente (Dominate Mind)": {
+                "source": "Star Wars Saga Edition Knights of the Old Republic Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Dominate_Mind",
+                "text": "Efeito: Ao usar Truque Mental, se o resultado superar a Defesa de Vontade do alvo em 10 pontos ou mais, você pode determinar o que ele fará com sua ação padrão no próximo turno dele."
+        },
+        "Resistência à Energia Aprimorada (Improved Energy Resistance)": {
+                "source": "Star Wars Saga Edition Knights of the Old Republic Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Energy_Resistance",
+                "text": "Efeito: Ao ativar Resistência à Energia, você pode escolher que o poder afete um aliado a até 6 quadrados de você, em seu lugar."
+        },
+        "Impacto da Força Aprimorado (Improved Force Slam)": {
+                "source": "Star Wars Saga Edition Knights of the Old Republic Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Force_Slam",
+                "text": "Efeito: Ao usar Impacto da Força, você pode aumentar o tempo de ativação para uma ação de rodada completa. Dessa forma, o poder afeta todos os alvos em um raio de 2 quadrados, com origem no seu quadrado.\n\nPonto de Força: Você pode gastar 1 Ponto de Força para ampliar a área para uma explosão de raio de 4 quadrados, também com origem no seu quadrado."
+        },
+        "Atordoamento da Força Aprimorado (Improved Force Stun)": {
+                "source": "Star Wars Saga Edition Knights of the Old Republic Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Force_Stun",
+                "text": "Efeito: Quando Atordoamento da Força for bem-sucedido, o alvo também fica temporariamente imobilizado por 1 rodada."
+        },
+        "Ionizar Aprimorado (Improved Ionize)": {
+                "source": "Star Wars Saga Edition Knights of the Old Republic Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Ionize",
+                "text": "Efeito: Ao usar Ionizar, você pode gastar 1 Ponto de Força para que o alvo sofra o dano iônico integral.\n\nNormal: O dano iônico é reduzido à metade depois de ser comparado ao limiar de dano do alvo."
+        },
+        "Combate Cinético Aprimorado (Improved Kinetic Combat)": {
+                "source": "Star Wars Saga Edition Knights of the Old Republic Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Kinetic_Combat",
+                "text": "Efeito: Combate Cinético permite empunhar até três armas simultaneamente. Mover e atacar com uma dessas armas continua exigindo uma ação padrão."
+        },
+        "Resistir à Força Aprimorado (Improved Resist Force)": {
+                "source": "Star Wars Saga Edition Knights of the Old Republic Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Resist_Force",
+                "text": "Efeito: Ao ativar Resistir à Força, você pode escolher que o poder afete um aliado a até 6 quadrados de você, em seu lugar."
+        },
+        "Valor Aprimorado (Improved Valor)": {
+                "source": "Star Wars Saga Edition Knights of the Old Republic Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Valor",
+                "text": "Efeito: Ao ativar Valor, você também recebe os benefícios desse poder da Força."
+        },
+        "Transferência Vital Aprimorada (Improved Vital Transfer)": {
+                "source": "Star Wars Saga Edition Knights of the Old Republic Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Vital_Transfer",
+                "text": "Efeito: Transferência Vital pode ser usada em um alvo a até 6 quadrados de você, desde que ele esteja dentro da sua linha de visão."
+        },
+        "Absorção de Idioma (Language Absorption)": {
+                "source": "Star Wars Saga Edition Knights of the Old Republic Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Language_Absorption",
+                "text": "Efeito: Você pode usar telepatia para aprender um idioma à força a partir de outra criatura. Se ela não estiver disposta, faça um teste de Usar a Força contra a Defesa de Vontade dela, conforme a aplicação Telepatia dessa perícia. Se for bem-sucedido, você conserva a capacidade de falar e compreender o idioma por 24 horas."
+        },
+        "Golpe de Batalha Aprimorado (Improved Battle Strike)": {
+                "source": "Star Wars Saga Edition Force Unleashed Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Battle_Strike",
+                "text": "Efeito: Ao usar Golpe de Batalha, você pode aplicar os bônus nas jogadas de ataque e nas rolagens de dano a todos os ataques realizados durante uma ação de ataque total."
+        },
+        "Fúria Sombria Aprimorada (Improved Dark Rage)": {
+                "source": "Star Wars Saga Edition Force Unleashed Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Dark_Rage",
+                "text": "Efeito: Ao usar Fúria Sombria, você ignora a restrição que impede o uso de perícias e a realização de tarefas que exijam paciência e concentração. Você também pode ativar Fúria Sombria na rodada de surpresa, inclusive quando estiver surpreendido."
+        },
+        "Desarmar com a Força Aprimorado (Improved Force Disarm)": {
+                "source": "Star Wars Saga Edition Force Unleashed Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Force_Disarm",
+                "text": "Efeito: Ao usar Desarmar com a Força, você pode aumentar a ativação para uma ação de rodada completa. Se fizer isso, o oponente deixa de receber o bônus normal de +10 na Defesa de Reflexos associado ao desarme."
+        },
+        "Empurrão da Força Aprimorado (Improved Force Thrust)": {
+                "source": "Star Wars Saga Edition Force Unleashed Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Force_Thrust",
+                "text": "Efeito: Ao usar Empurrão da Força, você pode aumentar a ativação para uma ação de rodada completa e gastar 1 Ponto de Força para afetar todas as criaturas em um cone de 6 quadrados, com origem no seu quadrado."
+        },
+        "Aperto da Força Aprimorado (Improved Force Grip)": {
+                "source": "Star Wars Saga Edition Force Unleashed Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Force_Grip",
+                "text": "Efeito: Ao usar Aperto da Força, você pode gastar 1 Ponto de Força como ação livre para manter o poder por 1 rodada adicional sem concentração. Ao terminar essa rodada adicional, você não pode retomar a concentração para continuar mantendo esse uso do poder."
+        },
+        "Relâmpago da Força Aprimorado (Improved Force Lightning)": {
+                "source": "Star Wars Saga Edition Force Unleashed Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Force_Lightning",
+                "text": "Efeito: Ao usar Relâmpago da Força, você pode aumentar a ativação para uma ação de rodada completa. Nesse caso, o alvo faz um teste de Força. Se seu teste de Usar a Força superar o resultado dele, empurre-o 1 quadrado, mais 1 quadrado adicional para cada 5 pontos pelos quais seu resultado superar o teste dele. Se o empurrão lançar o alvo contra um objeto maior que ele, o alvo sofre 1d6 pontos de dano.\n\nTeste de resistência ao empurrão: O alvo soma seu bônus base de ataque e o modificador de tamanho ao teste de Força. Os modificadores são: Colossal +20; Imenso +15; Enorme +10; Grande +5; Médio +0; Pequeno −5; Minúsculo −10; Diminuto −15; Ínfimo −20. Criaturas com mais de duas pernas, ou excepcionalmente estáveis por outro motivo, recebem também +5 de bônus de estabilidade."
+        },
+        "Truque Mental Aprimorado (Improved Mind Trick)": {
+                "source": "Star Wars Saga Edition Force Unleashed Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Mind_Trick",
+                "text": "Efeito: Ao usar Truque Mental, você pode aumentar a ativação para uma ação de rodada completa para afetar todas as criaturas em um cone de 6 quadrados, com origem no seu quadrado.\n\nPonto de Força: Você pode gastar 1 Ponto de Força para ampliar esse cone para 12 quadrados, mantendo a origem no seu quadrado."
+        },
+        "Repreensão Aprimorada (Improved Rebuke)": {
+                "source": "Star Wars Saga Edition Force Unleashed Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Rebuke",
+                "text": "Efeito: Quando um aliado a até 12 quadrados de você e dentro da sua linha de visão for alvo de um poder da Força, você pode usar Repreensão como se você fosse o alvo desse poder."
+        },
+        "Repulsão Aprimorada (Improved Repulse)": {
+                "source": "Star Wars Saga Edition Force Unleashed Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Repulse",
+                "text": "Efeito: Ao usar Repulsão, você pode aumentar a ativação para uma ação de rodada completa para afetar todas as criaturas em uma explosão de raio de 2 quadrados, com origem no seu quadrado.\n\nPonto de Força: Você pode gastar 1 Ponto de Força para ampliar a explosão para um raio de 4 quadrados, mantendo a origem no seu quadrado."
+        },
+        "Transferência Vital Avançada (Advanced Vital Transfer)": {
+                "source": "Star Wars Saga Edition Clone Wars Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Advanced_Vital_Transfer",
+                "text": "Efeito: Ao usar Transferência Vital, você pode gastar 1 Ponto de Destino para curar todo o dano do alvo e remover todas as condições debilitantes dele."
+        },
+        "Manto Aprimorado (Improved Cloak)": {
+                "source": "Star Wars Saga Edition Clone Wars Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Cloak",
+                "text": "Efeito: Manter o poder Manto passa a exigir uma ação de movimento, em lugar de uma ação padrão."
+        },
+        "Levitação Aprimorada (Improved Levitate)": {
+                "source": "Star Wars Saga Edition Clone Wars Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Levitate",
+                "text": "Efeito: Se for movido involuntariamente para um fosso ou para fora de uma superfície elevada, por exemplo por Empurrão da Força ou Investida Bantha, você pode gastar 1 Ponto de Força para ativar Levitação como reação. Ao fazer isso, seu movimento forçado termina no último quadrado antes da borda do precipício."
+        },
+        "Malacia Aprimorada (Improved Malacia)": {
+                "source": "Star Wars Saga Edition Clone Wars Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Malacia",
+                "text": "Efeito: Você pode manter a penalidade ao limiar de dano causada por Malacia com uma ação rápida, em lugar de uma ação padrão."
+        },
+        "Fase Aprimorada (Improved Phase)": {
+                "source": "Star Wars Saga Edition Clone Wars Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Phase",
+                "text": "Efeito: Ao usar Fase, você pode encerrar uma ação de movimento individual dentro de um quadrado ocupado. Você ainda precisa terminar seu turno em um quadrado desocupado no qual possa permanecer legalmente."
+        },
+        "Rasgar Aprimorado (Improved Rend)": {
+                "source": "Star Wars Saga Edition Clone Wars Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Rend",
+                "text": "Efeito: O alcance de Rasgar aumenta para 12 quadrados. Ao usar esse poder em uma criatura ou objeto, você pode ignorar a Redução de Dano desse alvo."
+        },
+        "Ponto de Ruptura Aprimorado (Improved Shatterpoint)": {
+                "source": "Star Wars Saga Edition Clone Wars Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Shatterpoint",
+                "text": "Efeito: Quando um ataque beneficiado por Ponto de Ruptura fizer um alvo descer na Trilha de Condição, você pode gastar 1 Ponto de Força para tornar a condição dele persistente. Essa condição persistente só pode ser removida por cirurgia, no caso de seres vivos, ou por reparos, no caso de droides, objetos e veículos."
+        },
+        "Tecnometria Aprimorada (Improved Technometry)": {
+                "source": "Star Wars Saga Edition Clone Wars Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Technometry",
+                "text": "Efeito: Ao usar Tecnometria, você pode aumentar a ativação para uma ação de rodada completa e afetar todos os droides em um cone de 6 quadrados, com origem no seu quadrado."
+        },
+        "Desintoxicar Veneno (Detoxify Poison)": {
+                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Detoxify_Poison",
+                "text": "Efeito: Você pode usar Transferência Vital para tratar um veneno que esteja afetando o alvo. Substitua os efeitos normais do poder pela comparação do resultado do seu teste de Usar a Força com a CD do veneno. Se igualar ou superar essa CD, você desintoxica o veneno conforme a aplicação correspondente da perícia Tratar Ferimentos."
+        },
+        "Balistacinese Aprimorada (Improved Ballistakinesis)": {
+                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Ballistakinesis",
+                "text": "Efeito: Ao usar Balistacinese, você pode gastar 1 Ponto de Força para afetar uma área de 3 × 3 quadrados, em lugar da área de 2 × 2 quadrados."
+        },
+        "Transferência Sombria Aprimorada (Improved Dark Transfer)": {
+                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Dark_Transfer",
+                "text": "Efeito: Ao usar Transferência Sombria, você pode gastar 1 Ponto de Força para revivificar uma criatura que tenha morrido desde o fim do seu último turno. Faça um teste de Usar a Força com CD 25. Se for bem-sucedido, o alvo fica inconsciente em vez de morto, e esse uso de Transferência Sombria não recupera Pontos de Vida dele."
+        },
+        "Detonar Aprimorado (Improved Detonate)": {
+                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Detonate",
+                "text": "Efeito: Ao usar Detonar, você também causa dano aos inimigos próximos do objeto escolhido como alvo. Compare o resultado do teste de Usar a Força com a Defesa de Reflexos de cada inimigo a até 2 quadrados do objeto. Cada inimigo cuja defesa seja igualada ou superada sofre dano cortante igual à metade do dano sofrido pelo objeto. Esse efeito é um ataque de área."
+        },
+        "Iluminar Aprimorado (Improved Enlighten)": {
+                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Enlighten",
+                "text": "Efeito: Ao usar Iluminar, você pode gastar 1 Ponto de Força para afetar um aliado adicional."
+        },
+        "Explosão de Relâmpagos Aprimorada (Improved Lightning Burst)": {
+                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Lightning_Burst",
+                "text": "Efeito: Ao usar Explosão de Relâmpagos, compare também o resultado do seu teste de Usar a Força com a Defesa de Fortitude de cada alvo. Se o resultado igualar ou superar tanto a Defesa de Reflexos quanto a de Fortitude de um alvo, empurre-o 1 quadrado para longe de você e derrube-o, deixando-o prostrado. Esse movimento não provoca ataques de oportunidade."
+        },
+        "Obscurecer Aprimorado (Improved Obscure)": {
+                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Obscure",
+                "text": "Efeito: Ao usar Obscurecer, você pode gastar 1 Ponto de Força para receber +5 de bônus da Força no teste de Usar a Força."
+        },
+        "Escudo da Força Aprimorado (Improved Force Shield)": {
+                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Force_Shield",
+                "text": "Efeito: Ao usar Escudo da Força, você pode gastar 1 Ponto de Força para expandir a proteção, de modo que ela cubra você e todos os aliados adjacentes.\n\nPonto de Destino: Como alternativa, você pode gastar 1 Ponto de Destino para proteger um veículo que esteja ocupando, independentemente do tamanho dele. Se o veículo já possuir um valor de escudo, esse valor e o concedido pelo poder não se acumulam."
+        },
+        "Desequilibrar Aprimorado (Improved Stagger)": {
+                "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Stagger",
+                "text": "Efeito: Ao usar Desequilibrar, você pode gastar 1 Ponto de Força para empurrar o alvo 2 quadrados para longe de você, em lugar de 1 quadrado."
+        },
+        "Curar Doença (Cure Disease)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Cure_Disease",
+                "text": "Efeito: Ao usar Transferência Vital, se seu teste de Usar a Força igualar ou superar a CD de Tratar Ferimentos de uma doença que esteja afetando o alvo, você pode gastar 1 Ponto de Força para curar essa doença."
+        },
+        "Cegar Estendido (Extended Blind)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Extended_Blind",
+                "text": "Efeito: O alcance básico de Cegar aumenta de 12 para 18 quadrados."
+        },
+        "Desarmar com a Força Estendido (Extended Force Disarm)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Extended_Force_Disarm",
+                "text": "Efeito: O alcance básico de Desarmar com a Força aumenta de 12 para 18 quadrados."
+        },
+        "Aperto da Força Estendido (Extended Force Grip)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Extended_Force_Grip",
+                "text": "Efeito: O alcance básico de Aperto da Força aumenta de 12 para 18 quadrados."
+        },
+        "Empurrão da Força Estendido (Extended Force Thrust)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Extended_Force_Thrust",
+                "text": "Efeito: O alcance básico de Empurrão da Força aumenta de 12 para 18 quadrados."
+        },
+        "Mover Objeto Estendido (Extended Move Object)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Extended_Move_Object",
+                "text": "Efeito: O alcance básico de Mover Objeto aumenta de 12 para 18 quadrados."
+        },
+        "Convecção Aprimorada (Improved Convection)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Convection",
+                "text": "Efeito: Quando um alvo sofre dano de fogo de Convecção, o fogo usa seu bônus base de ataque na jogada contra a Defesa de Fortitude do alvo, em lugar do bônus normal de +5."
+        },
+        "Crucitorn Aprimorado (Improved Crucitorn)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Crucitorn",
+                "text": "Efeito: Se você usar Crucitorn e o ataque ou poder da Força ainda causar dano superior ao seu limiar de dano, esse uso de Crucitorn não é consumido. O poder permanece na sua suíte de poderes da Força."
+        },
+        "Criocinese Aprimorada (Improved Cryokinesis)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Cryokinesis",
+                "text": "Efeito: Você pode usar Criocinese em veículos ocupados que estejam dentro do alcance. O veículo só desce na Trilha de Condição se o resultado do seu teste de Usar a Força também superar a Defesa de Fortitude dele."
+        },
+        "Dobrar Espaço Aprimorado (Improved Fold Space)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Fold_Space",
+                "text": "Efeito: Ao usar Dobrar Espaço, você pode gastar 1 Ponto de Força para mover o objeto para qualquer lugar dentro da sua linha de visão.\n\nPonto de Destino: Como alternativa, você pode gastar 1 Ponto de Destino para mover o objeto para qualquer lugar dentro do mesmo sistema estelar."
+        },
+        "Luz da Força Aprimorada (Improved Force Light)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Force_Light",
+                "text": "Efeito: Você pode gastar 1 Ponto de Força para que Luz da Força cegue as criaturas às quais causar dano. Cada criatura que sofrer dano do poder concede ocultação a todos os demais alvos até o fim do próximo turno dela.\n\nPonto de Destino: Você pode gastar 1 Ponto de Destino para que a ocultação concedida seja total."
+        },
+        "Tempestade da Força Aprimorada (Improved Force Storm)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Force_Storm",
+                "text": "Efeito: Ao ativar Tempestade da Força, você pode gastar 1 Ponto de Força para preencher a tempestade com relâmpagos da Força. Na ativação, e novamente cada vez que gastar uma ação padrão para manter o poder, compare o resultado do seu teste de Usar a Força com a Defesa de Reflexos de um alvo dentro da área da tempestade. Se o resultado igualar ou superar essa defesa, esse alvo sofre 3d6 pontos de dano da Força.\n\nPonto de Destino: Você pode gastar 1 Ponto de Destino para aumentar esse dano para 6d6."
+        },
+        "Surto Vegetal Aprimorado (Improved Plant Surge)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Plant_Surge",
+                "text": "Efeito: Você pode gastar 1 Ponto de Força para que Surto Vegetal afete todos os inimigos em uma área de 5 × 5 quadrados. Pelo menos um quadrado da área precisa estar dentro do alcance do poder.\n\nPonto de Destino: Como alternativa, você pode gastar 1 Ponto de Destino para afetar todos os inimigos em uma área de 10 × 10 quadrados."
+        },
+        "Bomba Mental Aprimorada (Improved Thought Bomb)": {
+                "source": "Star Wars Saga Edition Jedi Academy Training Manual / Wiki-Fandom",
+                "sourceUrl": "https://swse.fandom.com/wiki/Improved_Thought_Bomb",
+                "text": "Efeito: Você pode gastar 1 Ponto de Força para que Bomba Mental afete todos os inimigos a até 5 quadrados de você.\n\nPonto de Destino: Como alternativa, você pode gastar 1 Ponto de Destino para afetar todos os inimigos dentro da sua linha de visão."
+        }
+,
+
         "À Beira da Morte (Brink of Death)": {
                 "source": "Star Wars Saga Edition Legacy Era Campaign Guide / Wiki-Fandom",
                 "text": "Pré-requisito: Nenhum.\n\nBenefício: Quando você causa dano suficiente com um ataque para matar um alvo, pode escolher reduzir esse alvo a 0 pontos de vida, deixando-o inconsciente e vivo. As regras normais para estar com 0 pontos de vida se aplicam."
@@ -8799,6 +9086,7 @@ Forma de Sabre — Vaapad: Se você possui a Aptidão Vaapad, este poder de form
         if (treeName) parts.push(`Árvore: ${treeName}`);
         if (detail?.descriptor) parts.push(`Descritor: ${detail.descriptor}`);
         if (detail?.source) parts.push(`Fonte: ${detail.source}`);
+        if (detail?.sourceUrl) parts.push(`Link da fonte: ${detail.sourceUrl}`);
         parts.push('');
         parts.push(detail?.text || 'Conteúdo ainda não preenchido.');
         if (detail?.checks?.length) {
@@ -8833,7 +9121,7 @@ Forma de Sabre — Vaapad: Se você possui a Aptidão Vaapad, este poder de form
         const detail = LIBRARY_ITEM_DETAILS[itemName];
         const context = treeName ? `<p><strong>Árvore:</strong> ${escapeLibraryText(treeName)}</p>` : '';
         const body = detail ? escapeLibraryText(detail.text).replace(/\n/g, '<br>') : 'Conteúdo ainda não preenchido.';
-        const source = detail?.source ? `<p><strong>Fonte:</strong> ${escapeLibraryText(detail.source)}</p>` : '';
+        const source = detail?.source ? `<p><strong>Fonte:</strong> ${escapeLibraryText(detail.source)}${detail.sourceUrl ? ` — <a href="${escapeLibraryText(detail.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color: var(--sw-yellow)">Consultar fonte</a>` : ''}</p>` : '';
         const descriptor = detail?.descriptor ? `<p><strong>Descritor:</strong> ${escapeLibraryText(detail.descriptor)}</p>` : '';
         const checks = detail?.checks?.length ? `
             <table class="class-table">
