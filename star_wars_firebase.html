@@ -670,19 +670,38 @@
 
         .library-linked-row {
             display: grid;
-            grid-template-columns: minmax(170px, 1fr) minmax(150px, 1fr) auto auto;
+            grid-template-columns: minmax(220px, 1.1fr) minmax(220px, 1fr) auto auto;
             gap: 8px;
-            align-items: center;
+            align-items: stretch;
             width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 8px;
+            box-sizing: border-box;
         }
 
-        .library-linked-row select {
+        .library-linked-row select,
+        .library-linked-row input {
             width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
             padding: 8px;
             background: rgba(0, 0, 0, 0.5);
             border: 1px solid var(--sw-accent);
             color: var(--sw-text);
             border-radius: 3px;
+        }
+
+        .library-action-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+
+        .library-action-row .btn-add {
+            margin-top: 0;
         }
 
         .btn-library-small {
@@ -985,6 +1004,25 @@
             }
             .library-list {
                 max-height: 45vh;
+            }
+            .library-linked-row {
+                grid-template-columns: 1fr;
+                gap: 7px;
+                padding: 8px;
+            }
+            .library-linked-row select,
+            .library-linked-row input,
+            .library-linked-row button {
+                width: 100%;
+            }
+            .library-action-row {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 7px;
+            }
+            .library-action-row .btn-add {
+                width: 100%;
+                padding: 9px 10px;
             }
 
             /* Notas */
@@ -3719,32 +3757,40 @@ window._debouncedRender = function() {
                         <div id="talents-${sheet.id}" class="dynamic-list">
                             ${sheet.talents.map((t, idx) => renderDynamicItem(sheet.id, 'talents', idx, t)).join('')}
                         </div>
-                        <button class="btn-add" onclick="addLibraryItemSlot(${sheet.id}, 'talents')">+ Escolher da Biblioteca</button>
-                        <button class="btn-add" onclick="addCustomLibraryItem(${sheet.id}, 'talents')">+ Adicionar Custom</button>
+                        <div class="library-action-row">
+                            <button class="btn-add" onclick="addLibraryItemSlot(${sheet.id}, 'talents')">+ Escolher da Biblioteca</button>
+                            <button class="btn-add" onclick="addCustomLibraryItem(${sheet.id}, 'talents')">+ Adicionar Custom</button>
+                        </div>
                     </div>
                     <div class="panel">
                         <h3>Aptidões</h3>
                         <div id="aptitudes-${sheet.id}" class="dynamic-list">
                             ${sheet.aptitudes.map((a, idx) => renderDynamicItem(sheet.id, 'aptitudes', idx, a)).join('')}
                         </div>
-                        <button class="btn-add" onclick="addLibraryItemSlot(${sheet.id}, 'aptitudes')">+ Escolher da Biblioteca</button>
-                        <button class="btn-add" onclick="addCustomLibraryItem(${sheet.id}, 'aptitudes')">+ Adicionar Custom</button>
+                        <div class="library-action-row">
+                            <button class="btn-add" onclick="addLibraryItemSlot(${sheet.id}, 'aptitudes')">+ Escolher da Biblioteca</button>
+                            <button class="btn-add" onclick="addCustomLibraryItem(${sheet.id}, 'aptitudes')">+ Adicionar Custom</button>
+                        </div>
                     </div>
                     <div class="panel">
                         <h3>Poderes da Força</h3>
                         <div id="forcePowers-${sheet.id}" class="dynamic-list">
                             ${sheet.forcePowers.map((p, idx) => renderDynamicItem(sheet.id, 'forcePowers', idx, p)).join('')}
                         </div>
-                        <button class="btn-add" onclick="addLibraryItemSlot(${sheet.id}, 'forcePowers')">+ Escolher da Biblioteca</button>
-                        <button class="btn-add" onclick="addCustomLibraryItem(${sheet.id}, 'forcePowers')">+ Adicionar Custom</button>
+                        <div class="library-action-row">
+                            <button class="btn-add" onclick="addLibraryItemSlot(${sheet.id}, 'forcePowers')">+ Escolher da Biblioteca</button>
+                            <button class="btn-add" onclick="addCustomLibraryItem(${sheet.id}, 'forcePowers')">+ Adicionar Custom</button>
+                        </div>
                     </div>
                     <div class="panel">
                         <h3>Técnicas da Força</h3>
                         <div id="forceTechniques-${sheet.id}" class="dynamic-list">
                             ${(sheet.forceTechniques || []).map((t, idx) => renderDynamicItem(sheet.id, 'forceTechniques', idx, t)).join('')}
                         </div>
-                        <button class="btn-add" onclick="addLibraryItemSlot(${sheet.id}, 'forceTechniques')">+ Escolher da Biblioteca</button>
-                        <button class="btn-add" onclick="addCustomLibraryItem(${sheet.id}, 'forceTechniques')">+ Adicionar Custom</button>
+                        <div class="library-action-row">
+                            <button class="btn-add" onclick="addLibraryItemSlot(${sheet.id}, 'forceTechniques')">+ Escolher da Biblioteca</button>
+                            <button class="btn-add" onclick="addCustomLibraryItem(${sheet.id}, 'forceTechniques')">+ Adicionar Custom</button>
+                        </div>
                     </div>
                 </div>
 
