@@ -669,16 +669,17 @@
         }
 
         .library-linked-row {
-            display: grid;
-            grid-template-columns: minmax(220px, 1.1fr) minmax(220px, 1fr) auto auto;
+            display: flex;
+            flex-direction: column;
             gap: 8px;
-            align-items: stretch;
             width: 100%;
+            max-width: 100%;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 6px;
             padding: 8px;
             box-sizing: border-box;
+            overflow: hidden;
         }
 
         .library-linked-row select,
@@ -691,6 +692,14 @@
             border: 1px solid var(--sw-accent);
             color: var(--sw-text);
             border-radius: 3px;
+        }
+
+        .library-linked-controls {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto auto;
+            gap: 8px;
+            align-items: stretch;
+            width: 100%;
         }
 
         .library-action-row {
@@ -1006,7 +1015,6 @@
                 max-height: 45vh;
             }
             .library-linked-row {
-                grid-template-columns: 1fr;
                 gap: 7px;
                 padding: 8px;
             }
@@ -1014,6 +1022,10 @@
             .library-linked-row input,
             .library-linked-row button {
                 width: 100%;
+            }
+            .library-linked-controls {
+                grid-template-columns: 1fr;
+                gap: 7px;
             }
             .library-action-row {
                 display: grid;
@@ -3948,9 +3960,11 @@ window._debouncedRender = function() {
                         <select onchange="updateDynamicItem(${sheetId}, '${field}', ${index}, this.value)">
                             ${options}
                         </select>
-                        <input type="text" value="${escapedValue}" onchange="updateDynamicItem(${sheetId}, '${field}', ${index}, this.value)" placeholder="${isKnownChoice ? 'Nome vinculado à Biblioteca' : 'Item customizado'}">
-                        <button class="btn-library-small" ${hasLibraryDetail(value) ? '' : 'disabled'} onclick="openLibraryItemFromSheet('${field}', '${jsValue}')">Ver</button>
-                        <button class="btn-remove" onclick="removeDynamicItem(${sheetId}, '${field}', ${index})">✕</button>
+                        <div class="library-linked-controls">
+                            <input type="text" value="${escapedValue}" onchange="updateDynamicItem(${sheetId}, '${field}', ${index}, this.value)" placeholder="${isKnownChoice ? 'Nome vinculado à Biblioteca' : 'Item customizado'}">
+                            <button class="btn-library-small" ${hasLibraryDetail(value) ? '' : 'disabled'} onclick="openLibraryItemFromSheet('${field}', '${jsValue}')">Ver</button>
+                            <button class="btn-remove" onclick="removeDynamicItem(${sheetId}, '${field}', ${index})">✕</button>
+                        </div>
                     </div>
                 </div>
             `;
