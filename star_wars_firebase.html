@@ -3526,10 +3526,10 @@ window._debouncedRender = function() {
     }
 
     function hasLibraryDetail(itemName) {
-        return Boolean(LIBRARY_ITEM_DETAILS[itemName] || findLibraryTreeByName(itemName));
+        return Boolean(LIBRARY_ITEM_DETAILS[itemName] || findLibraryTreeByName(itemName) || findLibraryItemContext(itemName));
     }
 
-    function findLibraryTreeByName(treeName) {
+return Boolean(LIBRARY_ITEM_DETAILS[itemName] || findLibraryTreeByName(itemName) || findLibraryItemContext(itemName));
         const aptitudes = LIBRARY_DATA.aptitudes;
         if (!aptitudes || !aptitudes.trees) return null;
         const index = aptitudes.trees.findIndex(tree => tree.name === treeName);
