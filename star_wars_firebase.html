@@ -4856,3 +4856,162 @@ function findLibraryTreeByName(treeName) {
                     name: 'Árvore de Aptidões: Bruxa de Dathomir (Dathomiri Witch)',
                     items: [
     [Truncated]
+
+                    ]
+                }
+            ]
+        },
+        talents: { label: 'Talentos', items: [] },
+        forceTechniques: { label: 'Técnicas da Força', items: [] },
+        healing: { label: 'Manual de Cura', items: [] }
+    };
+    var Truncated = 'Conteúdo desta árvore ainda não preenchido.';
+    const LIBRARY_ITEM_DETAILS = {};
+
+    function openLibrary() {
+        document.getElementById('libraryModal').classList.add('active');
+        showLibraryCategory('forcePowers');
+    }
+
+    function closeLibrary() {
+        document.getElementById('libraryModal').classList.remove('active');
+    }
+
+    function clearElement(el) {
+        while (el.firstChild) el.removeChild(el.firstChild);
+    }
+
+    function showLibraryCategory(categoryKey) {
+        const tabs = document.getElementById('libraryTabs');
+        const list = document.getElementById('libraryList');
+        const details = document.getElementById('libraryDetails');
+        clearElement(tabs);
+        clearElement(list);
+        clearElement(details);
+        const initial = document.createElement('p');
+        initial.textContent = 'Selecione uma opção da lista para ver os detalhes.';
+        details.appendChild(initial);
+
+        Object.entries(LIBRARY_DATA).forEach(([key, category]) => {
+            const btn = document.createElement('button');
+            btn.className = 'class-btn' + (key === categoryKey ? ' active' : '');
+            btn.textContent = category.label;
+            btn.onclick = () => showLibraryCategory(key);
+            tabs.appendChild(btn);
+        });
+
+        const category = LIBRARY_DATA[categoryKey];
+        if (!category) return;
+        if (category.trees) {
+            category.trees.forEach((tree, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'library-item-btn' + (index === 0 ? ' active' : '');
+                btn.textContent = tree.name;
+                btn.onclick = () => showLibraryTree(categoryKey, index);
+                list.appendChild(btn);
+            });
+            if (category.trees.length) showLibraryTree(categoryKey, 0);
+            return;
+        }
+        (category.items || []).forEach(item => {
+            const btn = document.createElement('button');
+            btn.className = 'library-item-btn';
+            btn.textContent = item;
+            btn.onclick = () => showLibraryItem(category.label, item, '', categoryKey);
+            list.appendChild(btn);
+        });
+    }
+
+    function showLibraryTree(categoryKey, treeIndex) {
+        const category = LIBRARY_DATA[categoryKey];
+        const tree = category.trees[treeIndex];
+        const details = document.getElementById('libraryDetails');
+        clearElement(details);
+        document.querySelectorAll('#libraryList .library-item-btn').forEach((btn, index) => {
+            btn.classList.toggle('active', index === treeIndex);
+        });
+        const title = document.createElement('h3');
+        title.className = 'library-tree-title';
+        title.textContent = tree.name;
+        details.appendChild(title);
+        const box = document.createElement('div');
+        box.className = 'library-list';
+        (tree.items || []).forEach(item => {
+            const btn = document.createElement('button');
+            btn.className = 'library-item-btn';
+            btn.textContent = item;
+            btn.onclick = () => showLibraryItem(category.label, item, tree.name, categoryKey);
+            box.appendChild(btn);
+        });
+        details.appendChild(box);
+    }
+
+    function escapeLibraryText(value) {
+        return String(value || '').replace(/[&<>]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[char]));
+    }
+
+    function getLibraryCopyText(categoryLabel, itemName, treeName, detail) {
+        const parts = [itemName, 'Categoria: ' + categoryLabel];
+        if (treeName) parts.push('Árvore: ' + treeName);
+        if (detail && detail.source) parts.push('Fonte: ' + detail.source);
+        parts.push('');
+        parts.push((detail && detail.text) || 'Conteúdo ainda não preenchido.');
+        return parts.join(String.fromCharCode(10));
+    }
+
+    function copyLibraryItem(categoryLabel, itemName, treeName) {
+        const detail = LIBRARY_ITEM_DETAILS[itemName];
+        const text = getLibraryCopyText(categoryLabel, itemName, treeName, detail);
+        navigator.clipboard.writeText(text).catch(() => {});
+    }
+
+    function addLibraryItemToActiveSheet(categoryKey, itemName) {
+        const fieldMap = { forcePowers: 'forcePowers', forceTechniques: 'forceTechniques', talents: 'talents', aptitudes: 'aptitudes' };
+        const field = fieldMap[categoryKey];
+        const sheet = sheets.find(s => s.id === activeSheetId);
+        if (!field || !sheet) return;
+        if (!Array.isArray(sheet[field])) sheet[field] = [];
+        if (!sheet[field].includes(itemName)) sheet[field].push(itemName);
+        renderSheets();
+        saveToLocalStorage();
+    }
+
+    function showLibraryItem(categoryLabel, itemName, treeName, categoryKey = '') {
+        const details = document.getElementById('libraryDetails');
+        const detail = LIBRARY_ITEM_DETAILS[itemName];
+        clearElement(details);
+        const title = document.createElement('h3');
+        title.className = 'library-tree-title';
+        title.textContent = itemName;
+        details.appendChild(title);
+        const cat = document.createElement('p');
+        cat.textContent = 'Categoria: ' + categoryLabel;
+        details.appendChild(cat);
+        if (treeName) {
+            const tree = document.createElement('p');
+            tree.textContent = 'Árvore: ' + treeName;
+            details.appendChild(tree);
+        }
+        const body = document.createElement('p');
+        body.textContent = (detail && detail.text) || 'Conteúdo ainda não preenchido.';
+        details.appendChild(body);
+        if (['forcePowers', 'forceTechniques', 'talents', 'aptitudes'].includes(categoryKey)) {
+            const add = document.createElement('button');
+            add.className = 'btn-action btn-reference';
+            add.textContent = '➕ Adicionar à ficha ativa';
+            add.onclick = () => addLibraryItemToActiveSheet(categoryKey, itemName);
+            details.appendChild(add);
+        }
+        const copy = document.createElement('button');
+        copy.className = 'btn-action btn-reference';
+        copy.textContent = '📋 Copiar texto';
+        copy.onclick = () => copyLibraryItem(categoryLabel, itemName, treeName);
+        details.appendChild(copy);
+    }
+
+    // Inicializar
+    // Dados carregados pelo Firebase via onSnapshot
+    renderSheets();
+</script>
+</body>
+</html>
