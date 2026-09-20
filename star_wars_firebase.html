@@ -3952,7 +3952,11 @@ function findLibraryTreeByName(treeName) {
             const isKnownChoice = choices.some(choice => choice.value === value);
             const options = [
                 `<option value="">Selecionar da Biblioteca...</option>`,
-                ...choices.map(choice => `<option value="${choice.value.replace(/"/g, '&quot;')}" ${choice.value === value ? 'selected' : ''}>${choice.label.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</option>`)
+                ...choices.map(choice => {
+                    const choiceValue = String((choice && choice.value) || '');
+                    const choiceLabel = String((choice && choice.label) || choiceValue);
+                    return `<option value="${choiceValue.replace(/"/g, '&quot;')}" ${choiceValue === value ? 'selected' : ''}>${choiceLabel.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</option>`;
+                })
             ].join('');
             return `
                 <div class="dynamic-item">
@@ -4321,7 +4325,14 @@ function findLibraryTreeByName(treeName) {
     }
 
     function addLibraryItemSlot(id, field) {
-        addDynamicItem(id, field);
+        const sheet = sheets.find(s => s.id === id);
+        if (sheet && sheet[field] !== undefined) {
+            const choices = getLibraryChoicesForField(field);
+            const firstChoice = choices.find(choice => choice && choice.value);
+            sheet[field].push(firstChoice ? firstChoice.value : "");
+            renderSheets();
+            saveToLocalStorage();
+        }
     }
 
     function addCustomLibraryItem(id, field) {
@@ -5016,20 +5027,3 @@ function findLibraryTreeByName(treeName) {
 </body>
 </html>
 
-<script>
-(function() {
-    const previousRenderDynamicItem = renderDynamicItem;
-    renderDynamicItem = function(sheetId, field, index, value) {
-        const escapedValue = String(value || '')
-            .replace(/&/g, '&amp;')
-            .replace(/"/g, '&quot;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;');
-        if (isLibraryField(field)) {
-            return '<div class="dynamic-item"><input type="text" value="' + escapedValue + '" onchange="updateDynamicItem(' + sheetId + ', &quot;' + field + '&quot;, ' + index + ', this.value)"><button class="btn-remove" onclick="removeDynamicItem(' + sheetId + ', &quot;' + field + '&quot;, ' + index + ')">✕</button></div>';
-        }
-        return previousRenderDynamicItem(sheetId, field, index, value);
-    };
-    renderSheets();
-})();
-</script>
