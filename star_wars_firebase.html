@@ -5015,3 +5015,21 @@ function findLibraryTreeByName(treeName) {
 </script>
 </body>
 </html>
+
+<script>
+(function() {
+    const previousRenderDynamicItem = renderDynamicItem;
+    renderDynamicItem = function(sheetId, field, index, value) {
+        const escapedValue = String(value || '')
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+        if (isLibraryField(field)) {
+            return '<div class="dynamic-item"><input type="text" value="' + escapedValue + '" onchange="updateDynamicItem(' + sheetId + ', &quot;' + field + '&quot;, ' + index + ', this.value)"><button class="btn-remove" onclick="removeDynamicItem(' + sheetId + ', &quot;' + field + '&quot;, ' + index + ')">✕</button></div>';
+        }
+        return previousRenderDynamicItem(sheetId, field, index, value);
+    };
+    renderSheets();
+})();
+</script>
