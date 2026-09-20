@@ -352,17 +352,6 @@
             color: var(--sw-yellow);
         }
 
-        .library-search {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            background: #0f0f0f;
-            color: var(--sw-text);
-            border: 1px solid var(--sw-border);
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
         .library-panel {
             background: rgba(255, 232, 31, 0.05);
             border-left: 3px solid var(--sw-yellow);
@@ -673,88 +662,6 @@
             color: #00c878;
         }
 
-        .badge-technique {
-            background: rgba(175, 120, 255, 0.16);
-            border: 1px solid #af78ff;
-            color: #d7c1ff;
-        }
-
-        .library-linked-row {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            width: 100%;
-            max-width: 100%;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 6px;
-            padding: 8px;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
-
-        .library-linked-row select,
-        .library-linked-row input {
-            width: 100%;
-            min-width: 0;
-            box-sizing: border-box;
-            padding: 8px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--sw-accent);
-            color: var(--sw-text);
-            border-radius: 3px;
-        }
-
-        .library-linked-controls {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto auto;
-            gap: 8px;
-            align-items: stretch;
-            width: 100%;
-        }
-
-        .library-action-row {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-top: 6px;
-        }
-
-        .library-action-row .btn-add {
-            margin-top: 0;
-        }
-
-        .btn-library-small {
-            background: rgba(255, 232, 31, 0.12);
-            color: var(--sw-yellow);
-            border: 1px solid var(--sw-yellow);
-            padding: 7px 10px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        .btn-library-small:disabled {
-            opacity: 0.45;
-            cursor: not-allowed;
-        }
-
-        .library-note-link {
-            background: transparent;
-            border: none;
-            color: var(--sw-yellow);
-            font-weight: bold;
-            cursor: pointer;
-            padding: 0;
-            text-align: left;
-            font-size: 1em;
-        }
-
-        .library-note-link:hover {
-            text-decoration: underline;
-        }
-
         .note-card-title-static {
             color: var(--sw-yellow);
             font-weight: bold;
@@ -1025,28 +932,6 @@
             .library-list {
                 max-height: 45vh;
             }
-            .library-linked-row {
-                gap: 7px;
-                padding: 8px;
-            }
-            .library-linked-row select,
-            .library-linked-row input,
-            .library-linked-row button {
-                width: 100%;
-            }
-            .library-linked-controls {
-                grid-template-columns: 1fr;
-                gap: 7px;
-            }
-            .library-action-row {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 7px;
-            }
-            .library-action-row .btn-add {
-                width: 100%;
-                padding: 9px 10px;
-            }
 
             /* Notas */
             .note-card { padding: 10px; }
@@ -1192,7 +1077,6 @@ function startListeners() {
                 let needsRender = toRemove1.length > 0;
                 snap.docs.forEach(d => {
                     const data = { ...d.data(), firebaseId: d.id, owner: ownerId };
-                    if (!Array.isArray(data.forceTechniques)) data.forceTechniques = [];
                     const existing = window._sheets.find(s => s.firebaseId === d.id);
                     if (!existing) needsRender = true; // nova ficha
                     const changed = mergeSheet(data);
@@ -1216,7 +1100,6 @@ function startListeners() {
             let needsRender2 = toRemove2.length > 0;
             snap.docs.forEach(d => {
                 const data = { ...d.data(), firebaseId: d.id, owner: 'mestre' };
-                if (!Array.isArray(data.forceTechniques)) data.forceTechniques = [];
                 const existing = window._sheets.find(s => s.firebaseId === d.id);
                 if (!existing) needsRender2 = true;
                 const changed = mergeSheet(data);
@@ -1239,7 +1122,6 @@ function startListeners() {
             let needsRender3 = toRemove3.length > 0;
             snap.docs.forEach(d => {
                 const data = { ...d.data(), firebaseId: d.id, owner: userInfo.id };
-                if (!Array.isArray(data.forceTechniques)) data.forceTechniques = [];
                 const existing = window._sheets.find(s => s.firebaseId === d.id);
                 if (!existing) needsRender3 = true;
                 const changed = mergeSheet(data);
@@ -3349,7 +3231,6 @@ window._debouncedRender = function() {
             talents: [],
             aptitudes: [],
             forcePowers: [],
-            forceTechniques: [],
             equipments: [],
             lore: "",
             noteDetails: {},
@@ -3477,99 +3358,6 @@ window._debouncedRender = function() {
         }).join('');
     }
 
-    const LIBRARY_FIELD_CONFIG = {
-        forcePowers: {
-            categoryKey: 'forcePowers',
-            prefix: 'force',
-            singular: 'Poder da Força',
-            badgeClass: 'badge-force',
-            emptyMsg: 'Nenhum Poder da Força adicionado ainda.'
-        },
-        forceTechniques: {
-            categoryKey: 'forceTechniques',
-            prefix: 'technique',
-            singular: 'Técnica da Força',
-            badgeClass: 'badge-technique',
-            emptyMsg: 'Nenhuma Técnica da Força adicionada ainda.'
-        },
-        talents: {
-            categoryKey: 'talents',
-            prefix: 'talent',
-            singular: 'Talento',
-            badgeClass: 'badge-talent',
-            emptyMsg: 'Nenhum Talento adicionado ainda.'
-        },
-        aptitudes: {
-            categoryKey: 'aptitudes',
-            prefix: 'aptitude',
-            singular: 'Aptidão',
-            badgeClass: 'badge-aptitude',
-            emptyMsg: 'Nenhuma Aptidão adicionada ainda.'
-        }
-    };
-
-    function getLibraryChoicesForField(field) {
-        const config = LIBRARY_FIELD_CONFIG[field];
-        const category = config ? LIBRARY_DATA[config.categoryKey] : null;
-        if (!category) return [];
-
-        if (category.items) {
-            return category.items.map(item => ({ value: item, label: item, kind: 'item' }));
-        }
-
-        if (category.trees) {
-            const choices = [];
-            category.trees.forEach(tree => {
-                choices.push({ value: tree.name, label: tree.name, kind: 'tree' });
-                (tree.items || []).forEach(item => {
-                    if (!item || item === 'Conteúdo desta árvore ainda não preenchido.') return;
-                    choices.push({ value: item, label: `${item} — ${tree.name}`, kind: 'item', treeName: tree.name });
-                });
-            });
-            return choices;
-        }
-
-        return [];
-    }
-
-    function isLibraryField(field) {
-        return Boolean(LIBRARY_FIELD_CONFIG[field]);
-    }
-
-    function hasLibraryDetail(itemName) {
-        return Boolean(LIBRARY_ITEM_DETAILS[itemName] || findLibraryTreeByName(itemName) || Object.values(LIBRARY_DATA).some(category => (category.items || []).includes(itemName) || (category.trees || []).some(tree => (tree.items || []).includes(itemName))));
-    }
-
-function findLibraryTreeByName(treeName) {
-        const aptitudes = LIBRARY_DATA.aptitudes;
-        if (!aptitudes || !aptitudes.trees) return null;
-        const index = aptitudes.trees.findIndex(tree => tree.name === treeName);
-        return index >= 0 ? { tree: aptitudes.trees[index], index } : null;
-    }
-
-    function openLibraryItemFromSheet(field, itemName) {
-        if (!itemName) return;
-        const config = LIBRARY_FIELD_CONFIG[field];
-        if (!config) return;
-
-        document.getElementById('libraryModal').classList.add('active');
-        showLibraryCategory(config.categoryKey);
-
-        const treeMatch = findLibraryTreeByName(itemName);
-        if (treeMatch && config.categoryKey === 'aptitudes') {
-            showLibraryTree('aptitudes', treeMatch.index);
-            return;
-        }
-
-        const category = LIBRARY_DATA[config.categoryKey];
-        let treeName = '';
-        if (category?.trees) {
-            const parentTree = category.trees.find(tree => (tree.items || []).includes(itemName));
-            if (parentTree) treeName = parentTree.name;
-        }
-        showLibraryItem(category.label, itemName, treeName, config.categoryKey);
-    }
-
     function renderNotesSection(sheet, field, prefix, badgeLabel, badgeClass, placeholder, emptyMsg) {
         const items = sheet[field] ? sheet[field].filter(item => item && item.trim() !== '') : [];
         if (items.length === 0) {
@@ -3579,17 +3367,12 @@ function findLibraryTreeByName(treeName) {
             const key = prefix + '_' + encodeURIComponent(item);
             const savedText = (sheet.noteDetails && sheet.noteDetails[key]) ? sheet.noteDetails[key] : '';
             const escapedItem = item.replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/`/g, '&#96;');
-            const jsItem = item.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
             const escapedKey = key.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
             const escapedText = savedText.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-            const hasDetail = hasLibraryDetail(item);
-            const titleMarkup = hasDetail
-                ? `<button class="library-note-link" onclick="openLibraryItemFromSheet('${field}', '${jsItem}')">${escapedItem}</button>`
-                : `<span class="note-card-title-static">${escapedItem}</span>`;
             return `<div class="note-card">
                 <div class="note-card-header">
                     <span class="note-card-badge ${badgeClass}">${badgeLabel}</span>
-                    ${titleMarkup}
+                    <span class="note-card-title-static">${escapedItem}</span>
                 </div>
                 <textarea class="note-card-textarea" placeholder="${placeholder}" onchange="updateNoteDetail(${sheet.id}, '${escapedKey}', this.value)">${escapedText}</textarea>
             </div>`;
@@ -3780,40 +3563,21 @@ function findLibraryTreeByName(treeName) {
                         <div id="talents-${sheet.id}" class="dynamic-list">
                             ${sheet.talents.map((t, idx) => renderDynamicItem(sheet.id, 'talents', idx, t)).join('')}
                         </div>
-                        <div class="library-action-row">
-                            <button class="btn-add" onclick="addLibraryItemSlot(${sheet.id}, 'talents')">+ Escolher da Biblioteca</button>
-                            <button class="btn-add" onclick="addCustomLibraryItem(${sheet.id}, 'talents')">+ Adicionar Custom</button>
-                        </div>
+                        <button class="btn-add" onclick="addDynamicItem(${sheet.id}, 'talents')">+ Adicionar Talento</button>
                     </div>
                     <div class="panel">
                         <h3>Aptidões</h3>
                         <div id="aptitudes-${sheet.id}" class="dynamic-list">
                             ${sheet.aptitudes.map((a, idx) => renderDynamicItem(sheet.id, 'aptitudes', idx, a)).join('')}
                         </div>
-                        <div class="library-action-row">
-                            <button class="btn-add" onclick="addLibraryItemSlot(${sheet.id}, 'aptitudes')">+ Escolher da Biblioteca</button>
-                            <button class="btn-add" onclick="addCustomLibraryItem(${sheet.id}, 'aptitudes')">+ Adicionar Custom</button>
-                        </div>
+                        <button class="btn-add" onclick="addDynamicItem(${sheet.id}, 'aptitudes')">+ Adicionar Aptidão</button>
                     </div>
                     <div class="panel">
                         <h3>Poderes da Força</h3>
                         <div id="forcePowers-${sheet.id}" class="dynamic-list">
                             ${sheet.forcePowers.map((p, idx) => renderDynamicItem(sheet.id, 'forcePowers', idx, p)).join('')}
                         </div>
-                        <div class="library-action-row">
-                            <button class="btn-add" onclick="addLibraryItemSlot(${sheet.id}, 'forcePowers')">+ Escolher da Biblioteca</button>
-                            <button class="btn-add" onclick="addCustomLibraryItem(${sheet.id}, 'forcePowers')">+ Adicionar Custom</button>
-                        </div>
-                    </div>
-                    <div class="panel">
-                        <h3>Técnicas da Força</h3>
-                        <div id="forceTechniques-${sheet.id}" class="dynamic-list">
-                            ${(sheet.forceTechniques || []).map((t, idx) => renderDynamicItem(sheet.id, 'forceTechniques', idx, t)).join('')}
-                        </div>
-                        <div class="library-action-row">
-                            <button class="btn-add" onclick="addLibraryItemSlot(${sheet.id}, 'forceTechniques')">+ Escolher da Biblioteca</button>
-                            <button class="btn-add" onclick="addCustomLibraryItem(${sheet.id}, 'forceTechniques')">+ Adicionar Custom</button>
-                        </div>
+                        <button class="btn-add" onclick="addDynamicItem(${sheet.id}, 'forcePowers')">+ Adicionar Poder</button>
                     </div>
                 </div>
 
@@ -3854,11 +3618,6 @@ function findLibraryTreeByName(treeName) {
                         <div class="notes-section-title" style="margin-top: 30px;">Poderes da Força</div>
                         <div id="notes-forcePowers-${sheet.id}">
                             ${renderNotesSection(sheet, 'forcePowers', 'force', 'Poder da Força', 'badge-force', 'Descreva em detalhes o que este poder faz, seus efeitos, custo, alcançe, etc...', 'Nenhum Poder da Força adicionado ainda. Adicione poderes na aba Ficha.')}
-                        </div>
-
-                        <div class="notes-section-title" style="margin-top: 30px;">Técnicas da Força</div>
-                        <div id="notes-forceTechniques-${sheet.id}">
-                            ${renderNotesSection(sheet, 'forceTechniques', 'technique', 'Técnica da Força', 'badge-technique', 'Descreva observações próprias sobre esta técnica...', 'Nenhuma Técnica da Força adicionada ainda. Adicione técnicas na aba Ficha.')}
                         </div>
 
                         <div class="notes-section-title" style="margin-top: 30px;">Talentos</div>
@@ -3956,37 +3715,9 @@ function findLibraryTreeByName(treeName) {
     }
 
     function renderDynamicItem(sheetId, field, index, value) {
-        const escapedValue = String(value || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/`/g, '&#96;');
-        const jsValue = String(value || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-        if (isLibraryField(field)) {
-            const choices = getLibraryChoicesForField(field);
-            const isKnownChoice = choices.some(choice => choice.value === value);
-            const options = [
-                `<option value="">Selecionar da Biblioteca...</option>`,
-                ...choices.map(choice => {
-                    const choiceValue = String((choice && choice.value) || '');
-                    const choiceLabel = String((choice && choice.label) || choiceValue);
-                    return `<option value="${choiceValue.replace(/"/g, '&quot;')}" ${choiceValue === value ? 'selected' : ''}>${choiceLabel.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</option>`;
-                })
-            ].join('');
-            return `
-                <div class="dynamic-item">
-                    <div class="library-linked-row">
-                        <select onchange="updateLibraryLinkedItem(${sheetId}, '${field}', ${index}, this.value)">
-                            ${options}
-                        </select>
-                        <div class="library-linked-controls">
-                            <input type="text" value="${escapedValue}" onchange="updateDynamicItem(${sheetId}, '${field}', ${index}, this.value)" placeholder="${isKnownChoice ? 'Nome vinculado à Biblioteca' : 'Item customizado'}">
-                            <button class="btn-library-small" ${hasLibraryDetail(value) ? '' : 'disabled'} onclick="openLibraryItemFromSheet('${field}', '${jsValue}')">Ver</button>
-                            <button class="btn-remove" onclick="removeDynamicItem(${sheetId}, '${field}', ${index})">✕</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
         return `
             <div class="dynamic-item">
-                <input type="text" value="${escapedValue}" onchange="updateDynamicItem(${sheetId}, '${field}', ${index}, this.value)">
+                <input type="text" value="${value}" onchange="updateDynamicItem(${sheetId}, '${field}', ${index}, this.value)">
                 <button class="btn-remove" onclick="removeDynamicItem(${sheetId}, '${field}', ${index})">✕</button>
             </div>
         `;
@@ -4306,20 +4037,21 @@ function findLibraryTreeByName(treeName) {
         if (sheet && sheet[field]) {
             sheet[field][index] = value;
             // Só re-renderiza a aba de notas quando o nome do item muda
-            if (isLibraryField(field)) {
-                const notesSection = document.getElementById(`notes-${field}-${id}`);
+            if (field === 'forcePowers' || field === 'talents' || field === 'aptitudes') {
+                const notesSection = document.getElementById(`notes-${field === 'forcePowers' ? 'forcepowers' : field}-${id}`);
                 if (notesSection && typeof renderNotesSection === 'function') {
-                    const config = LIBRARY_FIELD_CONFIG[field];
-                    notesSection.innerHTML = renderNotesSection(sheet, field, config.prefix, config.singular, config.badgeClass, 'Descreva observações próprias...', config.emptyMsg);
+                    const badgeMap = { forcePowers: 'badge-force', talents: 'badge-talent', aptitudes: 'badge-aptitude' };
+                    const labelMap = { forcePowers: 'Poder da Força', talents: 'Talento', aptitudes: 'Aptidão' };
+                    const emptyMap = {
+                        forcePowers: 'Nenhum Poder da Força adicionado ainda.',
+                        talents: 'Nenhum Talento adicionado ainda.',
+                        aptitudes: 'Nenhuma Aptidão adicionada ainda.'
+                    };
+                    notesSection.innerHTML = renderNotesSection(sheet, field, field.slice(0,-1), labelMap[field], badgeMap[field], 'Descreva em detalhes...', emptyMap[field]);
                 }
             }
             saveToLocalStorage();
         }
-    }
-
-    function updateLibraryLinkedItem(id, field, index, value) {
-        updateDynamicItem(id, field, index, value);
-        renderSheets();
     }
 
     function removeDynamicItem(id, field, index) {
@@ -4332,26 +4064,6 @@ function findLibraryTreeByName(treeName) {
     }
 
     function addDynamicItem(id, field) {
-        const sheet = sheets.find(s => s.id === id);
-        if (sheet && sheet[field] !== undefined) {
-            sheet[field].push("");
-            renderSheets();
-            saveToLocalStorage();
-        }
-    }
-
-    function addLibraryItemSlot(id, field) {
-        const sheet = sheets.find(s => s.id === id);
-        if (sheet && sheet[field] !== undefined) {
-            const choices = getLibraryChoicesForField(field);
-            const firstChoice = choices.find(choice => choice && choice.value);
-            sheet[field].push(firstChoice ? firstChoice.value : "");
-            renderSheets();
-            saveToLocalStorage();
-        }
-    }
-
-    function addCustomLibraryItem(id, field) {
         const sheet = sheets.find(s => s.id === id);
         if (sheet && sheet[field] !== undefined) {
             sheet[field].push("");
@@ -4513,7 +4225,6 @@ function findLibraryTreeByName(treeName) {
                 sheets.forEach(s => {
                     if (!s.imageState) s.imageState = { zoom: 1, offsetX: 0, offsetY: 0 };
                     if (!s.noteDetails) s.noteDetails = {};
-                    if (!Array.isArray(s.forceTechniques)) s.forceTechniques = [];
                     if (s.generalNotes === undefined) s.generalNotes = '';
                     if (!s.customNotes) s.customNotes = [];
                     if (!s.activeTab) s.activeTab = 'ficha';
@@ -4677,7 +4388,6 @@ function findLibraryTreeByName(treeName) {
                 'Redemoinho da Força (Force Whirlwind)',
                 'Refutar (Rebuke)',
                 'Reorganização (Rearrangement)',
-                'Relâmpago da Força (Force Lightning)',
                 'Repulsa (Repulse)',
                 'Resistência a Energia (Energy Resistance)',
                 'Resistir à Força (Resist Force)',
@@ -6161,7 +5871,7 @@ function findLibraryTreeByName(treeName) {
             ]
         }
     };
-    var Truncated = 'Conteúdo desta árvore ainda não preenchido.';
+
     const LIBRARY_ITEM_DETAILS = {
         "Recuperação de Ponto de Força (Force Point Recovery)": {
                 "source": "Star Wars Saga Edition Core Rulebook / Wiki-Fandom",
@@ -9638,7 +9348,8 @@ Benefício: Uma vez por encontro, ao usar apenas armas com as quais você seja p
         "Voo Impulsivo (Impulsive Flight)": {
                   "source": "Star Wars Saga Edition Scum and Villainy / Wiki-Fandom",
                   "text": "Pré-requisitos: Nenhum.\n\nBenefício: Você consegue se retirar com maior velocidade quando a situação exige fuga imediata. Ao usar a ação Retirar, seu movimento de retirada é mais eficiente, permitindo escapar de ameaças próximas com menos perda de ritmo."
-        }}
+        }};
+
 
     function openLibrary() {
         document.getElementById('libraryModal').classList.add('active');
@@ -9649,20 +9360,14 @@ Benefício: Uma vez por encontro, ao usar apenas armas com as quais você seja p
         document.getElementById('libraryModal').classList.remove('active');
     }
 
-    function clearElement(el) {
-        while (el.firstChild) el.removeChild(el.firstChild);
-    }
-
     function showLibraryCategory(categoryKey) {
         const tabs = document.getElementById('libraryTabs');
         const list = document.getElementById('libraryList');
         const details = document.getElementById('libraryDetails');
-        clearElement(tabs);
-        clearElement(list);
-        clearElement(details);
-        const initial = document.createElement('p');
-        initial.textContent = 'Selecione uma opção da lista para ver os detalhes.';
-        details.appendChild(initial);
+
+        tabs.innerHTML = '';
+        list.innerHTML = '';
+        details.innerHTML = '<p>Selecione uma opção da lista para ver os detalhes.</p>';
 
         Object.entries(LIBRARY_DATA).forEach(([key, category]) => {
             const btn = document.createElement('button');
@@ -9673,152 +9378,115 @@ Benefício: Uma vez por encontro, ao usar apenas armas com as quais você seja p
         });
 
         const category = LIBRARY_DATA[categoryKey];
-        if (!category) return;
-
-        const search = document.createElement('input');
-        search.className = 'library-search';
-        search.type = 'search';
-        search.placeholder = 'Pesquisar nesta lista...';
-        list.appendChild(search);
-
-        const results = document.createElement('div');
-        results.className = 'library-list-results';
-        list.appendChild(results);
-
-        const normalize = value => String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
         if (category.trees) {
-            const renderTreeButtons = () => {
-                clearElement(results);
-                const query = normalize(search.value);
-                category.trees.forEach((tree, index) => {
-                    const treeItems = tree.items || [];
-                    const searchable = normalize([tree.name, ...treeItems].join(' '));
-                    if (query && !searchable.includes(query)) return;
-                    const btn = document.createElement('button');
-                    btn.className = 'library-item-btn';
-                    btn.textContent = tree.name;
-                    btn.onclick = () => showLibraryTree(categoryKey, index);
-                    results.appendChild(btn);
-                });
-                if (!results.children.length) {
-                    const empty = document.createElement('p');
-                    empty.textContent = 'Nenhum resultado encontrado.';
-                    results.appendChild(empty);
-                }
-            };
-            search.oninput = renderTreeButtons;
-            renderTreeButtons();
-            if (category.trees.length) showLibraryTree(categoryKey, 0);
+            category.trees.forEach((tree, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'library-item-btn' + (index === 0 ? ' active' : '');
+                btn.textContent = tree.name;
+                btn.onclick = () => showLibraryTree(categoryKey, index);
+                list.appendChild(btn);
+            });
+            showLibraryTree(categoryKey, 0);
             return;
         }
 
-        const renderItemButtons = () => {
-            clearElement(results);
-            const query = normalize(search.value);
-            (category.items || []).forEach(item => {
-                if (query && !normalize(item).includes(query)) return;
-                const btn = document.createElement('button');
-                btn.className = 'library-item-btn';
-                btn.textContent = item;
-                btn.onclick = () => showLibraryItem(category.label, item, '', categoryKey);
-                results.appendChild(btn);
-            });
-            if (!results.children.length) {
-                const empty = document.createElement('p');
-                empty.textContent = 'Nenhum resultado encontrado.';
-                results.appendChild(empty);
-            }
-        };
-        search.oninput = renderItemButtons;
-        renderItemButtons();
+        category.items.forEach(item => {
+            const btn = document.createElement('button');
+            btn.className = 'library-item-btn';
+            btn.textContent = item;
+            btn.onclick = () => showLibraryItem(category.label, item);
+            list.appendChild(btn);
+        });
     }
 
     function showLibraryTree(categoryKey, treeIndex) {
         const category = LIBRARY_DATA[categoryKey];
         const tree = category.trees[treeIndex];
         const details = document.getElementById('libraryDetails');
-        clearElement(details);
+
         document.querySelectorAll('#libraryList .library-item-btn').forEach((btn, index) => {
             btn.classList.toggle('active', index === treeIndex);
         });
-        const title = document.createElement('h3');
-        title.className = 'library-tree-title';
-        title.textContent = tree.name;
-        details.appendChild(title);
-        const box = document.createElement('div');
-        box.className = 'library-list';
-        (tree.items || []).forEach(item => {
-            const btn = document.createElement('button');
-            btn.className = 'library-item-btn';
-            btn.textContent = item;
-            btn.onclick = () => showLibraryItem(category.label, item, tree.name, categoryKey);
-            box.appendChild(btn);
-        });
-        details.appendChild(box);
+
+        details.innerHTML = `
+            <h3 class="library-tree-title">${tree.name}</h3>
+            <div class="library-list">
+                ${tree.items.map(item => `
+                    <button class="library-item-btn" onclick="showLibraryItem('${category.label}', '${item.replace(/'/g, "\\'")}', '${tree.name.replace(/'/g, "\\'")}')">${item}</button>
+                `).join('')}
+            </div>
+        `;
     }
 
     function escapeLibraryText(value) {
-        return String(value || '').replace(/[&<>]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[char]));
+        return String(value || '').replace(/[&<>\"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;' }[char]));
     }
 
     function getLibraryCopyText(categoryLabel, itemName, treeName, detail) {
-        const parts = [itemName, 'Categoria: ' + categoryLabel];
-        if (treeName) parts.push('Árvore: ' + treeName);
-        if (detail && detail.source) parts.push('Fonte: ' + detail.source);
+        const parts = [itemName, `Categoria: ${categoryLabel}`];
+        if (treeName) parts.push(`Árvore: ${treeName}`);
+        if (detail?.descriptor) parts.push(`Descritor: ${detail.descriptor}`);
+        if (detail?.source) parts.push(`Fonte: ${detail.source}`);
+        if (detail?.sourceUrl) parts.push(`Link da fonte: ${detail.sourceUrl}`);
         parts.push('');
-        parts.push((detail && detail.text) || 'Conteúdo ainda não preenchido.');
-        return parts.join(String.fromCharCode(10));
+        parts.push(detail?.text || 'Conteúdo ainda não preenchido.');
+        if (detail?.checks?.length) {
+            parts.push('');
+            parts.push('Tabela de CD:');
+            detail.checks.forEach(row => parts.push(`CD ${row.cd}: ${row.effect}`));
+        }
+        if (detail?.special) {
+            parts.push('');
+            parts.push(`Especial: ${detail.special}`);
+        }
+        return parts.join('\n');
     }
 
     function copyLibraryItem(categoryLabel, itemName, treeName) {
         const detail = LIBRARY_ITEM_DETAILS[itemName];
         const text = getLibraryCopyText(categoryLabel, itemName, treeName, detail);
-        navigator.clipboard.writeText(text).catch(() => {});
+        navigator.clipboard.writeText(text).then(() => {
+            const status = document.getElementById('libraryCopyStatus');
+            if (status) {
+                status.textContent = 'Copiado para a área de transferência.';
+                setTimeout(() => status.textContent = '', 2500);
+            }
+        }).catch(() => {
+            const status = document.getElementById('libraryCopyStatus');
+            if (status) status.textContent = 'Não foi possível copiar automaticamente. Selecione o texto e copie manualmente.';
+        });
     }
 
-    function addLibraryItemToActiveSheet(categoryKey, itemName) {
-        const fieldMap = { forcePowers: 'forcePowers', forceTechniques: 'forceTechniques', talents: 'talents', aptitudes: 'aptitudes' };
-        const field = fieldMap[categoryKey];
-        const sheet = sheets.find(s => s.id === activeSheetId);
-        if (!field || !sheet) return;
-        if (!Array.isArray(sheet[field])) sheet[field] = [];
-        if (!sheet[field].includes(itemName)) sheet[field].push(itemName);
-        renderSheets();
-        saveToLocalStorage();
-    }
-
-    function showLibraryItem(categoryLabel, itemName, treeName, categoryKey = '') {
+    function showLibraryItem(categoryLabel, itemName, treeName) {
         const details = document.getElementById('libraryDetails');
         const detail = LIBRARY_ITEM_DETAILS[itemName];
-        clearElement(details);
-        const title = document.createElement('h3');
-        title.className = 'library-tree-title';
-        title.textContent = itemName;
-        details.appendChild(title);
-        const cat = document.createElement('p');
-        cat.textContent = 'Categoria: ' + categoryLabel;
-        details.appendChild(cat);
-        if (treeName) {
-            const tree = document.createElement('p');
-            tree.textContent = 'Árvore: ' + treeName;
-            details.appendChild(tree);
-        }
-        const body = document.createElement('p');
-        body.textContent = (detail && detail.text) || 'Conteúdo ainda não preenchido.';
-        details.appendChild(body);
-        if (['forcePowers', 'forceTechniques', 'talents', 'aptitudes'].includes(categoryKey)) {
-            const add = document.createElement('button');
-            add.className = 'btn-action btn-reference';
-            add.textContent = '➕ Adicionar à ficha ativa';
-            add.onclick = () => addLibraryItemToActiveSheet(categoryKey, itemName);
-            details.appendChild(add);
-        }
-        const copy = document.createElement('button');
-        copy.className = 'btn-action btn-reference';
-        copy.textContent = '📋 Copiar texto';
-        copy.onclick = () => copyLibraryItem(categoryLabel, itemName, treeName);
-        details.appendChild(copy);
+        const context = treeName ? `<p><strong>Árvore:</strong> ${escapeLibraryText(treeName)}</p>` : '';
+        const body = detail ? escapeLibraryText(detail.text).replace(/\n/g, '<br>') : 'Conteúdo ainda não preenchido.';
+        const source = detail?.source ? `<p><strong>Fonte:</strong> ${escapeLibraryText(detail.source)}${detail.sourceUrl ? ` — <a href="${escapeLibraryText(detail.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color: var(--sw-yellow)">Consultar fonte</a>` : ''}</p>` : '';
+        const descriptor = detail?.descriptor ? `<p><strong>Descritor:</strong> ${escapeLibraryText(detail.descriptor)}</p>` : '';
+        const checks = detail?.checks?.length ? `
+            <table class="class-table">
+                <thead><tr><th>CD</th><th>Efeito</th></tr></thead>
+                <tbody>
+                    ${detail.checks.map(row => `<tr><td>${escapeLibraryText(row.cd)}</td><td>${escapeLibraryText(row.effect)}</td></tr>`).join('')}
+                </tbody>
+            </table>
+        ` : '';
+        const special = detail?.special ? `<p><strong>Especial:</strong> ${escapeLibraryText(detail.special)}</p>` : '';
+
+        details.innerHTML = `
+            <h3 class="library-tree-title">${escapeLibraryText(itemName)}</h3>
+            <p><strong>Categoria:</strong> ${escapeLibraryText(categoryLabel)}</p>
+            ${context}
+            ${descriptor}
+            ${source}
+            <p>${body}</p>
+            ${checks}
+            ${special}
+            <button class="btn-action btn-reference" onclick="copyLibraryItem('${categoryLabel.replace(/'/g, "\\'")}', '${itemName.replace(/'/g, "\\'")}', '${(treeName || '').replace(/'/g, "\\'")}')">📋 Copiar texto</button>
+            <p id="libraryCopyStatus" style="color: var(--sw-yellow); font-weight: bold;"></p>
+        `;
     }
 
     // Inicializar
@@ -9827,4 +9495,3 @@ Benefício: Uma vez por encontro, ao usar apenas armas com as quais você seja p
 </script>
 </body>
 </html>
-
