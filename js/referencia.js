@@ -317,11 +317,44 @@ function renderLibrarySource(detail) {
         ${detail?.sourceUrl ? `<p class="library-source-link"><a href="${escapeHtml(detail.sourceUrl)}" target="_blank" rel="noopener noreferrer">Abrir fonte na wiki</a>${detail.sourceLicense ? ` · Tradução sob <a href="https://www.fandom.com/licensing" target="_blank" rel="noopener noreferrer">${escapeHtml(detail.sourceLicense)}</a>` : ''}</p>` : ''}`;
 }
 
+function renderForcePowerCard(itemName, detail, itemIndex) {
+    const paragraphs = (detail?.text || 'Conteúdo ainda não preenchido.').split(/\n\n/);
+    const facts = paragraphs[0].startsWith('Tempo:') ? paragraphs.shift().split('\n') : [];
+    const descriptors = (detail?.descriptor || '').replace(/[\[\]]/g, '').split(',').map(value => value.trim()).filter(Boolean);
+    return `<article class="force-power-card">
+        <header class="library-item-head">
+            ${getLibraryImageUrl(itemName, 'forcePowers') ? renderLibraryIcon(itemName, 'forcePowers', 'large') : ''}
+            <div><div class="library-kicker">${detail?.kind === 'aptitude' ? 'Aptidão' : 'Poder da Força'}</div>
+            <h3 class="library-tree-title">${escapeHtml(itemName.replace(/\s*\([^()]*\)$/, ''))}</h3>
+            <p class="power-english">${escapeHtml(itemName.match(/\(([^()]*)\)$/)?.[1] || '')}</p></div>
+        </header>
+        <div class="library-meta">${descriptors.map(value => `<span class="chip power-descriptor ${value === 'Lado Sombrio' ? 'dark-side' : value === 'Lado Claro' ? 'light-side' : value === 'Forma de Sabre' ? 'saber-form' : ''}">${escapeHtml(value)}</span>`).join('')}</div>
+        ${facts.length ? `<dl class="power-facts">${facts.map(line => {
+            const colon = line.indexOf(':');
+            return colon < 0 ? `<div><dt>Observação</dt><dd>${escapeHtml(line)}</dd></div>` : `<div><dt>${escapeHtml(line.slice(0, colon))}</dt><dd>${escapeHtml(line.slice(colon + 1).trim())}</dd></div>`;
+        }).join('')}</dl>` : ''}
+        ${descriptors.includes('Forma de Sabre') ? `<p class="library-source-note">${escapeHtml(LIGHTSABER_FORM_RULES)}</p>` : ''}
+        <div class="library-text">${paragraphs.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join('')}</div>
+        ${renderLibraryChecks(detail)}
+        ${detail?.special ? `<section class="library-special"><h4>Especial</h4><p>${escapeHtml(detail.special)}</p></section>` : ''}
+        <footer class="power-footer">
+            <div class="power-source">${detail?.source ? `<p>${escapeHtml(detail.source)}</p>` : ''}${renderLibrarySource(detail)}</div>
+            <div class="library-actions"><button class="btn" onclick="copyLibraryItem('forcePowers', null, ${itemIndex})">Copiar texto</button><span id="libraryCopyStatus" role="status"></span></div>
+        </footer>
+    </article>`;
+}
+
 function showLibraryItem(categoryKey, treeIndex, itemIndex) {
     const details = document.getElementById('libraryDetails');
     const { category, tree, itemName, detail } = getLibraryItem(categoryKey, treeIndex, itemIndex);
 
     if (!tree) highlightLibraryListItem(itemIndex);
+
+    if (categoryKey === 'forcePowers') {
+        details.innerHTML = renderForcePowerCard(itemName, detail, itemIndex);
+        details.scrollTop = 0;
+        return;
+    }
 
     const meta = [
         ['Categoria', detail?.kind === 'aptitude' ? 'Aptidões' : category.label],

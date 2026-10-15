@@ -1,77 +1,23 @@
 # Star Wars — Campanha
 
-Ficha de personagem de Star Wars Saga Edition, em português. O site usa HTML, CSS e JavaScript diretamente, com autenticação e salvamento no Firebase. Não há etapa de build.
+## Português (Brasil)
 
-## Estrutura
+**Star Wars — Campanha** é uma aplicação web criada para acompanhar uma campanha de RPG de mesa no sistema **Star Wars Saga Edition**. A proposta é reunir a ficha dos personagens e as consultas às regras em um mesmo lugar, tornando mais fácil acompanhar a evolução de cada personagem e usar suas habilidades durante as sessões.
 
-```text
-star_wars_firebase.html       Página principal do site
-css/                         Estilos da interface
-js/                          Comportamento da ficha, Biblioteca e Firebase
-  dados/                     Catálogos, descrições e regras do jogo
-img/                         Imagens usadas pelo site, separadas por categoria
-dev/
-  preview/                   Site com fichas fictícias, sem login nem Firebase
-  testes/                    Verificações automatizadas
-  importadores/              Importação do livro e de textos de classes
-  ferramentas/               Utilitários, como o índice de imagens da Biblioteca
-  referencias/               Fontes de consulta e material de trabalho
-    fontes-poderes.json      Referências da revisão dos Poderes da Força
-    poderes/                 Referências visuais permanentes e prompts
-    especies/                Fontes e originais para editar ícones de espécies
-    icones-originais/        Acervo que estava em saga-crawler/static/features
-    icones-reserva/          Imagens que estavam em img/sem-uso
-output/                      Saídas temporárias locais; ignoradas pelo Git
-AGENTS.md                    Orientações do projeto para os assistentes
-```
+A ficha reúne atributos, classes, espécies, perícias, defesas, pontos de vida, talentos, aptidões e Poderes da Força. Uma Biblioteca integrada permite consultar as descrições e as regras dessas habilidades diretamente pela ficha, com terminologia em português brasileiro e referências ao material usado na campanha.
 
-As referências são preservadas para consulta. Uma imagem aprovada para uso no site deve ser colocada na categoria correspondente de `img/`. Tentativas e saídas temporárias ficam em `output/`.
+O projeto também permite organizar equipamentos pessoais, itens guardados, implantes cibernéticos e artefatos, além de configurar ataques vinculados às armas. Notas e história ajudam a registrar acontecimentos, objetivos e detalhes dos personagens ao longo da aventura. As fichas são salvas online para dar continuidade à campanha entre as sessões.
 
-## Onde alterar cada parte
+É um projeto feito por fãs, desenvolvido a partir das necessidades dos jogadores e do mestre. A interface está em português brasileiro, e as funcionalidades continuam sendo aprimoradas conforme a campanha evolui.
 
-| O que mudar | Arquivo ou pasta |
-| --- | --- |
-| Lista de poderes, aptidões e talentos | `js/dados/biblioteca.js` |
-| Descrições completas e tabelas da Biblioteca | `js/dados/biblioteca-detalhes.js` |
-| Tela da Biblioteca | `js/referencia.js` |
-| Seleção de talentos, aptidões e poderes na ficha | `js/talentos.js` |
-| Classes e progressão | `js/dados/classes.js`, `js/dados/progressao.js` |
-| Espécies e suplementos | `js/dados/especies*.js` |
-| Usos das perícias | `js/dados/pericias-usos.js` |
-| Inventário e ataques | `js/equipamentos.js`, `js/ataques.js` |
-| Aparência | `css/estilos.css` |
-| Imagens da Biblioteca | `img/` e `js/dados/imagens-biblioteca.js` |
+---
 
-## Abrir localmente
+## English (US)
 
-Na raiz deste repositório, execute:
+**Star Wars — Campanha** is a web application built to support a tabletop RPG campaign using **Star Wars Saga Edition**. It brings character sheets and rules references together, making it easier to track character progression and use abilities during game sessions.
 
-```powershell
-python -m http.server 8765 --bind 127.0.0.1
-```
+Each sheet includes ability scores, classes, species, skills, defenses, hit points, feats, talents, and Force powers. An integrated Library provides access to ability descriptions and rules directly from the sheet, using Brazilian Portuguese terminology and references to the material used in the campaign.
 
-- Site com Firebase: <http://127.0.0.1:8765/star_wars_firebase.html>
-- Pré-visualização com fichas fictícias: <http://127.0.0.1:8765/dev/preview/>
-- Biblioteca na pré-visualização: <http://127.0.0.1:8765/dev/preview/#biblioteca>
-- Equipamentos na pré-visualização: <http://127.0.0.1:8765/dev/preview/#equipamentos>
+The application also supports personal equipment, stored items, cybernetic implants, and artifacts, along with configurable attacks linked to weapons. Notes and backstories help players record events, goals, and character details throughout their adventures. Character sheets are saved online to keep the campaign going between sessions.
 
-Use a pré-visualização para experimentar mudanças sem editar as fichas salvas dos jogadores. O endereço público da página principal continua sendo `star_wars_firebase.html`.
-
-## Verificações
-
-Os testes usam Node.js, sem instalar pacotes. Para executar todos no PowerShell, a partir da raiz:
-
-```powershell
-Get-ChildItem dev/testes/verificar-*.cjs | ForEach-Object {
-    node $_.FullName
-    if ($LASTEXITCODE -ne 0) { throw "Falhou: $($_.Name)" }
-}
-```
-
-## Atualizar dados e imagens
-
-- Índice de imagens: abra `dev/ferramentas/atualizar-imagens-biblioteca.html`, selecione a pasta `img/` e salve o arquivo gerado em `js/dados/imagens-biblioteca.js`.
-- Textos das classes: `node dev/importadores/importar-textos-classes.cjs caminho-do-original.html --check` confere o conteúdo. Sem `--check`, o script atualiza os textos locais.
-- Perícias do livro: `python dev/importadores/importar-pericias-livro.py caminho-do-livro.pdf`. Requer `pypdfium2` e regrava `js/dados/pericias-usos.js`; confira as alterações antes de publicar.
-
-As fontes baixadas em `dev/referencias/especies/fontes/` são locais e continuam ignoradas pelo Git. As referências permanentes, os originais e os prompts em `dev/referencias/` podem ser versionados.
+This is a fan-made project shaped by the needs of its players and game master. The interface is in Brazilian Portuguese, and features continue to improve as the campaign develops.

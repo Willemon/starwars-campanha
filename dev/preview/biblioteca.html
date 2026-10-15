@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="../../">
+    <title>Biblioteca — Prévia visual</title>
+    <style>
+        :root { color-scheme: dark; --bg:#141619; --panel:#1b1e22; --line:#ffffff12; --text:#e9e5dd; --muted:#92979e; --gold:#d4b16c; }
+        * { box-sizing:border-box; }
+        body { margin:0; background:var(--bg); color:var(--text); font:15px/1.65 "Segoe UI",Arial,sans-serif; }
+        button,input { font:inherit; }
+        button,a,input { -webkit-tap-highlight-color:transparent; }
+        button { cursor:pointer; }
+        :focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
+        a { color:var(--gold); text-underline-offset:4px; }
+        .masthead { min-height:84px; padding:19px 34px; display:flex; align-items:center; gap:18px; border-bottom:1px solid var(--line); background:#111315; }
+        .mark { font:22px Georgia,serif; color:var(--gold); border:1px solid #d4b16c55; width:44px; height:44px; display:grid; place-items:center; }
+        .brand { font-size:12px; letter-spacing:3px; font-weight:600; }
+        .masthead small { display:block; color:var(--muted); font-size:11px; letter-spacing:.7px; margin-top:3px; }
+        .preview-label { margin-left:auto; color:var(--muted); font-size:10px; letter-spacing:2px; }
+        .workspace { display:grid; grid-template-columns:286px minmax(0,1fr); max-width:1500px; margin:auto; min-height:calc(100vh - 84px); }
+        aside { padding:28px 16px; border-right:1px solid var(--line); background:#17191c; }
+        .sidebar-title { padding:0 14px; display:flex; align-items:center; justify-content:space-between; }
+        .sidebar-title h2 { font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; margin:0; }
+        #count { color:var(--muted); font-size:11px; }
+        .search { margin:19px 12px 18px; position:relative; }
+        .search span { position:absolute; top:8px; left:12px; color:var(--muted); font-size:18px; }
+        input { width:100%; background:#111315; border:1px solid var(--line); border-radius:4px; padding:10px 12px 10px 34px; color:var(--text); font-size:12px; }
+        input::placeholder { color:#777e87; }
+        #powerList { display:grid; gap:3px; max-height:calc(100vh - 235px); overflow-y:auto; padding-right:5px; scrollbar-width:thin; scrollbar-color:#454545 transparent; }
+        .power { display:flex; align-items:center; gap:12px; padding:11px 12px; width:100%; border:1px solid transparent; border-left:2px solid transparent; background:transparent; color:#afb3b9; text-align:left; border-radius:0 4px 4px 0; line-height:1.4; font-size:13px; }
+        .power:hover { background:#ffffff05; color:var(--text); }
+        .power[aria-pressed=true] { color:#f2dfb6; border-left-color:var(--gold); background:linear-gradient(90deg,#d4b16c18,transparent); }
+        .power img,.empty-icon { width:34px; height:34px; border-radius:4px; flex-shrink:0; }
+        .empty-icon { display:grid; place-items:center; background:#ffffff05; color:#737982; font:20px Georgia,serif; }
+        main { padding:35px clamp(25px,5vw,76px) 45px; min-width:0; }
+        .breadcrumb { color:var(--muted); font-size:11px; letter-spacing:.5px; display:flex; align-items:center; gap:12px; margin-bottom:36px; }
+        .breadcrumb span:last-child { color:#c3c5c9; }
+        .breadcrumb a { color:var(--muted); text-decoration:none; }
+        .hero { display:flex; align-items:center; gap:24px; }
+        .hero img,.hero .empty-icon { width:86px; height:86px; border-radius:5px; box-shadow:0 0 0 1px #ffffff16,0 10px 25px #0004; }
+        .eyebrow { color:var(--gold); font-size:10px; letter-spacing:2.4px; text-transform:uppercase; margin:0 0 7px; }
+        h1 { font:650 clamp(28px,3.2vw,40px)/1.15 "Segoe UI",Arial,sans-serif; letter-spacing:-1px; margin:0; }
+        .english { color:var(--muted); font-size:15px; margin:8px 0 0; }
+        .descriptor { margin-top:24px; display:flex; gap:9px; align-items:center; color:#c5a5a7; font-size:10px; text-transform:uppercase; letter-spacing:1.6px; }
+        .descriptor::before { content:""; width:5px; height:5px; background:#b47b80; border-radius:50%; }
+        .facts { display:grid; grid-template-columns:minmax(140px,.8fr) minmax(0,2fr); gap:28px; border-block:1px solid var(--line); margin:26px 0 28px; padding:18px 0; }
+        .facts dt { color:var(--muted); font-size:10px; letter-spacing:1.6px; text-transform:uppercase; margin-bottom:5px; }
+        .facts dd { margin:0; color:#d8d9dc; font-size:13px; }
+        .rules-copy { max-width:76ch; color:#c7c9cd; font-size:15px; line-height:1.95; }
+        .rules-copy p { margin:0 0 21px; white-space:pre-line; }
+        .special { margin:28px 0; padding:3px 0 3px 20px; border-left:2px solid var(--gold); }
+        .special h2 { margin:0 0 8px; font-size:10px; font-weight:600; letter-spacing:2px; color:var(--gold); text-transform:uppercase; }
+        .special p { margin:0; color:#d4d0c7; font-size:14px; line-height:1.85; white-space:pre-line; }
+        .class-table { width:100%; border-collapse:collapse; margin:20px 0; font-size:13px; }
+        .class-table th,.class-table td { padding:12px; border-bottom:1px solid var(--line); text-align:left; }
+        .class-table th { color:var(--gold); font-weight:500; }
+        footer { margin-top:32px; border-top:1px solid var(--line); padding-top:18px; display:flex; gap:24px; align-items:center; justify-content:space-between; }
+        .source { font-size:10px; line-height:1.8; color:var(--muted); max-width:75%; }
+        .source p { margin:0 0 5px; }
+        .source a { color:#b8a57e; }
+        .copy { background:transparent; color:#c5c7cc; border:1px solid #ffffff20; padding:9px 15px; border-radius:3px; white-space:nowrap; font-size:11px; }
+        .copy:hover { background:#ffffff06; border-color:#d4b16c77; color:var(--gold); }
+        #copyStatus { display:block; color:var(--gold); font-size:11px; text-align:right; }
+        .source-note { color:var(--muted); font-size:13px; white-space:pre-line; }
+        .workspace { max-width:1320px; gap:24px; padding:28px; grid-template-columns:280px minmax(0,1fr); }
+        aside { border:1px solid var(--line); border-radius:8px; padding:24px 12px; align-self:start; }
+        main { background:var(--panel); border:1px solid #ffffff18; border-top:3px solid var(--gold); border-radius:8px; padding:30px clamp(24px,3vw,44px); align-self:start; box-shadow:0 16px 45px #0002; }
+        .breadcrumb { margin-bottom:30px; }
+        .hero img,.hero .empty-icon { width:76px; height:76px; }
+        .facts { background:#11131555; margin-inline:-16px; padding:18px 16px; gap:24px; }
+        .rules-copy { line-height:1.85; color:#d6d7db; }
+        .special { background:#d4b16c08; padding:16px 20px; }
+        .source { font-size:11px; }
+        .power small { display:block; color:var(--muted); font-size:11px; margin-top:3px; }
+        @media(min-width:1000px) { aside { position:sticky; top:24px; max-height:calc(100vh - 48px); } #powerList { max-height:calc(100vh - 205px); } }
+        @media(max-width:760px) { .masthead { padding:16px 20px; } .preview-label { display:none; } .workspace { grid-template-columns:1fr; } aside { border-right:0; border-bottom:1px solid var(--line); padding:18px 12px; } #powerList { max-height:180px; } .breadcrumb { margin-bottom:25px; } main { padding:25px 22px; } .hero { gap:18px; } .hero img,.hero .empty-icon { width:68px; height:68px; } .facts { grid-template-columns:1fr; gap:15px; } footer { align-items:flex-start; } .source { max-width:65%; } }
+    </style>
+    <script defer src="js/estado.js"></script>
+    <script defer src="js/dados/biblioteca.js"></script>
+    <script defer src="js/dados/biblioteca-detalhes.js"></script>
+    <script defer src="js/dados/imagens-biblioteca.js"></script>
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/referencia.js"></script>
+    <script defer src="dev/preview/biblioteca.js"></script>
+</head>
+<body>
+    <header class="masthead"><span class="mark" aria-hidden="true">SW</span><div class="brand">BIBLIOTECA<small>STAR WARS · SAGA EDITION</small></div><span class="preview-label">PRÉVIA VISUAL / 02</span></header>
+    <div class="workspace">
+        <aside aria-label="Poderes da Força">
+            <div class="sidebar-title"><h2>Poderes da Força</h2><span id="count"></span></div>
+            <div class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar um poder..." aria-label="Buscar poder"></div>
+            <nav id="powerList" aria-label="Lista de poderes"></nav>
+        </aside>
+        <main id="entry" aria-live="polite"></main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+[
+    {
+        "file": "force-scream.png",
+        "page": "https://swtor.jedipedia.net/en/abl/force-scream-2",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/forcestream.png"
+    },
+    {
+        "file": "force-shield.png",
+        "page": "https://swtor.jedipedia.net/en/abl/force-armor-3",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/forcearmor.png"
+    },
+    {
+        "file": "force-whirlwind.png",
+        "page": "https://swtor.jedipedia.net/en/abl/whirlwind-10",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/whirlwind.png"
+    },
+    {
+        "file": "slow.png",
+        "page": "https://swtor.jedipedia.net/en/abl/force-slow-6",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/movementslowed.png"
+    },
+    {
+        "file": "repulse.png",
+        "page": "https://swtor.jedipedia.net/en/abl/force-wave-13",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/shockwave.png"
+    },
+    {
+        "file": "force-blast.png",
+        "page": "https://swtor.jedipedia.net/en/abl/force-blast",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/abl_si_so_demolish.png"
+    },
+    {
+        "file": "rend.png",
+        "page": "https://swtor.jedipedia.net/en/abl/force-rend-2",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/abl_sw_ma_force_gash.png"
+    },
+    {
+        "file": "fear.png",
+        "page": "https://swtor.jedipedia.net/en/abl/intimidating-roar-3",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/afraid.png"
+    },
+    {
+        "file": "mind-shard.png",
+        "page": "https://swtor.jedipedia.net/en/abl/mind-crush-5",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/mindcrush.png"
+    },
+    {
+        "file": "force-drain.png",
+        "page": "https://swtor.jedipedia.net/en/abl/force-leech",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/abl_si_so_force_leech.png"
+    },
+    {
+        "file": "resist-force.png",
+        "page": "https://swtor.jedipedia.net/en/abl/force-shroud",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/shadowcloak.png"
+    },
+    {
+        "file": "wound.png",
+        "page": "https://swtor.jedipedia.net/en/abl/crushing-darkness-6",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/consumingdarkness.png"
+    },
+    {
+        "file": "obscure.png",
+        "page": "https://swtor.jedipedia.net/en/abl/obfuscating-throw",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/obfuscate.png"
+    },
+    {
+        "file": "makashi-riposte.png",
+        "page": "https://swtor.jedipedia.net/en/abl/riposte-passive",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/vengefulstrike.png"
+    },
+    {
+        "file": "phase.png",
+        "page": "https://swtor.jedipedia.net/en/abl/phase-walk-2",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/phasewalkshadow.png"
+    },
+    {
+        "file": "lightning-burst.png",
+        "page": "https://swtor.jedipedia.net/en/abl/overload-14",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/overload.png"
+    },
+    {
+        "file": "force-storm.png",
+        "page": "https://swtor.jedipedia.net/en/abl/force-storm-17",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/forceStorm.png"
+    },
+    {
+        "file": "combustion.png",
+        "page": "https://swtor.jedipedia.net/en/abl/campfire",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/burned.png",
+        "ability": "Campfire"
+    },
+    {
+        "file": "convection.png",
+        "page": "https://swtor.jedipedia.net/en/abl/immolate",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/flamethrower.png",
+        "ability": "Immolate"
+    },
+    {
+        "file": "corruption.png",
+        "page": "https://swtor.jedipedia.net/en/abl/affliction-4",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/lifedrain.png",
+        "ability": "Affliction"
+    },
+    {
+        "file": "crucitorn.png",
+        "page": "https://swtor.jedipedia.net/en/abl/endure-pain",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/regenerate.png",
+        "ability": "Endure Pain"
+    },
+    {
+        "file": "detonate.png",
+        "page": "https://swtor.jedipedia.net/en/abl/demolish-2",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/abl_si_as_demolish.png",
+        "ability": "Demolish"
+    },
+    {
+        "file": "saber-swarm.png",
+        "page": "https://swtor.jedipedia.net/en/abl/ravage-7",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/bladerush.png",
+        "ability": "Ravage"
+    },
+    {
+        "file": "vornskrs-ferocity.png",
+        "page": "https://swtor.jedipedia.net/en/abl/berserk-7",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/berserk.png",
+        "ability": "Berserk"
+    },
+    {
+        "file": "swift-flank.png",
+        "page": "https://swtor.jedipedia.net/en/abl/mad-dash",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/jugg_mara_mad_dash.png",
+        "ability": "Mad Dash"
+    },
+    {
+        "file": "deflecting-slash.png",
+        "page": "https://swtor.jedipedia.net/en/abl/saber-reflect-11",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/saberreflectjuggernaut.png",
+        "ability": "Saber Reflect"
+    },
+    {
+        "file": "ionize.png",
+        "page": "https://swtor.jedipedia.net/en/abl/emp-discharge",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/abl_ag_sn_EMPDischarge.png",
+        "ability": "EMP Discharge"
+    },
+    {
+        "file": "morichro.png",
+        "page": "https://swtor.jedipedia.net/en/abl/force-stasis-2",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/carbonized.png",
+        "ability": "Force Stasis"
+    },
+    {
+        "file": "hatred.png",
+        "page": "https://swtor.jedipedia.net/en/abl/channel-hatred",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/channelHatred.png",
+        "ability": "Channel Hatred"
+    },
+    {
+        "file": "energy-resistance.png",
+        "page": "https://swtor.jedipedia.net/en/abl/energy-shield-2",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/energyshield.png",
+        "ability": "Energy Shield"
+    },
+    {
+        "file": "dark-transfer.png",
+        "page": "https://swtor.jedipedia.net/en/abl/dark-heal-7",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/darkGift.png",
+        "ability": "Dark Heal"
+    },
+    {
+        "file": "sarlacc-sweep.png",
+        "page": "https://swtor.jedipedia.net/en/abl/cyclone-slash-2",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/spinningslash.png",
+        "ability": "Cyclone Slash"
+    },
+    {
+        "file": "valor.png",
+        "page": "https://swtor.jedipedia.net/en/abl/force-empowerment",
+        "imageUrl": "https://swtorfiles.jedipedia.net/icons/56/uti_imp_rep_power_raid_buff.png",
+        "ability": "Force Empowerment"
+    }
+]
