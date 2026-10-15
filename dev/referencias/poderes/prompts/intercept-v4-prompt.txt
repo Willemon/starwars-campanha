@@ -1,0 +1,19 @@
+Tool: built-in image_gen
+Final asset: img/poderes/intercept-v4.png
+User art reference: img/poderes/ballistakinesis.png, with original Move Object and Negate Energy as supporting style references.
+User correction: coherent game-icon lighting, readable dark masses and localized aura; remove cloudy painterly texture.
+
+Repaint the COMPOSITION of image 2 Intercept using the GAME-ICON LIGHTING AND RENDERING of image 1 Ballistakinesis, also grounded in original reference images 3 Move Object and 4 Negate Energy. User specifically prefers image 1's readable dark masses, simple rock forms, directional light and coherent luminous aura. Image 2's cloudy painted texture is rejected.
+
+KEEP image 2's exact content and positions: one adult bald figure on left, two raised hands toward right, ONE incoming rock upper-right, speed strokes TRAILING to the RIGHT of rock (rock moves LEFT toward figure). Preserve two natural arms and wrists and FIVE DIGITS PER HAND. Do not mirror/flip either hand, change thumb side or fuse fingers. Keep dark gap between hands and rock.
+
+RENDER LIKE IMAGE 1:
+- Figure, hands and robe are near-black substantial silhouettes with a few broad soft dark-blue volumes, no fine cloth folds or painted texture. Shapes remain clearly separated.
+- Rock is DARK, with only 3-4 large controlled dark-blue/gray shadow planes, like image 1's rocks. No pale detailed realistic stone, gritty texture, hundreds of tiny facets or cloudy surface.
+- Deep navy background with several broad soft tapered BLUE light masses giving direction and depth, like the green reference translated to BLUE. Do not copy image 1's extra rocks or victim.
+- VISIBLE FORCE AURA concentrated in the AIR BETWEEN BOTH PALMS AND ROCK'S LEFT/FRONT FACE. Build it from broad clean blue light washes and pale icy-cyan highlights: a softly luminous curved pressure zone just in front of hands meeting the incoming rock. Light is strong enough to read at thumbnail size, but localized and structured. It lights selected palm/fingertip edges and a few broad sleeve planes, and catches the dark rock's forward-facing edge. Most figure and rock mass stays DARK. Soft halation and variable edge light as in image 1, not a uniform outline around everything.
+- At rock's left/front face, TWO short faint curved pressure-wave strokes suggest arresting the object. These integrate with the aura, not a dense nest of rings. Three tapered speed strokes remain behind rock on RIGHT.
+- Dark negative space above, below and around the effect preserves legibility. Energy is organized in broad light and movement shapes, NOT SMOKE/FOG/CLOUDS.
+
+Original compact RASTER game-icon finish, smoothly blended yet softly organic light transitions, slightly softened silhouettes, no artificial pixelation. No vector/SVG sticker finish or geometric graphic clothing stripes. No traditional painterly brushstrokes, marbling, grain, realistic skin/nails, detailed cloth, cinematic rendering or 3D. No mist covering character and rock, no tiny filaments, no particle haze, no explosions, no blaster bolts, no lightsaber. Only one incoming rock and one two-handed defender.
+Square, close crop, no scenery, text, watermark or frame. Match the visual discipline and game-like quality of the GREEN reference while preserving user's BLUE Intercept scene and all correct hand anatomy.

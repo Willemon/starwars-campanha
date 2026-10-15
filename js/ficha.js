@@ -5,7 +5,7 @@
 // icon = sufixo da imagem img/pericias/skill-training-<icon>.jpg (null = sem imagem; mostra o atributo)
 const SKILLS = [
     { key: 'acrobacia',      label: 'Acrobacia',         attr: 'DES', icon: 'acrobatics' },
-    { key: 'conhecimentos',  label: 'Conhecimento',      attr: 'INT', icon: null, group: 'knowledge' },
+    { key: 'conhecimentos',  label: 'Conhecimento',      attr: 'INT', icon: 'knowledge', group: 'knowledge' },
     { key: 'enganacao',      label: 'Enganar',           attr: 'CAR', icon: 'deception' },
     { key: 'escalar',        label: 'Escalar',           attr: 'FOR', icon: 'climb' },
     { key: 'furtividade',    label: 'Furtividade',       attr: 'DES', icon: 'stealth' },
@@ -235,6 +235,71 @@ function syncDerivedValues(sheet) {
 
 function getHalfLevel(sheet) {
     return Math.floor(getCharacterLevel(sheet) / 2);
+}
+
+function hasForcePointChoice(sheet, english) {
+    const names = Array.isArray(sheet.escolhas) ? getOwnedChoices(sheet).map(entry => entry.nome) : [...(sheet.talents || []), ...(sheet.aptitudes || [])];
+    return names.some(name => name.endsWith(`(${english})`));
+}
+
+function getForcePointStats(sheet) {
+    const classes = (sheet.classes || []).filter(entry => toInt(entry.level) > 0);
+    const className = classes.find(entry => entry.name === sheet.forcePoints?.className)?.name || classes.at(-1)?.name || '';
+    const classData = Object.values(CLASS_DATA).find(entry => entry.nome === className);
+    const level = getCharacterLevel(sheet);
+    const total = level ? (classData?.forcePointBase || 5) + getHalfLevel(sheet) + (hasForcePointChoice(sheet, 'Force Boon') ? 3 : 0) : 0;
+    const dice = level >= 15 ? 3 : level >= 8 ? 2 : 1;
+    const sides = hasForcePointChoice(sheet, 'Strong in the Force') ? 8 : 6;
+    return { total, dice, sides, className, level };
+}
+
+function prepareForcePoints(sheet) {
+    const stats = getForcePointStats(sheet);
+    const previous = sheet.forcePoints;
+    const legacy = sheet.combat?.forcePoints;
+    let current = previous?.current ?? (legacy !== '' && legacy != null ? toInt(legacy) : stats.total);
+    if (previous && stats.level > previous.level) current = stats.total;
+    else if (previous && stats.total !== previous.total) current += stats.total - previous.total;
+    const next = { current: Math.max(0, Math.min(stats.total, toInt(current))), total: stats.total, level: stats.level, className: stats.className };
+    if (JSON.stringify(previous) === JSON.stringify(next)) return false;
+    sheet.forcePoints = next;
+    return true;
+}
+
+function calculateFlatFootedDefense(sheet) {
+    const keepDex = hasForcePointChoice(sheet, 'Uncanny Dodge I');
+    return calculateDefense(sheet, 'REF') - (keepDex ? 0 : Math.max(0, toInt(sheet.attributes.DES?.mod)));
+}
+
+function renderForcePoints(sheet) {
+    const stats = getForcePointStats(sheet);
+    return `<div class="card" data-force-points>
+        <div class="card-header"><h3 class="card-title">Pontos da Força</h3><span class="force-dice" title="${stats.dice > 1 ? 'Role os dados e use somente o maior resultado' : 'Bônus ao gastar um Ponto da Força'}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">${stats.sides === 8 ? '<path d="M12 2 22 12 12 22 2 12Z M12 2 8 12l4 10 4-10Z M2 12h20"/>' : '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 7h.01M17 7h.01M7 12h.01M17 12h.01M7 17h.01M17 17h.01" stroke-width="3" stroke-linecap="round"/>'}</svg>${stats.dice}d${stats.sides}</span></div>
+        <div class="force-points-fields">
+            <div class="field"><label for="fp-total-${sheet.id}">Total</label><input id="fp-total-${sheet.id}" class="stat-input locked" type="number" value="${stats.total}" readonly></div>
+            <div class="field"><label for="fp-current-${sheet.id}">Atual</label><input id="fp-current-${sheet.id}" class="stat-input" type="number" min="0" max="${stats.total}" value="${sheet.forcePoints?.current ?? stats.total}" onchange="updateForcePoints(${sheet.id}, this.value)"></div>
+        </div>
+        ${stats.dice > 1 ? '<p class="card-hint">Use apenas o maior dado.</p>' : ''}
+        ${(sheet.classes || []).length > 1 ? `<div class="field force-point-class"><label for="fp-class-${sheet.id}">Classe do último nível</label><select id="fp-class-${sheet.id}" onchange="updateForcePointClass(${sheet.id}, this.value)">${sheet.classes.map(entry => `<option ${entry.name === stats.className ? 'selected' : ''}>${escapeHtml(entry.name)}</option>`).join('')}</select></div>` : ''}
+    </div>`;
+}
+
+function updateForcePoints(id, value) {
+    const sheet = findSheet(id);
+    if (!sheet) return;
+    prepareForcePoints(sheet);
+    sheet.forcePoints.current = Math.max(0, Math.min(sheet.forcePoints.total, toInt(value)));
+    document.getElementById(`fp-current-${id}`).value = sheet.forcePoints.current;
+    scheduleSave(id);
+}
+
+function updateForcePointClass(id, name) {
+    const sheet = findSheet(id);
+    if (!sheet || !sheet.classes.some(entry => entry.name === name)) return;
+    prepareForcePoints(sheet);
+    sheet.forcePoints.className = name;
+    renderSheets();
+    scheduleSave(id);
 }
 
 function getConditionPenalty(sheet) {
@@ -546,6 +611,7 @@ function renderSheets() {
         if (syncDerivedValues(sheet)) scheduleSave(sheet.id);
         // Talentos e Aptidões por nível (js/talentos.js); converte a lista digitada das fichas antigas
         if (prepareSheetChoices(sheet)) scheduleSave(sheet.id);
+        if (prepareForcePoints(sheet)) scheduleSave(sheet.id);
         if (prepareInventory(sheet)) scheduleSave(sheet.id);
         if (prepareAttacks(sheet)) scheduleSave(sheet.id);
 
@@ -588,6 +654,7 @@ function renderFichaTab(sheet) {
 
         <section class="vitals">
             ${renderHitPoints(sheet)}
+            ${renderForcePoints(sheet)}
             ${renderDamageThreshold(sheet)}
             ${renderConditionTrack(sheet)}
         </section>
@@ -843,6 +910,11 @@ function renderDefenses(sheet) {
                                 </div>
                             `).join('')}
                         </div>
+                        ${def.key === 'REF' ? `<div class="defense-head flat-footed-continuation">
+                            ${renderDefenseIcon('flat-footed')}
+                            <div class="defense-title"><span class="defense-name">Reflexos Desprevenido</span><div class="defense-attr">${hasForcePointChoice(sheet, 'Uncanny Dodge I') ? 'Esquiva Sobrenatural I mantém DES' : 'Sem bônus de Destreza'}</div></div>
+                            <strong class="defense-total" data-flat-footed>${calculateFlatFootedDefense(sheet)}</strong>
+                        </div>` : ''}
                     </div>
                 `).join('')}
             </div>
@@ -1354,7 +1426,12 @@ function updateClassRow(id, index, value, field) {
         requestClassChange(id, index, value);
         return;
     }
-    sheet.classes[index].level = Math.max(1, toInt(value));
+    const newLevel = Math.max(1, toInt(value));
+    if (newLevel > toInt(sheet.classes[index].level)) {
+        prepareForcePoints(sheet);
+        sheet.forcePoints.className = sheet.classes[index].name;
+    }
+    sheet.classes[index].level = newLevel;
     renderSheets();
     scheduleSave(sheet.id);
 }
@@ -1392,6 +1469,8 @@ function refreshDefenseTotals(id, sheet) {
         if (attrEl) attrEl.textContent = renderDefenseAttribute(sheet, key);
     });
     sheetEl.querySelectorAll('[data-def-level]').forEach(input => { input.value = toInt(sheet.level); });
+    const flatFooted = sheetEl.querySelector('[data-flat-footed]');
+    if (flatFooted) flatFooted.textContent = calculateFlatFootedDefense(sheet);
     sheetEl.querySelectorAll('[data-def-species]').forEach(input => { input.value = getSpeciesDefenseBonus(sheet, input.dataset.defSpecies); });
     refreshDamageThreshold(id, sheet);
 }

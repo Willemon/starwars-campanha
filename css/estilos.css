@@ -773,6 +773,13 @@ label {
     gap: 10px;
 }
 
+.force-points-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.force-dice { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: var(--text-dim); white-space: nowrap; }
+.force-point-class { margin-top: 12px; }
+.force-point-class select { width: 100%; }
+.flat-footed-continuation { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+.vitals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
 .stat-input {
     padding: 5px 6px;
     font-family: var(--font-display);

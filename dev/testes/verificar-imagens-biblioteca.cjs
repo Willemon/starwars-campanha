@@ -29,7 +29,7 @@ for (const source of sources) {
     assert.equal(new URL(source.page).hostname, 'swtor.jedipedia.net');
     assert.equal(new URL(source.imageUrl).hostname, 'swtorfiles.jedipedia.net');
 }
-for (const english of ['Circle of Shelter', 'Kinetic Combat']) {
+for (const english of ['Circle of Shelter', 'Kinetic Combat', 'Assured Strike', 'Cryokinesis', 'Disarming Slash', 'Drain Energy', 'Fold Space', 'High Ground Defense', 'Twin Strike']) {
     const name = powers.find(power => power.endsWith(`(${english})`));
     assert.ok(imageFor(name), `Imagem local reconhecida: ${english}`);
 }
