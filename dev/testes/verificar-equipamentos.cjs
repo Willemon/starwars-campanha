@@ -6,7 +6,7 @@ const assert = require('node:assert/strict');
 const root = path.join(__dirname, '../..');
 let nextId = 0;
 const context = vm.createContext({ assert, console, window: {}, crypto: { randomUUID: () => 'item-' + ++nextId }, document: { addEventListener() {}, getElementById() { return null; }, querySelector() { return null; } } });
-for (const file of ['js/estado.js', 'js/dados/classes.js', 'js/dados/biblioteca.js', 'js/dados/progressao.js', 'js/ficha.js', 'js/referencia.js', 'js/icones.js', 'js/talentos.js', 'js/equipamentos.js', 'js/ataques.js']) {
+for (const file of ['js/estado.js', 'js/dados/classes.js', 'js/dados/biblioteca.js', 'js/dados/progressao.js', 'js/modelos/ficha.js', 'js/regras/ficha.js', 'js/ficha.js', 'js/regras/biblioteca.js', 'js/referencia.js', 'js/modelos/equipamentos.js', 'js/icones.js', 'js/regras/talentos.js', 'js/talentos.js', 'js/regras/equipamentos.js', 'js/equipamentos.js', 'js/regras/ataques.js', 'js/ataques.js']) {
     const source = fs.readFileSync(path.join(root, file), 'utf8');
     const code = file === 'js/estado.js' ? source.split('let syncStatusTimer')[0]
         : file === 'js/ficha.js' ? source.replace(/renderSheets\(\);\s*$/, '') : source;

@@ -3,7 +3,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const context = vm.createContext({ assert, window: {}, SPECIES_EFFECTS: {}, document: { addEventListener() {} } });
-for (const file of ['js/estado.js', 'js/dados/classes.js', 'js/ficha.js']) {
+for (const file of ['js/estado.js', 'js/dados/classes.js', 'js/modelos/ficha.js', 'js/regras/ficha.js', 'js/ficha.js']) {
     let text = fs.readFileSync(path.join(__dirname, '../..', file), 'utf8');
     if (file === 'js/estado.js') text = text.split('let syncStatusTimer')[0];
     if (file === 'js/ficha.js') text = text.replace(/renderSheets\(\);\s*$/, '');

@@ -6,7 +6,7 @@ const assert = require('node:assert/strict');
 const root = path.join(__dirname, '../..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const context = vm.createContext({ assert, console, window: {}, document: { addEventListener() {} } });
-for (const file of ['js/estado.js', 'js/dados/biblioteca.js', 'js/dados/biblioteca-detalhes.js', 'js/dados/prerequisitos-talentos.js', 'js/referencia.js', 'js/talentos.js']) {
+for (const file of ['js/estado.js', 'js/dados/biblioteca.js', 'js/dados/biblioteca-detalhes.js', 'js/dados/prerequisitos-talentos.js', 'js/regras/biblioteca.js', 'js/referencia.js', 'js/regras/talentos.js', 'js/talentos.js']) {
     vm.runInContext(file === 'js/estado.js' ? read(file).split('let syncStatusTimer')[0] : read(file), context);
 }
 vm.runInContext(`

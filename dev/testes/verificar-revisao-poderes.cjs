@@ -7,7 +7,7 @@ const root = path.join(__dirname, '../..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const context = vm.createContext({ window: {}, document: { addEventListener() {} } });
 vm.runInContext(read('js/estado.js').split('let syncStatusTimer')[0], context);
-for (const file of ['js/dados/biblioteca.js', 'js/dados/biblioteca-detalhes.js', 'js/referencia.js']) vm.runInContext(read(file), context);
+for (const file of ['js/dados/biblioteca.js', 'js/dados/biblioteca-detalhes.js', 'js/regras/biblioteca.js', 'js/referencia.js']) vm.runInContext(read(file), context);
 const data = JSON.parse(vm.runInContext('JSON.stringify({ names: LIBRARY_DATA.forcePowers.items, details: LIBRARY_ITEM_DETAILS })', context));
 const sources = JSON.parse(read('dev/referencias/fontes-poderes.json'));
 assert.equal(data.names.length, 91, 'Todas as entradas antigas continuam consultáveis');

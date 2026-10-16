@@ -6,7 +6,7 @@ const vm = require('node:vm');
 const root = path.join(__dirname, '../..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const context = vm.createContext({ window: {} });
-for (const file of ['js/dados/biblioteca.js', 'js/dados/imagens-biblioteca.js', 'js/icones.js']) {
+for (const file of ['js/dados/biblioteca.js', 'js/dados/imagens-biblioteca.js', 'js/modelos/equipamentos.js', 'js/icones.js']) {
     vm.runInContext(read(file), context);
 }
 const powers = vm.runInContext('LIBRARY_DATA.forcePowers.items', context);

@@ -26,13 +26,6 @@ const CLASS_ICON_FILES = {
     'Master Privateer': 'master-privateer.gif'
 };
 
-const WEAPON_TYPES = {
-    lightsabers: { label: 'Sabres de luz', file: 'lightsabers.jpg' },
-    pistols: { label: 'Pistolas', file: 'pistols.jpg' },
-    rifles: { label: 'Rifles', file: 'rifles.jpg' },
-    simple: { label: 'Armas simples', file: 'simple-weapons.jpg' },
-    advancedMelee: { label: 'Armas corpo a corpo avançadas', file: 'advanced-melee-weapons.jpg' },
-};
 
 // A primeira regra que casar com o nome da arma define o ícone (rifle antes de blaster)
 const WEAPON_ICON_RULES = [
