@@ -333,6 +333,18 @@ function renderSheets() {
             setupImagePanEvents(sheet.id);
         }
     });
+
+    applyClassTheme(sortedSheets);
+}
+
+function applyClassTheme(sheets) {
+    const active = sheets.find(s => s.id === activeSheetId) || sheets[0];
+    if (!active?.classes?.length) { document.body.removeAttribute('data-classe'); return; }
+    const primary = [...active.classes]
+        .filter(c => toInt(c.level) > 0)
+        .sort((a, b) => toInt(b.level) - toInt(a.level))[0];
+    if (primary?.name) document.body.dataset.classe = primary.name;
+    else document.body.removeAttribute('data-classe');
 }
 
 function renderFichaTab(sheet) {
