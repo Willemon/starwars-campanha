@@ -8,8 +8,7 @@ const loggedErrors = [];
 const context = vm.createContext({ assert, loggedErrors, console: { log: console.log, error: (...args) => loggedErrors.push(args) }, window: {}, crypto: { randomUUID: () => 'new-item' },
     document: { addEventListener() {}, getElementById() { return null; }, querySelector() { return null; } } });
 for (const file of ['js/estado.js', 'js/dados/classes.js', 'js/dados/especies.js', 'js/dados/biblioteca.js',
-    'js/dados/biblioteca-detalhes.js', 'js/dados/progressao.js', 'js/ficha.js', 'js/referencia.js',
-    'js/icones.js', 'js/especies.js', 'js/talentos.js', 'js/equipamentos.js', 'js/ataques.js']) {
+    'js/dados/biblioteca-detalhes.js', 'js/dados/progressao.js', 'js/modelos/ficha.js', 'js/regras/ficha.js', 'js/ficha.js', 'js/regras/biblioteca.js', 'js/referencia.js', 'js/modelos/equipamentos.js', 'js/icones.js', 'js/especies.js', 'js/regras/talentos.js', 'js/talentos.js', 'js/regras/equipamentos.js', 'js/equipamentos.js', 'js/regras/ataques.js', 'js/ataques.js']) {
     const source = fs.readFileSync(path.join(root, file), 'utf8');
     vm.runInContext(file === 'js/estado.js' ? source.split('let syncStatusTimer')[0]
         : file === 'js/ficha.js' ? source.replace(/renderSheets\(\);\s*$/, '')

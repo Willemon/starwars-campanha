@@ -1,0 +1,45 @@
+Tool: built-in image_gen
+Final asset: img/poderes/intercept-v3.png
+User composition: two raised hands, subtle Force barrier, incoming rock with motion strokes and restraining ripples.
+User corrections: anatomically correct arm/hand connections; five fingers each; visible integrated Force aura and original raster finish.
+
+COMPOSITION
+
+Edit/recompose image 1 Intercept according to the user's NEW exact scene. Image 1 provides blue palette and figure placement only; its single hand anatomy is WRONG and must NOT be copied. Image 2 Battle Meditation is supporting original reference for a person with BOTH arms raised and simple dark human forms. Image 3 Force Stun is original reference for gentle curved wave treatment. Keep original compact raster game-icon finish.
+
+ONE HUMAN LEFT, TWO RAISED HANDS, ONE INCOMING ROCK RIGHT.
+Remove the metal plate, red blaster beam, orange impact flash and all sparks completely.
+
+On the LEFT, show one adult bald near-black humanoid, in three-quarter side view facing RIGHT, upper body large and cropped at bottom. He raises BOTH arms in a natural TWO-HANDED DEFENSIVE PUSH, palms toward the incoming rock, as if bracing both hands against a vertical surface in front of him. One hand slightly higher/farther, the other lower/nearer so both wrists/forearms stay readable.
+REDRAW BOTH ARM-HAND CHAINS correctly: ONE anatomical left shoulder -> left upper arm -> left elbow -> left forearm -> left wrist -> LEFT hand; ONE right shoulder -> right upper arm -> right elbow -> right forearm -> right wrist -> RIGHT hand. Opposite hands, natural thumb positions, no swapped left hand on right forearm, no 180-degree twisted wrist, no duplicated same-side arms. The hand bases align with their own forearms. Normal human hands each with FOUR fingers and ONE opposable thumb, five digits total; simple broad shapes and natural perspective, no three-prong alien fingers or fused digits. Keep wrists and elbows unobscured enough to understand the connection. Think a real person calmly bracing with both hands, not a symbolic detached palm.
+
+Just IN FRONT OF BOTH PALMS at center, a SMALL VERY SUBTLE FORCE BARRIER: a faint translucent cool-blue curved patch, mostly invisible, with only a short soft incomplete rim and weak local refraction. No giant shield sphere, hard glass disk, bright rim or beam. It must not hide the hands.
+
+At CENTER-RIGHT, ONE plain irregular rounded ROCK is arriving from the RIGHT TOWARD THE PERSON AT LEFT, being arrested just in front of the hands' small barrier. Slate-gray/blue rock with two or three broad soft volume planes, not a mechanical plate. Keep clear dark space separating it from both hands.
+Show speed with THREE short tapered motion strokes TRAILING BEHIND THE ROCK on its RIGHT side, toward right edge. No strokes in front of it, no outgoing shot from hand. The right-side trailing strokes make incoming LEFTWARD movement clear.
+Around the rock's FRONT/LEFT side near the restraint, TWO very faint short curved ripple traces hug its surface, giving the impression the subtle barrier is meeting and stopping it. Quiet soft incomplete pale-blue arcs, low contrast, no electric rays, Wi-Fi graphic, orbiting horizontal hoops, many rings, magical cable or explosion.
+
+Use a few LARGE READABLE SHAPES. Deep navy/petrol abstract background, near-black figure, soft muted blue sleeve/torso volumes, gray-blue rock, restrained pale cyan barrier/ripple accents. Original raster icon style with smooth gentle broad shading and variable broken localized light. No tiny cloth folds, photoreal hand/skin detail, gritty rock texture, cinematic painting, 3D, perfect vector sticker, uniform neon contour, fake pixelation, scenery, text or decorative frame. Two hands anatomically belong to their correct arms; rock is incoming and being stopped by a small gentle barrier.
+
+HAND CORRECTION
+
+Edit ONLY THE TWO HANDS of image 1. Do not alter arms, wrists, sleeves, body, rock, movement trails, soft wave arcs, colors or framing.
+
+Both raised hands currently have only THREE long fingers plus thumb. They must EACH have FOUR distinct long fingers PLUS ONE separate opposable THUMB: FIVE DIGITS TOTAL PER HAND.
+Preserve which hand is left/right and preserve their existing natural connection to wrists. Do not flip or rotate either hand. Don't swap palms on arms.
+UPPER/FAR HAND has thumb at screen-right. Keep it there. Show FOUR separated upright fingers spreading gently above palm, including a distinct shortest LITTLE FINGER on the screen-left outer side and a distinct RING FINGER between little and middle. Each fingertip independently visible, no finger hidden/fused behind another.
+LOWER/NEAR HAND has thumb at screen-left. Keep it there. Show FOUR separated upright fingers above palm; add a clearly distinct shorter LITTLE FINGER on screen-right outer side. Index nearest thumb, then middle longest, ring, little shortest on outside.
+For EACH hand count individually: thumb, index, middle, ring, little. Five digits, four long tips plus short thumb, not four digits, no six digits. Spread the fingers enough for dark gaps between all four upper digits. Keep a natural single palm and one wrist aligned to its original forearm. Simplified dark human hand shapes with soft local pale-blue illumination, no nails or skin detail.
+Everything else remains pixel-composition equivalent: same two-handed stopping pose, incoming rock with right-side speed strokes, restrained curved blue containment traces. No extra limbs or elements, no text.
+
+AURA AND ART FINISH
+
+Edit image 1 Intercept. Keep its composition and correct anatomy: adult figure on left with TWO raised hands, FIVE DIGITS ON EACH HAND, naturally correct wrists/arms; rock on right arriving LEFTWARD with speed strokes trailing to its right. Keep all finger silhouettes and limb connections unchanged.
+
+The user rejects the CLEAN FLAT VECTOR / CHILDREN'S DRAWING finish and the missing FORCE AURA. Repaint the FINISH and FORCE LIGHT to genuinely match ORIGINAL RASTER icons in images 2 Negate Energy, 3 Rebuke, 4 Force Stun and 5 Fluid Riposte. Those originals are the style authority.
+
+Add a VISIBLE SOFT LUMINOUS FORCE AURA occupying the AIR IN FRONT OF THE TWO PALMS and extending to the rock's approaching LEFT face. Pale icy-blue light at the centers of the palms and pressure zone, diffusing through a broad cyan/blue glow with organic uneven intensity. A contained luminous field with soft irregular boundaries, integrating person, hands, space and object as ONE lighting composition. It must look like substantial Force energy in the air, not merely a glowing outline tracing fingers. Follow Negate Energy/Rebuke's concentrated aura and illuminated dark volumes. Within this glow the barrier is a soft curved pressure swell meeting rock, with a couple of gentle uneven wave arcs wrapping partly around rock's left/front face. Keep rock readable. The energy stops the incoming stone, no blasts, lightning, sparks, hard glass disk or giant geometric bubble.
+
+Repaint figure as broad dark softly modeled RASTER masses with gentle blue light washes giving sleeve/shoulder volumes. REMOVE graphic hard clothing stripes, perfect vector gradients, sharp cutout edges and uniform cyan neon tracing. Edges vary: parts lit by aura, other edges dark/lost. Halo is diffuse and organically irregular, not a line of constant width. Hands dark, five fingers each, aura spill on palms/fingers, no detailed skin or nails.
+Rock becomes a simple softly shaded gray-blue irregular mass, remove mosaic of sharp polygon facets and photoreal surface detail. Aura washes across its contact-facing planes, dark rear side. Speed strokes remain three tapered broad raster-soft marks behind rock on right.
+Backdrop deep navy and broad soft blue masses that blend into aura. Original old digital game-icon raster softness with slightly organic transitions, not artificially pixelated, not traditional oil/watercolor brush texture, not 3D render or cinematic painting. NO flat vector/SVG/sticker finish. No extra figures, objects, text or border. Preserve compact small-icon legibility, two correct five-digit hands, incoming-rock direction and a clearly visible integrated Force AURA.

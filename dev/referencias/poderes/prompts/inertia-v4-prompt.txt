@@ -1,0 +1,32 @@
+Tool: built-in image_gen
+Mechanics: https://swse.fandom.com/wiki/Inertia
+Final asset: img/poderes/inertia-v4.png
+Movement reference: dev/referencias/poderes/inertia-corrida-naruto.jpg
+Source: https://naruto-official.com/en/news/01_1479
+
+GENERATION FROM MOVEMENT REFERENCES
+
+Use case: stylized-concept. Create a NEW square raster ability icon of Inertia for Star Wars Saga Edition, using these references with distinct roles:
+1 Naruto running frame: RUNNING BODY LANGUAGE only, forward-driving chest, hips following, limbs in a forceful stride, clothing streaming backward.
+2 Naruto tree-running manga panel: running ON A VERTICAL SURFACE, with feet treating the wall as ground; perspective and physical drive only.
+3 Fluid Riposte and 4 Barrier of Blades: authoritative ORIGINAL ART FINISH, dark simple masses, soft sparse digital volumes, concentrated economical light. Do not copy anime character, hair, costume, manga text or scenery.
+
+The user needs ONE adult bald human CORRENDO EM 90 GRAUS NA PAREDE, OS DOIS PÉS APOIADOS NELA. A natural energetic runner with sideways gravity, not an upright climber and not a seated person braced against wall.
+
+Pose construction: imagine a convincing right-facing forward-leaning sprint ON THE GROUND. Rotate the WHOLE runner-and-ground scene 90 degrees counterclockwise: ground becomes a VERTICAL WALL AT RIGHT, the sprint now travels UP the image. The person projects LEFTWARD out from wall with normal running posture relative to that wall. Preserve forward lean of the CHEST IN THE UPWARD DIRECTION OF TRAVEL, hips following chest, back long and athletic. NOT chest leaning backward, NOT belly up, NOT hips sunk into a chair.
+Adapt the running cycle to the user's stylized TWO-FOOT CONTACT moment: BOTH SOLES lie FLUSH AGAINST the same vertical wall face at right, toes aimed upward. Front boot higher, rear boot lower. Both contacts visible, no gap under either sole. Leading knee bent high toward chest; trailing leg drives back/down with a much more open knee. Strongly asymmetric legs, each clearly connected to its own hip. Two feet only, no ghost limbs.
+Head/chest occupy upper-left/center, hips center-right, two boots staggered on right wall. The head points UP along wall, leading the run. Arms stream BACK behind the shoulders in Naruto-like running body language, with naturally different left/right positions, elbows slightly bent and loose fists, exactly two arms. Hands human with five-digit anatomy, most fingers naturally curled. No raised victory fist or wall-grabbing hands.
+Short broad tunic tails stream DOWNWARD, behind the upward motion. Sense of speed must come from the POSE before any effects. Large silhouette fills the square, both feet remain in frame.
+
+Plain slate-blue VERTICAL WALL occupies rightmost strip, no ledge or footholds. Abstract dark navy/petrol background. A few broad soft blue motion sweeps travel upward behind the body, subtle blur only on trailing cloth. No jet trails or magic beams. No enemies, weapons, floor or extra environment.
+Match original compact raster icons: nearly-black simple figures, a few smooth softly rounded volume washes on shoulder, sleeve and thigh; no fine folds or realistic fabric. Local irregular blue illumination, many edges lost in shadow, no complete neon contour. Normal-resolution soft raster rendering, no fake pixels, no 3D-render appearance, no cinematic painting, no brushstroke texture, no anime face/hair, no text/frame.
+Critical acceptance: the wall is his running ground; BOTH feet visibly on it; forward-driving torso and asymmetric stride instead of sitting or jumping.
+
+UPPER BODY CORRECTION
+
+Edit image 1. KEEP BOTH BOOT SOLES PLANTED ON THE VERTICAL WALL at right, keep their two exact contact positions, preserve the leg stride, tunic trailing down and blue upward motion. Correct the UPPER BODY POSITION and its rendering using original image 2 as finish reference.
+
+Move the torso, shoulders and head FARTHER LEFT, so the body is SIDEWAYS RELATIVE TO THE WALL. Hips remain around center-right. Chest/shoulders at center-left. HEAD at LEFT-CENTER, not above hips near top-right. The back/spine axis from hip to head must now extend roughly HORIZONTALLY LEFT, perpendicular to the right vertical wall. A slight UPWARD forward lean is fine, but NOT the current tall upright torso parallel to wall. Imagine a natural forward-leaning Naruto-style runner with gravity turned sideways and feet on the right wall. Chest drives toward TOP of image, hips follow; do not arch back or recline belly-up. Keep the head in dark side profile looking UP along the wall. Both arms trail DOWN/BACK past the torso in the Naruto running manner, not raised beside head and not splayed in a seated brace. Two arms, two hands, natural correct anatomy.
+
+Render the whole character as broad NEAR-BLACK SILHOUETTE with only a few soft smooth blue volume washes, matching ORIGINAL image 2. Remove visible skin, facial features, realistic muscles, tiny fabric folds, seams, straps and boot details. Broad tunic silhouette with softly rounded sleeves. Light varies and is broken; remove continuous neon outline. Wall smooth simple slate-blue plane, no realistic texture. Preserve the directional blue motion bands and full two-foot contacts. No photorealistic 3D render, no fake pixels, no cinematic detailed painting, no text/frame.
+The essential visual check is TWO FEET ON RIGHT WALL, HIPS RIGHT, HEAD LEFT, BODY PROJECTING SIDEWAYS, ACTIVE UPWARD RUNNING POSTURE.

@@ -1,0 +1,16 @@
+Tool: built-in image_gen
+Mechanics: https://swse.fandom.com/wiki/Inspire
+Final asset: img/poderes/inspire-v2.png
+Base: img/poderes/inspire.png
+User pose drawing: raised arm with blade angled upper-left, not vertical.
+
+Edit image 1, the small existing INSPIRE game ability icon. Image 1 is the exact composition AND art-finish base. Image 2 is ONLY the user's stick-figure reference for the central raised-arm and lightsaber angle. Follow the drawing, do not render its stick figures.
+
+Make ONLY these requested changes:
+1) Recolor the existing warm red/orange icon to a COOL BLUE palette: near-black/navy silhouettes, deep navy abstract background, soft blue and cyan light in the same existing areas. Preserve the existing number, arrangement, proportions and framing of all surrounding allied silhouettes. Keep the central figure's torso and simple body stance substantially the same. Maintain the original soft broad shadow/light volumes and very sparse detail.
+2) Raise ONE arm of the central figure so the elbow is softly bent and the hand holds a lightsaber high ABOVE AND SLIGHTLY TO THE RIGHT of his own head. The central adult humanoid has exactly two natural arms, each from its own shoulder. Other arm stays low, as close to the base as possible.
+3) Match image 2's lightsaber geometry: the HILT is at the RAISED HAND at upper-right of central head; the BLUE BLADE extends LEFTWARD from that high hand, on a SHALLOW DIAGONAL toward the UPPER LEFT. It is almost horizontal with a slight upward-left tilt, like the blue stroke in the sketch. Do NOT put the blade straight vertically upward. One single rigid straight blue-white blade, simple short dark hilt attached to gripping hand; no fantasy sword crossguard. Keep the entire blade and hilt inside frame, leaving a small margin at top. No oversized separate light streak or multiple blades.
+The raised saber is a rallying gesture inspiring the surrounding allies, not an attack. All allies remain calm upright dark silhouettes in their original positions. No extra characters, weapons for the allies, enemies, waves, lightning, mental rays, sparks, particles, impact or text.
+
+Art finish must closely match image 1's small classic raster game-icon look: simple nearly-black forms, a few smooth soft broad volumes, restrained integrated blue glow. Enough local light near saber-facing parts of raised hand and shoulder, variable soft edges; do not trace uniform neon lines around entire figures. Abstract background with original broad luminous arrangement, no new scenery or floor. Normal resolution, no artificial pixelation, no detailed clothing, faces, skin, 3D rendering, cinematic painting, brush texture or vector sticker finish. No new decorative border.
+This is a faithful edit of image 1, not a redesign. Central saber tilted upper-left as drawn, existing group preserved, cool blue palette.

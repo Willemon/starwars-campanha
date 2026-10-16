@@ -8,7 +8,7 @@ const context = vm.createContext({
     getLibraryImageUrl: () => '',
 });
 vm.runInContext(read('js/estado.js').split('let syncStatusTimer')[0], context);
-for (const file of ['js/dados/biblioteca.js', 'js/dados/biblioteca-detalhes.js', 'js/referencia.js']) vm.runInContext(read(file), context);
+for (const file of ['js/dados/biblioteca.js', 'js/dados/biblioteca-detalhes.js', 'js/regras/biblioteca.js', 'js/referencia.js']) vm.runInContext(read(file), context);
 context.assert = assert;
 vm.runInContext(String.raw`
     LIBRARY_DATA.forcePowers.items.forEach((name, index) => {

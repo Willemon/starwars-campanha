@@ -1,0 +1,14 @@
+Tool: built-in image_gen
+Final asset: img/poderes/enlighten-v4.png
+Reference preserved: dev/referencias/poderes/01-battle-meditation.jpg
+User correction: head-centered waves in the 2D picture plane, expanding from caster left and smaller incoming echoes toward receiver right.
+
+Edit image 1 Enlighten. ONLY change the mental waves, preserving both people, poses, correct five-finger temple hand, soldier's blaster rifle, bodies, navy backdrop and existing soft volumes exactly. Image 2 Battle Meditation is the user's EXACT WAVE GEOMETRY reference.
+
+Delete the current flattened HORIZONTAL elliptical halos floating over both heads. Replace with the Battle Meditation reference's planar circular ripple treatment: broad softly fading incomplete circular arcs BEHIND and AROUND the head, seen FRONT-ON IN THE 2D PICTURE PLANE. Their center is the head itself. They are not horizontal rings, orbiting hoops, crowns or halos suspended above heads.
+
+LEFT CASTER: two or three gentle incomplete circular wave arcs centered at the caster's head, expanding outward and upward from that head in the flat image plane, as in reference 2. Visible mainly above and around crown and sides, with lower portions lost behind silhouette and darkness. Soft subdued amber-gold strokes, varied light and width, diffuse fading ends, ample dark space between arcs, no hard geometric full circles and no bright white cores. Suggest quiet ripples expanding in ALL directions rather than Wi-Fi aimed right. Keep their brightness restrained and airy; integrated into dark background, not a glowing sign.
+
+RIGHT RECEIVER: much smaller and fainter matching curved wave traces close to the soldier's head, seen in the SAME front-on flat 2D plane. These suggest incoming awareness from the left: a sparse short progression of curved fragments approaches the back/upper-left of the receiver's head, growing SMALLER and softer as it nears his temple, then gently fades around his crown. Their flow is inward toward his head, not a second large source radiating outward. Do not mirror the large source ripples. Keep subtle, no arrows or literal diagram. No connecting beam, line, rope, Wi-Fi sector, lightning or bright forehead dot.
+
+Think the soft circular head-centered reverberations in reference 2, applied as outgoing left and a quiet smaller received echo on right. The mental effect stays secondary to the two dark figures. No added symbols, scenery, text, frame or particles. Normal-resolution soft raster game-icon finish, no painterly texture or artificial pixelation. Preserve every finger and all other image elements.

@@ -323,7 +323,19 @@ window.LIBRARY_IMAGE_FILES = {
         "valor": "valor.png",
         "vital-transfer": "vital-transfer.jpg",
         "vornskrs-ferocity": "vornskrs-ferocity.png",
-        "wound": "wound.png"
+        "wound": "wound.png",
+        "assured-strike": "assured-strike.png",
+        "cryokinesis": "cryokinesis.png",
+        "disarming-slash": "disarming-slash.png",
+        "drain-energy": "drain-energy.png",
+        "fold-space": "fold-space.png",
+        "high-ground-defense": "high-ground-defense.png",
+        "twin-strike": "twin-strike.png",
+        "enlighten": "enlighten.png",
+        "force-light": "force-light.png",
+        "inertia": "inertia.png",
+        "inspire": "inspire.png",
+        "intercept": "intercept.png"
     },
     "tecnicas": {
         "force-point-recovery": "force-point-recovery.jpg",

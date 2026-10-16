@@ -20,9 +20,6 @@ document.addEventListener('keydown', e => {
 });
 
 // Ignora acentos e maiúsculas na busca
-function normalizeSearch(text) {
-    return String(text || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-}
 
 // ===== Classes =====
 
@@ -125,14 +122,6 @@ function openLibrary() {
 }
 
 // Abre a Biblioteca direto num item (usado pelos talentos e aptidões da ficha)
-const CHOICE_LIBRARY_CATEGORIES = { talento: 'talents', aptidao: 'aptitudes', poder: 'forcePowers', tecnica: 'forceTechniques', segredo: 'forceSecrets' };
-
-function resolveLibraryItemName(itemName, categoryKey) {
-    const typed = normalizeSearch(itemName).trim();
-    const alias = Object.entries(LIBRARY_ITEM_RENAMES[categoryKey] || {}).find(([oldName]) =>
-        typed === normalizeSearch(oldName) || typed === normalizeSearch(choiceShortName(oldName)));
-    return alias ? alias[1] : itemName;
-}
 
 function openLibraryItem(itemName, tipo) {
     const preferred = CHOICE_LIBRARY_CATEGORIES[tipo];
@@ -175,9 +164,6 @@ function closeLibrary() {
 }
 
 // "Árvore de Aptidões: Ala (Wingman)" -> "Ala (Wingman)"
-function shortTreeName(name) {
-    return name.replace(/^Árvore de [^:]+:\s*/, '');
-}
 
 function showLibraryCategory(categoryKey) {
     const tabs = document.getElementById('libraryTabs');

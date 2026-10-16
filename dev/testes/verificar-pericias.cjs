@@ -7,7 +7,7 @@ const root = path.join(__dirname, '../..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const context = vm.createContext({ console, assert, window: {} });
 vm.runInContext(read('js/estado.js').split('let syncStatusTimer')[0], context);
-vm.runInContext(read('js/ficha.js').split('// Fichas com o grupo de Conhecimentos aberto')[0], context);
+vm.runInContext(read('js/modelos/ficha.js'), context);
 vm.runInContext(read('js/dados/pericias-usos.js'), context);
 vm.runInContext(read('js/pericias.js'), context);
 vm.runInContext(`

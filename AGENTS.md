@@ -1,3 +1,12 @@
+# Organização do código
+
+- Consulte `dev/ARQUITETURA.md` antes de acrescentar funcionalidades.
+- Modelos ficam em `js/modelos/`; cálculos, validações e compatibilidade de fichas antigas em `js/regras/`.
+- Regras recebem dados e não acessam DOM, Firebase, armazenamento ou funções de renderização.
+- Handlers da interface usam essas regras e agendam a gravação por `scheduleSave`.
+- Preserve as chaves dos documentos existentes. Uma mudança de formato precisa tratar fichas antigas e testar a recuperação dos dados.
+- Atualize os scripts da página e os testes quando separar arquivos. A prévia usa a ordem de carregamento da página principal.
+
 # Memória do projeto: estilo das imagens
 
 ## Ícones dos Poderes da Força

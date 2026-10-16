@@ -1,0 +1,18 @@
+Tool: built-in image_gen
+Final asset: img/poderes/inertia-v3.png
+User correction: BOTH feet on vertical wall and body perpendicular to it, running as though wall were ground.
+
+Correct the pose of this Inertia wall-running icon. The user explicitly requires BOTH FEET ON THE WALL and the BODY AT 90 DEGREES TO THE WALL. The current upright jumping/climbing pose is wrong.
+
+REDRAW THE WHOLE FIGURE in a strict SIDE VIEW so this geometry is absolutely unmistakable:
+- The wall remains a STRAIGHT VERTICAL plane at the RIGHT edge.
+- BOTH BOOT SOLES simultaneously touch that SAME VERTICAL WALL FACE, flat against it. One foot higher, the other lower, in a staggered running stride. There must be NO AIR GAP between EITHER boot sole and the wall. Both toes point upward along the wall. No foot in midair. No ledges or footholds.
+- The person's SPINE / torso axis projects HORIZONTALLY LEFT from the wall, making a RIGHT ANGLE (90 degrees) to the vertical wall. Hips at center-right, chest at center-left, head farther LEFT. Body is perpendicular to wall, as though the wall were the ground and normal gravity were rotated sideways. NOT standing vertically beside a wall, NOT climbing, NOT jumping toward it.
+- Two natural bent legs connect hips at center-right to the two soles at far right. The upper knee is drawn up for the forward part of the stride; the lower leg is driving against the lower contact. Keep a clear band of dark negative space between the two legs. BOTH soles remain on wall, including the lower/trailing foot. The user wants this stylized two-foot contact moment.
+- To convey RUNNING rather than a static brace: torso twists slightly, head turned to look UP along wall in direction of travel, one arm pumps FORWARD/UP, the other drives BACK/DOWN, simple tunic tails sweep DOWN behind the upward movement. Knees/arms strongly asymmetric and active. Exactly two arms naturally attached to opposite shoulders, two legs attached to respective hips, normal human five-digit hands as loose fists.
+A useful mental image is a sprinter standing on the vertical wall as though it were a horizontal track: the ENTIRE body orientation is rotated sideways, feet right, head left. Do not merely change the free foot while keeping the torso upright. REORIENT THE TORSO 90 DEGREES.
+Camera shows wall and BOTH sole contacts clearly. The sole contacts must be visible, no cropping either boot. One boot high on wall and one lower, separated, allowing the sideways body and running action to read instantly.
+
+Keep one bald adult dark humanoid, nearly-black silhouette, softly rounded broad clothing volume, deep navy/petrol/slate blue palette, abstract background. Add a few broad blue speed bands running UPWARD behind the sideways runner, tunic trailing downward, suggesting rapid travel UP THE WALL. No flight streak emanating from a foot.
+Compact vintage raster game ability icon, smooth simple broad gradients, no detailed anatomy or costume, no face, no neon line outlining whole body, no artificial pixelation, no 3D render, no cinematic painting. No extra characters, weapons, floor, scenery, text, angle symbols, arrows or frame.
+CHECK THE REQUIRED GEOMETRY IN THE FINISHED IMAGE: VERTICAL WALL, TWO SOLES AGAINST IT, HORIZONTAL TORSO PROJECTING LEFT AT 90 DEGREES. Do not deliver another one-foot airborne jump or upright climb.
